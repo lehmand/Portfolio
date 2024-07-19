@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  
+  constructor(){}
 
+  logo: string = '/assets/img/logo.png'
+  burger: string = '/assets/icons/burger/burger1.png'
 }

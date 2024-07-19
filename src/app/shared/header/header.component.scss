@@ -1,0 +1,20 @@
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
+
+header {
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 128px;
+
+    .header-logo h1 {
+        font-family: Syne;
+        font-weight: 600;
+    }
+
+    .burger-menu img {
+        height: 32px;
+    }
+}

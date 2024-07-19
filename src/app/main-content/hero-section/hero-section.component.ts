@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class HeroSectionComponent {
 
+  email: string = "contact@daniel-lehmann.dev"
 }

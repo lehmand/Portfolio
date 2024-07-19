@@ -1,0 +1,45 @@
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
+
+.hero {
+    height: 100vh;
+    background-color: $background;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    .hero-text h1 {
+        font-family: Syne;
+        font-weight: 800;
+        font-size: 128px;
+    }
+
+    .hero-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        .line {
+            border: 1.5px solid black;
+            width: 673px;
+        }
+
+        .name {
+            font-family: Overpass;
+            color: $highlight;
+            font-size: 48px;
+        }
+    }
+
+    a {
+       position: absolute;
+       transform: rotate(270deg);
+       text-decoration: none;
+       color: black;
+       font-size: 22px;
+       font-weight: 300;
+       top: 765px;
+    }
+}
