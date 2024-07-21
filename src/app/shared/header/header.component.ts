@@ -10,7 +10,5 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   
   constructor(){}
-
-  logo: string = '/assets/img/logo.png'
-  burger: string = '/assets/icons/burger/burger1.png'
+  
 }

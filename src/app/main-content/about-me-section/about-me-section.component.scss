@@ -1,0 +1,61 @@
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
+
+.about-me {
+  background-color: $background;
+  padding: 0 100px;
+
+  h1 {
+    font-family: Syne;
+    font-weight: 800;
+    font-size: 78px;
+  }
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+
+  .text {
+    p {
+      font-size: 22px;
+      font-family: Overpass;
+    }
+  }
+
+  .img {
+    img {
+      height: 553px;
+      width: 553px;
+    }
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+
+  .optional {
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+    gap: 8px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+
+    button {
+      border: 4px solid black;
+      background-color: transparent;
+      padding: 20px 60px;
+      font-family: Overpass;
+      font-size: 23px;
+    }
+  }
+}
