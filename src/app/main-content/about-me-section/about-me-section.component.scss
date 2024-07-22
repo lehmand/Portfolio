@@ -59,3 +59,10 @@ $highlight: #00bc8f;
     }
   }
 }
+
+.arrow {
+  background-color: $background;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 190px;
+}

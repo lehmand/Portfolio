@@ -1,0 +1,17 @@
+<section class="skills">
+    <div class="content-wrapper">
+        <div class="headline-wrapper">
+            <h1>My skills</h1>
+        </div>
+        <div class="icons-wrapper">
+            <div *ngFor="let skill of skills" class="icon-box">
+                <img [src]="skill.iconUrl" alt="" class="skill-icon">
+                <p> {{skill.name}} </p>    
+            </div>
+        </div>
+        <div class="contact-me-wrapper">
+            <img src="/assets/icons/skills/learning.png" alt="">
+            <p>Don't see the skill you need? <a href="">Contact me</a> I'm always ready to learn!</p>
+        </div>
+    </div>
+</section>
