@@ -1,0 +1,70 @@
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.project {
+    display: flex;
+    padding: 48px 0;
+    position: relative;
+    gap: 48px;
+
+    &.odd-project {
+        gap: 128px;
+
+        flex-direction: row-reverse;
+
+        .project-info {
+
+            .project-number {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+
+    .project-info {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .project-number {
+            font-family: Syne;
+            font-weight: 700;
+            font-size: 48px;
+            position: absolute;
+            right: 0;
+            top: 0px;
+        }
+
+        h1 {
+            font-family: Syne;
+            font-weight: 800;
+            font-size: 45px;
+        }
+
+        h2 {
+            font-family: Overpass;
+            font-size: 23px;
+            color: $highlight;            
+        }
+
+        p {
+            font-family: Overpass;
+            font-size: 16px;
+            max-width: 400px;
+        }
+    }
+}

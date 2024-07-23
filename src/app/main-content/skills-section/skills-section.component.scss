@@ -57,7 +57,7 @@ $highlight: #00bc8f;
         justify-content: center;
         align-items: flex-end;
         gap: 16px;
-        margin-top: 24px;
+        margin: 24px 0;
 
 
         p {
@@ -71,4 +71,8 @@ $highlight: #00bc8f;
             margin: 0 8px;
         }
     }
+}
+
+.arrow {
+    margin: 0 128px;
 }
