@@ -1,0 +1,15 @@
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
+
+.contact {
+    background-color: $background;
+
+    .background {
+        background-image: url('/assets/img/contact-background.png');
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+}
