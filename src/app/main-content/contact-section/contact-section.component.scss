@@ -2,6 +2,10 @@ $background: #fffcf3;
 $primary: #000000;
 $highlight: #00bc8f;
 
+* {
+  box-sizing: border-box;
+}
+
 .contact {
   background-color: $background;
   background-image: url("/assets/img/contact-background.png");
@@ -20,25 +24,65 @@ $highlight: #00bc8f;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 617px;
-    width: 100%;
-    gap: 24px;
-    margin-top: 256px;
-  }
-
-  .button-container {
-    display: flex;
     justify-content: center;
-    margin-top: 24px;
+    gap: 24px;
 
-    button {
-        background-color: $primary;
-        padding: 20px 60px;
-        border: 4px solid #BBBBBB;
-        color: $background;
-        font-size: 23px;
-        font-family: Overpass;
-        opacity: 50%;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .form-row {
+        position: relative;
+
+        input {
+          padding: 8px;
+          outline: none;
+          background-color: transparent;
+          border: none;
+          border-bottom: 2px solid $background !important;
+        }
+
+        label.name,
+        label.email,
+        label.message {
+          font-family: Overpass;
+          font-size: 16px;
+          color: $background;
+          position: absolute;
+          left: 16px;
+          top: 4px;
+        }
+
+        label.checkbox {
+          font-family: Overpass;
+          font-size: 16px;
+          color: $background;
+        }
+
+        textarea {
+          outline: none;
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 2px solid $background !important;
+        }
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+
+          button {
+            padding: 20px 60px;
+            border: 4px solid #BBBBBB;
+            background-color: transparent;
+            opacity: 50%;
+            color: $background;
+            font-family: Overpass;
+            font-size: 23px;
+          }
+      }
     }
   }
 
@@ -66,66 +110,6 @@ $highlight: #00bc8f;
       font-size: 22px;
       font-weight: 400;
       font-family: Overpass;
-    }
-  }
-}
-
-form {
-  width: 100%;
-
-  .form-group {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    label {
-      position: absolute;
-      left: 0;
-      top: 16px;
-      margin-left: 8px;
-      color: $background;
-      font-family: Overpass;
-      font-size: 16px;
-    }
-
-    input {
-      padding: 15px 25px;
-      border: none;
-      border-bottom: 2px solid $background;
-      background-color: transparent;
-      outline: none;
-    }
-
-    textarea {
-      background-color: transparent;
-      resize: none;
-      max-height: 202px;
-      height: 100%;
-      padding: 15px 25px;
-      border: none;
-      border-bottom: 2px solid $background;
-    }
-  }
-
-  .checkbox-container {
-    margin-top: 24px;
-    .checkbox {
-      color: $background;
-      font-size: 14px;
-      font-family: Overpass;
-      display: block;
-      position: relative;
-      cursor: pointer;
-
-      #checkbox {
-        cursor: pointer;
-        
-      }
-
-      span {
-        color: $highlight;
-      }
     }
   }
 }

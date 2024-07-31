@@ -1,0 +1,52 @@
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
+
+
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 128px;
+
+    .left-side {
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h1,
+        p {
+            color: $background;
+        }
+
+        p {
+            font-family: Overpass;
+            font-size: 22px;
+        }
+    }
+
+    .right-side {
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .social-links {
+            display: flex;
+            gap: 42px;
+        }
+
+        .legal-container {
+            display: flex;
+            justify-content: flex-end;
+
+            a {
+                text-decoration: none;
+                color: $background;
+                font-family: Overpass;
+                font-size: 16px;
+            }
+        }
+    }
+}

@@ -6,24 +6,21 @@
                 <h3>Say hello! let's discuss your ideas and make it happen</h3>
             </div>
             <form (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    <input class="name" type="text" id="name" required>
-                    <label for="name">Your name</label>
+                <div class="form-row">
+                    <input type="text" id="name" size="81">
+                    <label class="name" for="name">Your name</label>
                 </div>
-                <div class="form-group">
-                    <input class="email" type="text" id="email" required>
-                    <label for="email">Your email</label>
+                <div class="form-row">
+                    <input type="email" id="email" size="81">
+                    <label class="email" for="email">Your email</label>
                 </div>
-                <div class="form-group">
-                    <label class="textfield" for="textfield">Your message</label>
-                    <textarea name="textfield" id="textfield" rows="15" required></textarea>
+                <div class="form-row">
+                    <textarea name="textarea" rows="15" id="textarea"></textarea>
+                    <label class="message" for="textarea">Your message</label>
                 </div>
-                
-                <div class="checkbox-container">
-                    <label class="checkbox" for="checkbox">
-                        <input id="checkbox" type="checkbox" name="privacy-policy" required>
-                        I've read the <span>privacy policy</span> and agree to the processing of my data as outlined.
-                    </label>
+                <div class="form-row checkbox-row">                    
+                    <input type="checkbox" id="checkbox">
+                    <label class="checkbox" for="checkbox"> I've read the <span>privacy policy</span> and agree to the processing of my data as outlined</label>
                 </div>
                 <div class="button-container">
                     <button>Send message</button>

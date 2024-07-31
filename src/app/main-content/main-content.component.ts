@@ -4,6 +4,7 @@ import { AboutMeSectionComponent } from './about-me-section/about-me-section.com
 import { SkillsSectionComponent } from './skills-section/skills-section.component';
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 @Component({
   selector: 'app-main-content',
@@ -14,6 +15,7 @@ import { ContactSectionComponent } from './contact-section/contact-section.compo
     SkillsSectionComponent,
     ProjectsSectionComponent,
     ContactSectionComponent,
+    FooterComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
