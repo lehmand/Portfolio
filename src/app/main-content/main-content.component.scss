@@ -1,6 +1,17 @@
-
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
 
 app-hero-section {
     position: relative;
     z-index: -1;
+}
+
+app-popup {
+    position: absolute;
+    top: 96px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $background;
 }
