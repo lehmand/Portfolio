@@ -7,7 +7,6 @@ section {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 
     .link-container {
         display: flex;
@@ -22,8 +21,6 @@ section {
             font-weight: 700;
             font-size: 96px;
             position: relative;
-            border-bottom: 4px solid $primary;
-            border-left: 4px solid $primary;
             z-index: 0;
             padding: 16px 32px;
             max-width: 520px;
@@ -34,28 +31,66 @@ section {
             &::before {
                 content: '';
                 position: absolute;
-                background-color: $background;
-                height: 75%;
-                width: 8px;
-                left: -4px;
-                bottom: 25%;
-                transition: all ease-in-out 125ms;
+                left: 0;
+                bottom: 0;
+                height: 48px;
+                border-left: 4px solid $primary;
+                transition: height ease-in-out 125ms;
+                
             }
 
             &::after {
                 content: '';
                 position: absolute;
-                left: 10%;
-                bottom: -4px;
-                width: 95%;
-                height: 4px;
-                background-color: $background;
-                z-index: 10;                
+                left: 0;
+                bottom: 0;
+                width: 5%;
+                border-bottom: 4px solid $primary;
+                transition: width ease-in-out 125ms, left ease-in-out 125ms;
+                              
+            }
+
+            &:hover::before {
+                height: 0;
             }
 
             &:hover::after {
-                display: none;
+                width: 65%;
+                left: 35%;
             }
+        }
+    }
+
+    .background {
+        background-image: url('/assets/img/popup-background.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 100px 128px;
+
+        .left-side {
+            color: $background;
+
+            h1 {
+                font-family: Syne;
+                font-size: 78px;
+                font-weight: 800;
+            }
+
+            p {
+                font-family: Overpass;
+                font-weight: 300;
+                font-size: 23px;
+            }
+        }
+
+        .right-side {
+            display: flex;
+            margin-top: 64px;
+            gap: 48px;
         }
     }
 
