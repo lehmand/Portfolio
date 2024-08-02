@@ -2,7 +2,8 @@
     <div class="header-logo">
         <h1> [ D L ] </h1>
     </div>
-    <div class="burger-menu">
+    <div class="burger-menu" (click)="toggleMenu()">
         <img src="/assets/icons/burger/burger1.png" alt="">
     </div>
 </header>
+<app-menu *ngIf="isMenuOpen" [@slideUpdown]></app-menu>

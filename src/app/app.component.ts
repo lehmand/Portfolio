@@ -8,7 +8,7 @@ import { HeaderComponent } from './shared/header/header.component';
   standalone: true,
   imports: [RouterOutlet, FooterComponent, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'portfolio-ng';

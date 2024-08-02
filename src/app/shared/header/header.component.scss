@@ -8,6 +8,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 128px;
+    background-color: $background;
 
     .header-logo h1 {
         font-family: Syne;
@@ -16,5 +17,16 @@ header {
 
     .burger-menu img {
         height: 32px;
+        cursor: pointer;
     }
+}
+
+app-menu {
+    position: fixed;
+    z-index: 10000;
+    top: 92px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $background;
 }

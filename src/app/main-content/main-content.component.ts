@@ -5,7 +5,7 @@ import { SkillsSectionComponent } from './skills-section/skills-section.componen
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
 import { FooterComponent } from '../shared/footer/footer.component';
-import { PopupComponent } from './popup/popup.component';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'app-main-content',
@@ -17,7 +17,7 @@ import { PopupComponent } from './popup/popup.component';
     ProjectsSectionComponent,
     ContactSectionComponent,
     FooterComponent,
-    PopupComponent
+    MenuComponent,
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',

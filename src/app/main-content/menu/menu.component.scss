@@ -7,6 +7,7 @@ section {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: $background;
 
     .link-container {
         display: flex;
@@ -69,7 +70,7 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 100px 128px;
+        padding: 102px 128px;
 
         .left-side {
             color: $background;
