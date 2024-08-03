@@ -3,7 +3,7 @@
         <h1> [ D L ] </h1>
     </div>
     <div class="burger-menu" (click)="toggleMenu()">
-        <img src="/assets/icons/burger/burger1.png" alt="">
+        <img [src]="currentImage" alt="">
     </div>
 </header>
 <app-menu *ngIf="isMenuOpen" [@slideUpDown]></app-menu>
