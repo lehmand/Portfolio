@@ -2,11 +2,6 @@ $background: #fffcf3;
 $primary: #000000;
 $highlight: #00bc8f;
 
-* {
-    position: relative;
-    z-index: -1;
-}
-
 app-menu {
     position: absolute;
     top: 96px;

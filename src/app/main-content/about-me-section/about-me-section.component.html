@@ -1,30 +1,31 @@
 <section class="about-me">
-    <h1>About me</h1>
-    <div class="description">
-        <div class="text">
-            <p>I am a Front-end developer from Mannheim, Germany. I help <br> designers and companies to bring their ideas
-                to real life. <br> Creativity and logical thinking are skills that I have developed <br> to connect ideas into 
-                quality products.
-                <br><br>
-                If you think I'd be a good match for your projects, contact me!
-            </p>
-            <div class="location">
-                <img src="/assets/icons/house.png" alt="">
-                <p>Based in Mannheim</p>
-            </div>
-            <div class="optional">
-                <img src="/assets/icons/laptop.png" alt="">
-                <p>Open to work Remote</p>
-            </div>
-            <div class="button">
-                <button>Let's talk</button>
-            </div>
-        </div>
-        <div class="img">
-            <img src="/assets/img/profile.jpg" alt="">
-        </div>
+  <h1>About me</h1>
+  <div class="description">
+    <div class="text">
+      <p>
+        I am a Front-end developer from Mannheim, Germany. I help <br />
+        designers and companies to bring their ideas to real life. <br />
+        Creativity and logical thinking are skills that I have developed <br />
+        to connect ideas into quality products. <br /><br />
+        If you think I'd be a good match for your projects, contact me!
+      </p>
+      <div class="location">
+        <img src="/assets/icons/house.png" alt="" />
+        <p>Based in Mannheim</p>
+      </div>
+      <div class="optional">
+        <img src="/assets/icons/laptop.png" alt="" />
+        <p>Open to work Remote</p>
+      </div>
+      <div class="button">
+        <button>Let's talk</button>
+      </div>
     </div>
+    <div class="img">
+      <img src="/assets/img/profile.jpg" alt="" />
+    </div>
+  </div>
 </section>
 <div class="arrow">
-    <img src="/assets/icons/animations/arrow-to-left.png" alt="">
+  <img (mouseenter)="toggleAnimation()" [src]="currentImage" alt="" />
 </div>

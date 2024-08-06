@@ -1,4 +1,8 @@
 app-header {
-    position: fixed;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 92px;
+    z-index: 1;
 }
