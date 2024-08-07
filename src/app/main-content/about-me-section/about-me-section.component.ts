@@ -20,6 +20,7 @@ export class AboutMeSectionComponent {
 
   currentIndex: number = 0;
   currentImage: string = this.arrowToLeft[this.currentIndex];
+  private animationId: any;
 
   toggleAnimation() {
     this.isAnimated = !this.isAnimated;
@@ -34,6 +35,11 @@ export class AboutMeSectionComponent {
         clearInterval(animationId);
       }
     }, 125);
+  }
 
+  resetAnimation() {
+    clearInterval(this.animationId);
+    this.currentIndex = 0;
+    this.currentImage = this.arrowToLeft[this.currentIndex];
   }
 }

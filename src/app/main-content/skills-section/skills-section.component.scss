@@ -43,15 +43,23 @@ $highlight: #00bc8f;
     .icons-wrapper {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
         gap: 78px 128px;
+        max-width: 1012px;
 
         .icon-box {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: calc(20% - 128px);
+            min-width: 90px;
+            max-width: 95px;
+            text-align: center;
             gap: 10px;
+            
+
+            // &:hover {
+            //   animation: iconAnimation ease-in-out 125ms;
+            // }
 
             p {
                 font-family: Overpass;
@@ -59,6 +67,22 @@ $highlight: #00bc8f;
                 font-weight: 700;
             }
         }
+
+        // @keyframes iconAnimation {
+        //     0% {
+        //         transform: translateX(0);
+        //     }
+
+        //     33% {
+        //         transform: translateX(65%);
+        //         opacity: 0;
+        //     }
+
+        //     66% {
+        //         transform: translateX(-65%);
+        //         opacity: 100;
+        //     }
+        // }
     }
 
     .contact-me-wrapper {

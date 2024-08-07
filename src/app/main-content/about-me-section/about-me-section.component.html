@@ -27,5 +27,5 @@
   </div>
 </section>
 <div class="arrow">
-  <img (mouseenter)="toggleAnimation()" [src]="currentImage" alt="" />
+  <img (mouseenter)="toggleAnimation()" (mouseleave)="resetAnimation()" [src]="currentImage" alt="" />
 </div>

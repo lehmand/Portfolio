@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hero-section.component.html',
-  styleUrl: './hero-section.component.scss'
+  styleUrl: './hero-section.component.scss',
 })
-export class HeroSectionComponent implements OnInit{
-
-  email: string = "contact@daniel-lehmann.dev"
+export class HeroSectionComponent implements OnInit {
+  email: string = 'contact@daniel-lehmann.dev';
 
   scrollDownArrow: string[] = [
     '/assets/icons/animations/scroll-down/arrow-down1.png',
@@ -23,16 +22,17 @@ export class HeroSectionComponent implements OnInit{
   ];
 
   currentIndex: number = 0;
-  currentImage: string = this.scrollDownArrow[this.currentIndex]
+  currentImage: string = this.scrollDownArrow[this.currentIndex];
+  private animationId: any;
 
   ngOnInit(): void {
     this.arrowAnimation();
   }
-  
-  arrowAnimation(){
-    let animationId = setInterval(() => {
+
+  arrowAnimation() {
+    this.animationId = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.scrollDownArrow.length;
-      this.currentImage = this.scrollDownArrow[this.currentIndex];      
+      this.currentImage = this.scrollDownArrow[this.currentIndex];
     }, 125);
   }
 }
