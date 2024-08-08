@@ -4,7 +4,7 @@
       <h1>My skills</h1>
     </div>
     <div class="icons-wrapper">
-      <div *ngFor="let skill of skills, let i = index" class="icon-box">
+      <div *ngFor="let skill of skills; let i = index" class="icon-box">
         <img
           [src]="skill.iconUrl"
           alt=""
@@ -26,5 +26,10 @@
   </div>
 </section>
 <div class="arrow">
-  <img src="/assets/icons/animations/arrow-to-right.png" alt="" />
+  <img 
+  [src]="currentImage"
+  alt=""
+  (mouseenter)="playAnimation()"
+  (mouseleave)="resetAnimation()" 
+  />
 </div>
