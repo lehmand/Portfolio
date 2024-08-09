@@ -34,6 +34,19 @@ $highlight: #00bc8f;
       gap: 20px;
       position: relative;
 
+      .checkbox-row {
+        color: $background;
+        font-family: Overpass;
+        font-size: 14px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        label > span {
+          color: $highlight;
+        }
+      }
+
       .form-row {
         position: relative;
         
@@ -87,12 +100,6 @@ $highlight: #00bc8f;
           left: 16px;
           top: 4px;
           cursor: text;
-        }
-
-        label.checkbox {
-          font-family: Overpass;
-          font-size: 16px;
-          color: $background;
         }
 
         textarea {
