@@ -5,26 +5,55 @@
                 <h2>Want to discuss a new project?</h2>
                 <h3>Say hello! let's discuss your ideas and make it happen</h3>
             </div>
-            <form (ngSubmit)="onSubmit()">
+            <form #contactForm="ngForm">
                 <div class="form-row">
+                    <img src="/assets/icons/error.png" alt="">
+                    <img src="/assets/icons/valid.png" alt="">
                     <input 
                     type="text" 
-                    id="name" 
+                    id="name"
+                    name="name" 
                     size="81" 
                     required
+                    minlength="4"
+                    #name="ngModel"
+                    class="formControl"
+                    [(ngModel)]="contact.name"
                     >
                     <label class="name" for="name">Your name</label>
                 </div>
                 <div class="form-row">
-                    <input type="email" id="email" size="81" required>
+                    <img src="/assets/icons/error.png" alt="">
+                    <img src="/assets/icons/valid.png" alt="">
+                    <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    size="81" 
+                    required
+                    #email="ngModel"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    class="formControl"
+                    [(ngModel)]="contact.email"
+                    >
                     <label class="email" for="email">Your email</label>
                 </div>
                 <div class="form-row">
-                    <textarea name="textarea" rows="15" id="textarea" required></textarea>
+                    <img src="/assets/icons/error.png" alt="">
+                    <img src="/assets/icons/valid.png" alt="">
+                    <textarea 
+                    name="message" 
+                    rows="15" 
+                    id="textarea" 
+                    required
+                    #name="ngModel"
+                    class="formControl"
+                    [(ngModel)]="contact.message"
+                    ></textarea>
                     <label class="message" for="textarea">Your message</label>
                 </div>
                 <div class="checkbox-row">                    
-                    <input type="checkbox" id="checkbox" required>
+                    <input type="checkbox" id="checkbox" required class="formControl">
                     <label class="checkbox" for="checkbox"> I've read the <span>privacy policy</span> and agree to the processing of my data as outlined</label>
                 </div>
                 <div class="button-container">

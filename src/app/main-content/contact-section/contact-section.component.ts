@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-contact-section',
@@ -9,10 +8,21 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss'
 })
-export class ContactSectionComponent {
+export class ContactSectionComponent implements OnInit {
 
 
-  onSubmit() {
-    
+  constructor(){}
+
+
+  contact: any = {
+    name: '',
+    email: '',
+    message: ''
+  }
+
+  ngOnInit(): void {
+    setInterval(() => {
+      console.log(this.contact.message)
+    },500)
   }
 }
