@@ -7,19 +7,19 @@
             </div>
             <form (ngSubmit)="onSubmit()">
                 <div class="form-row">
-                    <input type="text" id="name" size="81">
+                    <input type="text" id="name" size="81" required>
                     <label class="name" for="name">Your name</label>
                 </div>
                 <div class="form-row">
-                    <input type="email" id="email" size="81">
+                    <input type="email" id="email" size="81" required>
                     <label class="email" for="email">Your email</label>
                 </div>
                 <div class="form-row">
-                    <textarea name="textarea" rows="15" id="textarea"></textarea>
+                    <textarea name="textarea" rows="15" id="textarea" required></textarea>
                     <label class="message" for="textarea">Your message</label>
                 </div>
-                <div class="form-row checkbox-row">                    
-                    <input type="checkbox" id="checkbox">
+                <div class="checkbox-row">                    
+                    <input type="checkbox" id="checkbox" required>
                     <label class="checkbox" for="checkbox"> I've read the <span>privacy policy</span> and agree to the processing of my data as outlined</label>
                 </div>
                 <div class="button-container">
