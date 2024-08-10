@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss'
 })
@@ -24,5 +25,11 @@ export class ContactSectionComponent implements OnInit {
     setInterval(() => {
       console.log(this.contact.message)
     },500)
+  }
+
+  onBlur(field: NgModel){
+    if(field.untouched){
+      field.control.markAsTouched();
+    }
   }
 }

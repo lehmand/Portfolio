@@ -19,6 +19,7 @@ $highlight: #00bc8f;
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 0;
 
   .form-container {
     display: flex;
@@ -52,7 +53,6 @@ $highlight: #00bc8f;
 
         img {
           position: absolute;
-          display: none;
           z-index: 10;
           right: 0;
         }
@@ -85,11 +85,6 @@ $highlight: #00bc8f;
           font-family: Overpass;
           position: relative;
           z-index: 1;
-
-          .ng-valid[required],
-          .ng-valid.required {
-            border-bottom-color: red;
-          }
 
           &:focus + label,
           &:valid + label {
@@ -141,6 +136,14 @@ $highlight: #00bc8f;
             z-index: 1;
           }
         }
+
+      }
+      
+      .error-message {
+        color: #E61C40;
+        font-size: 12px;
+        font-family: Overpass;
+        transition: all 500ms ease-in-out;
       }
 
       .button-container {

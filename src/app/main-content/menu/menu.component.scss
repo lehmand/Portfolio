@@ -8,6 +8,8 @@ section {
     display: flex;
     flex-direction: column;
     background-color: $background;
+    position: relative;
+    z-index: 100;
 
     .link-container {
         display: flex;

@@ -1,64 +1,74 @@
 <section class="contact">
-        <h1>Say Hi!</h1>
-        <div class="form-container">
-            <div class="form-header">
-                <h2>Want to discuss a new project?</h2>
-                <h3>Say hello! let's discuss your ideas and make it happen</h3>
-            </div>
-            <form #contactForm="ngForm">
-                <div class="form-row">
-                    <img src="/assets/icons/error.png" alt="">
-                    <img src="/assets/icons/valid.png" alt="">
-                    <input 
-                    type="text" 
-                    id="name"
-                    name="name" 
-                    size="81" 
-                    required
-                    minlength="4"
-                    #name="ngModel"
-                    class="formControl"
-                    [(ngModel)]="contact.name"
-                    >
-                    <label class="name" for="name">Your name</label>
-                </div>
-                <div class="form-row">
-                    <img src="/assets/icons/error.png" alt="">
-                    <img src="/assets/icons/valid.png" alt="">
-                    <input 
-                    type="email" 
-                    id="email"
-                    name="email"
-                    size="81" 
-                    required
-                    #email="ngModel"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                    class="formControl"
-                    [(ngModel)]="contact.email"
-                    >
-                    <label class="email" for="email">Your email</label>
-                </div>
-                <div class="form-row">
-                    <img src="/assets/icons/error.png" alt="">
-                    <img src="/assets/icons/valid.png" alt="">
-                    <textarea 
-                    name="message" 
-                    rows="15" 
-                    id="textarea" 
-                    required
-                    #name="ngModel"
-                    class="formControl"
-                    [(ngModel)]="contact.message"
-                    ></textarea>
-                    <label class="message" for="textarea">Your message</label>
-                </div>
-                <div class="checkbox-row">                    
-                    <input type="checkbox" id="checkbox" required class="formControl">
-                    <label class="checkbox" for="checkbox"> I've read the <span>privacy policy</span> and agree to the processing of my data as outlined</label>
-                </div>
-                <div class="button-container">
-                    <button>Send message</button>
-                </div>
-            </form>
-        </div>
+  <h1>Say Hi!</h1>
+  <div class="form-container">
+    <div class="form-header">
+      <h2>Want to discuss a new project?</h2>
+      <h3>Say hello! let's discuss your ideas and make it happen</h3>
+    </div>
+    <form #contactForm="ngForm">
+      <div class="form-row">
+        <img *ngIf="name.invalid && name.touched" src="/assets/icons/error.png" class="error" alt="" />
+        <img *ngIf="name.valid && name.touched" src="/assets/icons/valid.png" class="valid" alt="" />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          size="81"
+          required
+          minlength="4"
+          #name="ngModel"
+          class="form-control"
+          [(ngModel)]="contact.name"
+          (blur)="onBlur(name)"
+        />
+        <label class="name" for="name">Your name</label>
+    </div>
+    <p class="error-message" *ngIf="name.invalid && name.touched">Please enter a your name.</p>
+      <div class="form-row">
+        <img *ngIf="email.invalid && email.touched" src="/assets/icons/error.png" class="error" alt="" />
+        <img *ngIf="email.valid && email.touched" src="/assets/icons/valid.png" class="valid" alt="" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          size="81"
+          required
+          #email="ngModel"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          class="form-control"
+          [(ngModel)]="contact.email"
+          (blur)="onBlur(email)"
+        />
+        
+        <label class="email" for="email">Your email</label>
+      </div>
+      <p class="error-message" *ngIf="email.invalid && email.touched">Please enter a your email.</p>
+      <div class="form-row">
+        <img *ngIf="message.invalid && message.touched" src="/assets/icons/error.png" class="error" alt="" />
+        <img *ngIf="message.valid && message.touched" src="/assets/icons/valid.png" class="valid" alt="" />
+        <textarea
+          name="message"
+          rows="15"
+          id="textarea"
+          required
+          #message="ngModel"
+          class="form-control"
+          [(ngModel)]="contact.message"
+          (blur)="onBlur(message)"
+        ></textarea>
+        <label class="message" for="textarea">Your message</label>
+      </div>
+      <p class="error-message" *ngIf="message.invalid && message.touched">Please enter a message.</p>
+      <div class="checkbox-row">
+        <input type="checkbox" id="checkbox" required class="form-control" />
+        <label class="checkbox" for="checkbox">
+          I've read the <span>privacy policy</span> and agree to the processing
+          of my data as outlined</label
+        >
+      </div>
+      <div class="button-container">
+        <button>Send message</button>
+      </div>
+    </form>
+  </div>
 </section>
