@@ -10,9 +10,14 @@ header {
     padding: 0 128px;
     background-color: $background;
 
-    .header-logo h1 {
+    .header-logo {
         font-family: Syne;
         font-weight: 600;
+
+        a {
+            text-decoration: none;
+            color: $primary;
+        }
 
         &:hover {
             cursor: pointer;
