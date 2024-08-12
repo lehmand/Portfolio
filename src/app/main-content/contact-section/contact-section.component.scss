@@ -140,17 +140,37 @@ $highlight: #00bc8f;
       }
       
       .error-message {
-        color: #E61C40;
-        font-size: 12px;
-        font-family: Overpass;
-        transition: all 500ms ease-in-out;
+
+        p {
+          color: red;
+          font-family: Overpass;
+          font-size: 12px;
+        }
       }
 
       .button-container {
         display: flex;
         justify-content: center;
+        position: relative;
+        z-index: 0;
 
           button {
+            padding: 20px 60px;
+            border: 4px solid #BBBBBB;
+            background-color: transparent;
+            opacity: 100%;
+            color: $background;
+            font-family: Overpass;
+            font-size: 23px;
+            z-index: 1;
+            cursor: pointer;
+
+            &:hover {
+              padding: 20px 80px;
+              transition: padding 125ms ease-in-out;
+            }
+
+            &:disabled {
             padding: 20px 60px;
             border: 4px solid #BBBBBB;
             background-color: transparent;
@@ -158,6 +178,7 @@ $highlight: #00bc8f;
             color: $background;
             font-family: Overpass;
             font-size: 23px;
+            }
           }
       }
     }
@@ -171,6 +192,11 @@ $highlight: #00bc8f;
     font-size: 78px;
     font-family: Syne;
     font-weight: 800;
+
+    &:hover {
+      color: $highlight;
+      transition: color 125ms ease-in-out;
+    }
   }
 
   .form-header {

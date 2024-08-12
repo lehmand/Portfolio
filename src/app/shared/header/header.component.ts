@@ -52,12 +52,10 @@ export class HeaderComponent {
     let animationId = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.burgerImages.length;
       this.currentImage = this.burgerImages[this.currentIndex];
-      console.log(this.currentIndex)
+      if(this.currentIndex % this.burgerImages.length === 0){
+        clearInterval(animationId)
+      }
     }, 50);
-
-    setTimeout(() => {
-      clearInterval(animationId)
-    }, 400);
   }
 
 }
