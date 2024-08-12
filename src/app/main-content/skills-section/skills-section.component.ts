@@ -125,6 +125,6 @@ export class SkillsSectionComponent {
   animationDone(index: number) {
     setTimeout(() => {
       this.skills[index].status = 'initial';
-    },500)
+    },250)
   }
 }

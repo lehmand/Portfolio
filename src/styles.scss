@@ -102,8 +102,9 @@ $highlight: #00bc8f;
 
 * {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html {
-  scroll-padding-top: 92px;
+  scroll-padding-top: 128px;
 }

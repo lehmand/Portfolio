@@ -6,4 +6,4 @@
         <img [src]="currentImage" alt="">
     </div>
 </header>
-<app-menu *ngIf="isMenuOpen" [@slideUpDown]></app-menu>
+<app-menu *ngIf="isMenuOpen" [@slideUpDown] (linkClicked)="toggleMenu()"></app-menu>

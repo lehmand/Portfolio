@@ -1,5 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -11,6 +11,12 @@ import { RouterLink } from '@angular/router';
 })
 export class MenuComponent {
 
+  @Output() linkClicked = new EventEmitter<void>();
+
   constructor(){}
+
+  onLinkClicked(){
+    this.linkClicked.emit();
+  }
 
 }
