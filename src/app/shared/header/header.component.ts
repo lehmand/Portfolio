@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from '../../main-content/menu/menu.component';
 import { transition, trigger, style, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -40,8 +41,7 @@ export class HeaderComponent {
 
   constructor(){
 
-  }
-  
+  }  
 
   toggleMenu(){
     this.isMenuOpen = !this.isMenuOpen;
