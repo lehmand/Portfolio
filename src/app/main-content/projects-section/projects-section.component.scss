@@ -93,6 +93,7 @@ $highlight: #00bc8f;
       .link-container {
         display: flex;
         max-height: 80px;
+        gap: 16px;
         a {          
           text-decoration: none;
           color: $primary;

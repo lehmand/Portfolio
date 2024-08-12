@@ -7,7 +7,8 @@ interface Project {
   name: string;
   tools: string;
   description: string;
-  link: string
+  link: string;
+  live: string
 }
 
 @Component({
@@ -26,7 +27,8 @@ export class ProjectsSectionComponent {
       name: 'Join',
       tools: 'Angular | TypeScript | HTML | CSS | Firebase',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and    categories.',
-      link: 'https://github.com/lehmand/join'
+      link: 'https://github.com/lehmand/join',
+      live: 'join.daniel-lehmann.dev'
     },
 
     {
@@ -35,7 +37,8 @@ export class ProjectsSectionComponent {
       name: 'Pollo Loco',
       tools: 'JavaScript | HTML | CSS',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      link: 'https://github.com/lehmand/el-pollo-loco'
+      link: 'https://github.com/lehmand/el-pollo-loco',
+      live: 'loco.daniel-lehmann.dev'
     }
   ];
 

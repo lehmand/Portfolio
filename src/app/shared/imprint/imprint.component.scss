@@ -1,0 +1,23 @@
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
+
+
+
+.background {
+    background-color: $background;
+}
+
+.legal-notice {
+    padding: 128px;
+
+    h1,
+    h2,
+    h3 {
+        padding: 16px 0;
+    }
+
+    li {
+        padding: 2px;
+    }
+}

@@ -47,7 +47,7 @@
       <div class="error-message" *ngIf="email.invalid && email.touched" [@slide]>
         <p>Please enter a your email.</p>
       </div>
-      <div class="form-row">
+      <div class="form-row" id="contact">
         <img *ngIf="message.invalid && message.touched" src="/assets/icons/error.png" class="error" alt="" />
         <img *ngIf="message.valid && message.touched" src="/assets/icons/valid.png" class="valid" alt="" />
         <textarea
@@ -89,4 +89,5 @@
       </div>
     </form>
   </div>
+  <a href="#top"><img class="top-arrow" src="/assets/img/arrow-up.png" alt=""></a>
 </section>
