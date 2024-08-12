@@ -64,7 +64,7 @@
         <label class="message" for="textarea">Your message</label>
       </div>
       <div class="error-message" *ngIf="message.invalid && message.touched" [@slide]>
-        <p>Please enter a your message.</p>
+        <p>Please enter a your message (Minimum length 50).</p>
       </div>
       <div class="checkbox-row">
         <input 
@@ -85,7 +85,7 @@
         <p>Please accept the privacy policy.</p>
       </div>
       <div class="button-container">
-        <button [disabled]="((name.invalid) || (email.invalid) || (message.invalid) || (checkbox.invalid))">Send message</button>
+        <button type="submit" [disabled]="((name.invalid) || (email.invalid) || (message.invalid) || (checkbox.invalid))">Send message</button>
       </div>
     </form>
   </div>
