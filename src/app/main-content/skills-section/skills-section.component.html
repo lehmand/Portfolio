@@ -10,18 +10,11 @@
           alt=""
           class="skill-icon"
           [@iconAnimation]="skill.status"
-          (mouseenter)="animate(i)"
+          (mouseover)="animate(i)"
           (@iconAnimation.done)="animationDone(i)"
         />
         <p>{{ skill.name }}</p>
       </div>
-    </div>
-    <div class="contact-me-wrapper">
-      <img src="/assets/icons/skills/learning.png" alt="" />
-      <p>
-        Don't see the skill you need? <a href="">Contact me</a> I'm always ready
-        to learn!
-      </p>
     </div>
   </div>
 </section>

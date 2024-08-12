@@ -13,6 +13,10 @@ header {
     .header-logo h1 {
         font-family: Syne;
         font-weight: 600;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .burger-menu img {

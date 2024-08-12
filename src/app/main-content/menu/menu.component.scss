@@ -81,6 +81,12 @@ section {
                 font-family: Syne;
                 font-size: 78px;
                 font-weight: 800;
+
+                &:hover {
+                    color: $highlight;
+                    transition: color 125ms ease-in-out;
+                    cursor: pointer
+                }
             }
 
             p {

@@ -55,11 +55,10 @@ $highlight: #00bc8f;
             max-width: 95px;
             text-align: center;
             gap: 10px;
-            
 
-            // &:hover {
-            //   animation: iconAnimation ease-in-out 125ms;
-            // }
+            &:hover > p {
+                color: $highlight;
+            }
 
             p {
                 font-family: Overpass;
@@ -67,22 +66,6 @@ $highlight: #00bc8f;
                 font-weight: 700;
             }
         }
-
-        // @keyframes iconAnimation {
-        //     0% {
-        //         transform: translateX(0);
-        //     }
-
-        //     33% {
-        //         transform: translateX(65%);
-        //         opacity: 0;
-        //     }
-
-        //     66% {
-        //         transform: translateX(-65%);
-        //         opacity: 100;
-        //     }
-        // }
     }
 
     .contact-me-wrapper {
