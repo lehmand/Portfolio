@@ -30,7 +30,6 @@ import { firstValueFrom } from 'rxjs';
 export class ContactSectionComponent implements OnInit {
 
 
-
   constructor(private http: HttpClient) {}
 
   contact: any = {
@@ -47,4 +46,5 @@ export class ContactSectionComponent implements OnInit {
       field.control.markAsTouched();
     }
   }
+
 }
