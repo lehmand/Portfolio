@@ -27,169 +27,7 @@ $highlight: #00bc8f;
     bottom: 64px;
     height: 76px;
     width: 54px;
-  }
-
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 190px;
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      position: relative;
-
-      .checkbox-row {
-        color: $background;
-        font-family: Overpass;
-        font-size: 14px;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-
-        label > span {
-          color: $highlight;
-        }
-      }
-
-      .form-row {
-        position: relative;
-
-        img {
-          position: absolute;
-          z-index: 10;
-          right: 0;
-        }
-        
-        &::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 4px;
-          border-bottom: 2px solid $background;
-          left: 0;
-          bottom: 0;
-          z-index: 0;
-        }
-
-        &:hover::after {
-          height: 100%;
-          border: 4px solid $background;
-        }
-
-        input {
-          padding: 16px;
-          outline: none;
-          background-color: transparent;
-          border: none;
-          color: $background;
-          max-height: 34px;
-          max-width: 593px;
-          font-size: 16px;
-          font-family: Overpass;
-          position: relative;
-          z-index: 1;
-
-          &:focus + label,
-          &:valid + label {
-            top: -16px;
-            left: 24px;
-            background-color: $primary;
-            transition: all 175ms ease-in-out;
-            padding: 0 4px;
-            z-index: 2;
-          }
-        }
-
-        label.name,
-        label.email,
-        label.message {
-          font-family: Overpass;
-          font-size: 16px;
-          color: $background;
-          position: absolute;
-          left: 16px;
-          top: 4px;
-          cursor: text;
-        }
-
-        textarea {
-          outline: none;
-          width: 100%;
-          background-color: transparent;
-          border: none;
-          color: white;
-          position: relative;
-          z-index: 1;
-          padding: 8px;
-          font-size: 16px;
-          font-family: Overpass;
-
-          &:hover {
-            cursor: text;
-          }
-
-          &:focus + label,
-          &:valid + label {
-            top: -16px;
-            left: 24px;
-            background-color: $primary;
-            padding: 0 4px;
-            transition: all 125ms ease-in-out;
-            z-index: 1;
-          }
-        }
-
-      }
-      
-      .error-message {
-
-        p {
-          color: red;
-          font-family: Overpass;
-          font-size: 12px;
-        }
-      }
-
-      .button-container {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        z-index: 0;
-
-          button {
-            padding: 20px 60px;
-            border: 4px solid #BBBBBB;
-            background-color: transparent;
-            opacity: 100%;
-            color: $background;
-            font-family: Overpass;
-            font-size: 23px;
-            z-index: 1;
-            cursor: pointer;
-
-            &:hover {
-              padding: 20px 80px;
-              transition: padding 125ms ease-in-out;
-            }
-
-            &:disabled {
-            padding: 20px 60px;
-            border: 4px solid #BBBBBB;
-            background-color: transparent;
-            opacity: 50%;
-            color: $background;
-            font-family: Overpass;
-            font-size: 23px;
-            }
-          }
-      }
-    }
-  }
+  }  
 
   h1 {
     color: $background;
@@ -205,21 +43,182 @@ $highlight: #00bc8f;
       transition: color 125ms ease-in-out;
     }
   }
+}
 
-  .form-header {
-    text-align: center;
-    h2 {
-      color: $highlight;
-      font-size: 32px;
-      font-weight: 700;
-      font-family: Overpass;
-    }
+.form-header {
+  text-align: center;
+  h2 {
+    color: $highlight;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Overpass;
+  }
 
-    h3 {
-      color: $background;
-      font-size: 22px;
-      font-weight: 400;
-      font-family: Overpass;
+  h3 {
+    color: $background;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: Overpass;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 240px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.checkbox-row {
+  color: $background;
+  font-family: Overpass;
+  font-size: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  label > span {
+    color: $highlight;
+  }
+}
+
+.form-row {
+  position: relative;
+  img {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-bottom: 2px solid $background;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  &:hover::after {
+    height: 100%;
+    border: 4px solid $background;
+  }
+
+  input {
+    padding: 16px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: $background;
+    font-size: 16px;
+    font-family: Overpass;
+    position: relative;
+    z-index: 1;
+
+    &:focus + label,
+    &:valid + label {
+      top: -16px;
+      left: 24px;
+      background-color: $primary;
+      transition: all 175ms ease-in-out;
+      padding: 0 4px;
+      z-index: 2;
     }
   }
+
+  label.name,
+  label.email,
+  label.message {
+    font-family: Overpass;
+    font-size: 16px;
+    color: $background;
+    position: absolute;
+    left: 16px;
+    top: 4px;
+    cursor: text;
+  }
+
+  textarea {
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding: 8px;
+    font-size: 16px;
+    font-family: Overpass;
+
+    &:hover {
+      cursor: text;
+    }
+
+    &:focus + label,
+    &:valid + label {
+      top: -16px;
+      left: 24px;
+      background-color: $primary;
+      padding: 0 4px;
+      transition: all 125ms ease-in-out;
+      z-index: 1;
+    }
+  }
+}
+
+.error-message {
+  p {
+    color: red;
+    font-family: Overpass;
+    font-size: 12px;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+
+    button {
+      padding: 20px 60px;
+      border: 4px solid #BBBBBB;
+      background-color: transparent;
+      opacity: 100%;
+      color: $background;
+      font-family: Overpass;
+      font-size: 23px;
+      z-index: 1;
+      cursor: pointer;
+
+      &:hover:not(.button-mobile) {
+        padding: 20px 80px;
+        transition: padding 125ms ease-in-out;
+      }
+
+      &:disabled {
+      padding: 20px 60px;
+      border: 4px solid #BBBBBB;
+      background-color: transparent;
+      opacity: 50%;
+      color: $background;
+      font-family: Overpass;
+      font-size: 23px;
+      }
+    }
+}
+
+.button-mobile {
+  display: none;
 }

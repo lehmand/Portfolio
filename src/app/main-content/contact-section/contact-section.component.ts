@@ -39,6 +39,8 @@ export class ContactSectionComponent implements OnInit {
     checkbox: false,
   };
 
+  mobileButton: string = 'Say hello ;)'
+
   ngOnInit(): void {}
 
   onBlur(field: NgModel) {
@@ -46,5 +48,7 @@ export class ContactSectionComponent implements OnInit {
       field.control.markAsTouched();
     }
   }
+
+
 
 }

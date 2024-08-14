@@ -11,8 +11,7 @@
     <div
       *ngFor="let project of projects; let i = index"
       [ngClass]="getProjectClass(i)"
-      class="project"
-    >
+      class="project">
       <h1 class="project-number">{{ project.projectNumber }}</h1>
       <div class="project-image">
         <img
@@ -20,7 +19,7 @@
           src="/assets/icons/animations/black-arrow.png"
           alt=""
         />
-        <img [src]="project.image" alt="" />
+        <img class="project-img" [src]="project.image" alt="" />
       </div>
 
       <div class="project-info">

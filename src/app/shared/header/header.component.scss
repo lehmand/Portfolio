@@ -2,37 +2,32 @@ $background: #fffcf3;
 $primary: #000000;
 $highlight: #00bc8f;
 
+
+* {
+    box-sizing: border-box;
+}
+
 header {
-    height: 92px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 128px;
     background-color: $background;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 128px;
 
     .header-logo {
-        font-family: Syne;
-        font-weight: 600;
-
         a {
             text-decoration: none;
             color: $primary;
         }
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-    .burger-menu img {
-        height: 32px;
-        cursor: pointer;
     }
 }
 
 app-menu {
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     top: 92px;
     left: 0;
     right: 0;

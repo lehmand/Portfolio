@@ -23,6 +23,7 @@ $highlight: #00bc8f;
   justify-content: space-between;
 
   .text {
+    pre,
     p {
       font-size: 22px;
       font-family: Overpass;
@@ -30,7 +31,6 @@ $highlight: #00bc8f;
   }
 
   .img {
-
     position: relative;
     
     &::after {

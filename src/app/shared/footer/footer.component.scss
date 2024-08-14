@@ -6,46 +6,38 @@ $highlight: #00bc8f;
 footer {
     background-color: black;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 0 128px;
+    gap: 8px;
 
-    .left-side {
-
+    .top-side {
         display: flex;
-        flex-direction: column;
-        gap: 8px;
-
-        h1,
-        p {
+        justify-content: space-between;
+        h1 {
             color: $background;
         }
 
-        p {
-            font-family: Overpass;
-            font-size: 22px;
+        .social-links {
+            display: flex;
+            gap: 16px;
         }
     }
 
-    .right-side {
-
+    .bottom-side {
         display: flex;
-        flex-direction: column;
-        gap: 8px;
-
-        .social-links {
-            display: flex;
-            gap: 42px;
+        justify-content: space-between;
+        font-family: Overpass;
+        p {
+            color: $background;
+            font-size: 16px;
         }
 
         .legal-container {
-            display: flex;
-            justify-content: flex-end;
-
             a {
                 text-decoration: none;
                 color: $background;
-                font-family: Overpass;
-                font-size: 16px;
+                
             }
         }
     }

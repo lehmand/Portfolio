@@ -18,73 +18,73 @@ $highlight: #00bc8f;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
 
-    .headline-wrapper {
+.icons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 78px 128px;
+    max-width: 1012px;
+
+    .icon-box {
         display: flex;
-        justify-content: center;
-        h1 {
-            text-align: center;
-            position: relative;
-            bottom: 52px;
-            padding: 0 24px;
-            background-color: $background;
-            font-size: 78px;
-            font-weight: 800;
-            font-family: Syne;
-            transition: color ease-in-out 125ms;
+        flex-direction: column;
+        align-items: center;
+        min-width: 90px;
+        max-width: 95px;
+        text-align: center;
+        gap: 10px;
 
-            &:hover {
-                color: $highlight;
-                cursor: default;
-            }
+        &:hover > p {
+            color: $highlight;
         }
-    }
-
-    .icons-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 78px 128px;
-        max-width: 1012px;
-
-        .icon-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 90px;
-            max-width: 95px;
-            text-align: center;
-            gap: 10px;
-
-            &:hover > p {
-                color: $highlight;
-            }
-
-            p {
-                font-family: Overpass;
-                font-size: 16px;
-                font-weight: 700;
-            }
-        }
-    }
-
-    .contact-me-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        gap: 16px;
-        margin: 24px 0;
-
 
         p {
-            font-size: 22px;
             font-family: Overpass;
+            font-size: 16px;
+            font-weight: 700;
         }
+    }
+}
 
-        a {
-            text-decoration: none;
+.contact-me-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 24px 0;
+
+
+    p {
+        font-size: 22px;
+        font-family: Overpass;
+    }
+
+    a {
+        text-decoration: none;
+        color: $highlight;
+        margin: 0 8px;
+    }
+}
+
+.headline-wrapper {
+    display: flex;
+    justify-content: center;
+    h1 {
+        text-align: center;
+        position: relative;
+        bottom: 52px;
+        padding: 0 24px;
+        background-color: $background;
+        font-size: 78px;
+        font-weight: 800;
+        font-family: Syne;
+        transition: color ease-in-out 125ms;
+
+        &:hover {
             color: $highlight;
-            margin: 0 8px;
+            cursor: default;
         }
     }
 }
@@ -94,3 +94,4 @@ $highlight: #00bc8f;
     background-color: $background;
     max-height: 300px;
 }
+

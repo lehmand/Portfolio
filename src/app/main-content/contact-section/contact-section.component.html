@@ -84,7 +84,8 @@
         <p>Please accept the privacy policy.</p>
       </div>
       <div class="button-container">
-        <button type="submit" [disabled]="((name.invalid) || (email.invalid) || (message.invalid) || (checkbox.invalid))">Send message</button>
+        <button class="button-desktop" type="submit" [disabled]="((name.invalid) || (email.invalid) || (message.invalid) || (checkbox.invalid))">Send message</button>
+        <button class="button-mobile" type="submit" [disabled]="((name.invalid) || (email.invalid) || (message.invalid) || (checkbox.invalid))">{{ mobileButton }}</button>
       </div>
     </form>
   </div>
