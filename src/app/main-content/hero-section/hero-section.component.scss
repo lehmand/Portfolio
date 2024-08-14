@@ -13,10 +13,13 @@ $highlight: #00bc8f;
   position: relative;
   padding: 0 128px;
 
-  .hero-text h1 {
-    font-family: Syne;
-    font-weight: 800;
-    font-size: 128px;
+  .hero-text {
+
+    h1 {
+      font-family: Syne;
+      font-weight: 800;
+      font-size: 128px;
+    }
   }
 
   .hero-name {
@@ -24,10 +27,11 @@ $highlight: #00bc8f;
     align-items: center;
     justify-content: center;
     gap: 16px;
+    width: 100%;
+    max-width: 1000px;
 
     .line {
-      border: 1.5px solid black;
-      max-width: 673px;
+      border: 2px solid black;
       width: 100%;
     }
 
@@ -35,6 +39,7 @@ $highlight: #00bc8f;
       font-family: Overpass;
       color: $highlight;
       font-size: 48px;
+      white-space: nowrap;
     }
   }
 }
@@ -124,4 +129,117 @@ $highlight: #00bc8f;
     font-family: Overpass;
     font-size: 23px;
   }
+}
+
+@media(max-width: 1250px){
+  .hero {
+    .hero-text{
+      h1 {
+        font-size: 96px;
+      }
+    }
+
+    .hero-name {
+      max-width: 750px;
+      .name {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media(max-width: 920px){
+  .hero {
+    .hero-text{
+      h1 {
+        font-size: 80px;
+      }
+    }
+
+    .hero-name {
+      max-width: 580px;
+      .name {
+        font-size: 32px;
+      }
+    }
+
+    .contact-container {
+      position: relative;
+      bottom: -96px;
+
+      a {
+        left: -128px;
+      }
+    }
+  }
+}
+
+@media(max-width: 768px){
+  .hero {
+    padding: 0 80px;
+    .hero-text{
+      h1 {
+        font-size: 64px;
+      }
+    }
+    .hero-name {
+      .name {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media(max-width: 680px){
+  .hero {
+    padding: 0 24px;
+    .hero-text{
+      h1 {
+        font-size: 64px;
+      }
+    }
+    .hero-name {
+      .name {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media(max-width: 530px){
+  .hero {
+    padding: 0 24px;
+    .hero-text{
+      h1 {
+        font-size: 48px;
+      }
+    }
+    .hero-name {
+      max-width: 400px;
+      .name {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media(max-width: 420px){
+  .hero {
+    .hero-text{
+      h1 {
+        font-size: 32px;
+      }
+    }
+    .hero-name {
+      max-width: 256px;
+      .name {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+@media(max-width: 1050px){
+  
 }

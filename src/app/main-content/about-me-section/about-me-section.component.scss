@@ -23,7 +23,6 @@ $highlight: #00bc8f;
   justify-content: space-between;
 
   .text {
-    pre,
     p {
       font-size: 22px;
       font-family: Overpass;
@@ -32,6 +31,8 @@ $highlight: #00bc8f;
 
   .img {
     position: relative;
+    max-width: 553px;
+    max-height: 553px;
     
     &::after {
       content: '';
@@ -51,9 +52,9 @@ $highlight: #00bc8f;
       opacity: 100;
     }
 
-    img {
-      height: 553px;
-      width: 553px;
+    .profile-img {
+      height: 100%;
+      width: 100%;
     }
   }
 
@@ -100,4 +101,130 @@ $highlight: #00bc8f;
   display: flex;
   justify-content: flex-end;
   padding: 64px 128px;
+}
+
+
+@media(max-width: 1450px){
+  .description {
+
+    .img {
+      max-width: 368px;
+      max-height: 368px;
+    }
+  }
+}
+
+@media(max-width: 1250px){
+  .about-me {
+    padding: 0 96px;
+  }
+}
+
+@media(max-width: 1150px){
+  .about-me {
+    padding: 0 80px;
+    h1 {
+      font-size: 64px;
+    }
+  }
+
+  .description {
+
+    .img {
+      max-width: 300px;
+      max-height: 300px;
+    }
+  }
+}
+
+@media(max-width: 960px){
+  .about-me {
+    padding: 0 64px;
+    h1 {
+      font-size: 36px;
+    }
+  }
+
+  .description {
+    .text {
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media(max-width: 768px){
+
+  .about-me {
+    padding: 0 16px;
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-size: 64px;
+    }
+  }
+  .description {
+    flex-direction: column;
+    align-items: center;
+    .text {
+      p {
+        font-size: 22px;
+      }
+
+      .button {
+        margin-bottom: 16px;
+      }
+    }
+
+    .img {
+      max-width: 512px;
+      max-height: 512px;
+
+      &:hover::after {
+        top: 3px;
+        left: 3px;
+        opacity: 100;
+      }
+    }
+  }
+
+  .arrow {
+    padding: 64px;
+  }
+}
+
+@media(max-width: 550px){
+  .about-me {
+    padding: 0 16px;
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-size: 48px;
+    }
+  }
+}
+
+@media(max-width: 430px){
+  .about-me {
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    .text {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .arrow {
+    padding: 0;
+  }
+}
+
+@media(max-width: 1050px){
+  
 }

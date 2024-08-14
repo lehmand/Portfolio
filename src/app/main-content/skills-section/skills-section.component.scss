@@ -3,95 +3,155 @@ $primary: #000000;
 $highlight: #00bc8f;
 
 .skills {
-    background-color: $background;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 0 128px;
+  background-color: $background;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0 128px;
 }
 
 .content-wrapper {
-    box-sizing: border-box;
-    border: 4px solid black;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  box-sizing: border-box;
+  border: 4px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 78px 128px;
+  max-width: 1012px;
+
+  .icon-box {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     justify-content: space-between;
-    gap: 78px 128px;
-    max-width: 1012px;
+    gap: 10px;
+    width: 64px;
 
-    .icon-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 90px;
-        max-width: 95px;
-        text-align: center;
-        gap: 10px;
-
-        &:hover > p {
-            color: $highlight;
-        }
-
-        p {
-            font-family: Overpass;
-            font-size: 16px;
-            font-weight: 700;
-        }
+    &:hover > p {
+      color: $highlight;
     }
+
+    p {
+      font-family: Overpass;
+      font-size: 16px;
+      font-weight: 700;
+      max-width: 100px;
+    }
+
+    .skill-icon {
+        width: 64px;
+        height: 64px;
+    }
+  }
 }
 
 .contact-me-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 16px;
-    margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 24px 0;
 
+  p {
+    font-size: 22px;
+    font-family: Overpass;
+  }
 
-    p {
-        font-size: 22px;
-        font-family: Overpass;
-    }
-
-    a {
-        text-decoration: none;
-        color: $highlight;
-        margin: 0 8px;
-    }
+  a {
+    text-decoration: none;
+    color: $highlight;
+    margin: 0 8px;
+  }
 }
 
 .headline-wrapper {
-    display: flex;
-    justify-content: center;
-    h1 {
-        text-align: center;
-        position: relative;
-        bottom: 52px;
-        padding: 0 24px;
-        background-color: $background;
-        font-size: 78px;
-        font-weight: 800;
-        font-family: Syne;
-        transition: color ease-in-out 125ms;
+  display: flex;
+  justify-content: center;
+  h1 {
+    text-align: center;
+    position: relative;
+    bottom: 52px;
+    padding: 0 24px;
+    background-color: $background;
+    font-size: 78px;
+    font-weight: 800;
+    font-family: Syne;
+    transition: color ease-in-out 125ms;
 
-        &:hover {
-            color: $highlight;
-            cursor: default;
+    &:hover {
+      color: $highlight;
+      cursor: default;
+    }
+  }
+}
+
+.arrow {
+  padding: 0 128px;
+  background-color: $background;
+  max-height: 300px;
+}
+
+@media (max-width: 1250px) {
+  .icons-wrapper {
+    gap: 32px 86px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1050px) {
+    .icons-wrapper {
+        padding: 0 48px;
+    }
+  .headline-wrapper {
+    h1 {
+      font-size: 72px;
+    }
+  }
+
+  .contact-me-wrapper {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 840px) {
+  .skills {
+    padding: 0 64px;
+  }
+  .headline-wrapper {
+    h1 {
+      font-size: 64px;
+      bottom: 48px;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+    .headline-wrapper {
+        h1 {
+          font-size: 32px;
+          bottom: 24px;
+        }
+      }
+
+    .icons-wrapper {
+        .icon-box {
+            width: 48px;
+           .skill-icon {
+            width: 48px;
+            height: 48px;
+           }
         }
     }
 }
 
-.arrow {
-    padding: 0 128px;
-    background-color: $background;
-    max-height: 300px;
+@media (max-width: 1050px) {
 }
-
