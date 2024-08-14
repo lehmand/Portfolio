@@ -27,7 +27,8 @@ $highlight: #00bc8f;
 
     .line {
       border: 1.5px solid black;
-      width: 673px;
+      max-width: 673px;
+      width: 100%;
     }
 
     .name {
