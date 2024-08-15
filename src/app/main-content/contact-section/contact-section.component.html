@@ -1,5 +1,6 @@
 <section class="contact">
-  <h1>Say Hi!</h1>
+  <div class="background">
+    <h1>Say Hi!</h1>
   <div class="form-container">
     <div class="form-header">
       <h2>Want to discuss a new project?</h2>
@@ -13,7 +14,6 @@
           type="text"
           id="name"
           name="name"
-          size="81"
           required
           minlength="4"
           #name="ngModel"
@@ -33,8 +33,8 @@
           type="email"
           id="email"
           name="email"
-          size="81"
           required
+          pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
           #email="ngModel"
           class="form-control"
           [(ngModel)]="contact.email"
@@ -51,7 +51,7 @@
         <img *ngIf="message.valid && message.touched" src="/assets/icons/valid.png" class="valid" alt="" />
         <textarea
           name="message"
-          rows="15"
+          rows="10"
           id="textarea"
           required
           #message="ngModel"
@@ -90,4 +90,5 @@
     </form>
   </div>
   <a href="#top"><img class="top-arrow" src="/assets/img/arrow-up.png" alt=""></a>
+  </div>
 </section>
