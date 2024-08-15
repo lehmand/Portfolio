@@ -98,6 +98,10 @@ $highlight: #00bc8f;
   padding: 0 128px;
   background-color: $background;
   max-height: 300px;
+  
+  img {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1250px) {
@@ -132,6 +136,10 @@ $highlight: #00bc8f;
       bottom: 48px;
     }
   }
+
+  .arrow {
+    padding: 0 64px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -151,7 +159,88 @@ $highlight: #00bc8f;
            }
         }
     }
+
+    .contact-me-wrapper {
+      img {
+        width: 48px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
 }
+
+@media (max-width: 550px) {
+  .skills {
+    padding: 0 48px;
+  }
+  .headline-wrapper {
+      h1 {
+        font-size: 32px;
+        bottom: 24px;
+      }
+    }
+
+  .icons-wrapper {
+      padding: 0 12px;
+      .icon-box {
+          width: 32px;
+          p {
+            font-size: 14px;
+          }
+         .skill-icon {
+          width: 32px;
+          height: 32px;
+         }
+      }
+  }
+
+  .contact-me-wrapper {
+    padding: 0 24px;
+    img {
+      width: 32px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .icons-wrapper {
+    gap: 24px 48px;
+  }
+  
+  .contact-me-wrapper {
+    padding: 0 12px;
+
+    p {
+      font-size: 13px;
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+
+  .headline-wrapper {
+    h1 {
+      font-size: 24px;
+      bottom: 16px;
+    }
+  }
+
+  .skills {
+    padding: 0 16px;
+  }
+
+  .arrow {
+    padding: 0 12px;
+  }
+}
+
 
 @media (max-width: 1050px) {
 }

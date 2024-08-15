@@ -47,6 +47,7 @@ $highlight: #00bc8f;
     position: absolute;
     z-index: 0;
     right: 0;
+    top: 0;
     font-family: Syne;
     font-size: 48px;
   }
@@ -169,7 +170,6 @@ $highlight: #00bc8f;
     opacity: 0;
   }
 
-
   &:hover > .rotate-arrow {
     scale: 1;
     rotate: 0deg;
@@ -184,6 +184,11 @@ $highlight: #00bc8f;
     z-index: 10;
     rotate: 135deg;
     scale: 0;
+  }
+
+  .project-img {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -232,6 +237,234 @@ $highlight: #00bc8f;
       }
     }
   }    
+}
+
+@media (max-width: 1450px) {
+  .project {
+    .project-image {
+      .project-img {
+        min-width: 420px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .project {
+    gap: 128px;
+    .project-image {
+      .project-img {
+        max-width: 420px;
+      }
+    }
+
+    .project-number {
+      font-size: 36px;
+    }
+  }  
+}
+
+@media (max-width: 1150px) {
+  .project {
+    gap: 90px;
+    &.odd-project {
+      .project-info {
+        text-align: right;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .project {
+    flex-direction: column;
+    gap: 48px;
+
+    &:hover > .project-image > .rotate-arrow {
+      scale: 1;
+      rotate: -180deg;
+      transition: scale 250ms ease-in-out 50ms normal, rotate 250ms ease-in-out 250ms normal;
+    }
+
+    .project-image {
+      margin-top: 24px;
+      .project-img {
+        max-width: none;
+        min-width: none;
+      }
+    }
+
+    .project-number {
+      font-size: 48px;
+    }
+
+    .project-info {
+      transform: translateX(0);
+      transform: translateY(-100%);
+      padding: 0 15px;
+    }
+
+    &.odd-project {
+      flex-direction: column;
+
+      &:hover > .project-image > .rotate-arrow {
+        scale: 1;
+        rotate: 450deg;
+        transition: scale 250ms ease-in-out 50ms normal, rotate 250ms ease-in-out 250ms normal;
+      }
+
+      .project-info {
+        transform: translateX(0);
+        transform: translateY(-100%);
+        align-items: flex-end;
+      }
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .projects {
+    padding: 64px;
+  }
+
+  .project {
+    &:hover > .project-image > .rotate-arrow {
+      scale: 0.7;
+      transition: scale 250ms ease-in-out 50ms normal, rotate 250ms ease-in-out 250ms normal;
+    }
+
+    &.odd-project {
+      &:hover > .project-image > .rotate-arrow {
+        scale: 0.7;
+        transition: scale 250ms ease-in-out 50ms normal, rotate 250ms ease-in-out 250ms normal;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .project {
+    .project-image {
+      margin-top: 8px;
+    }
+    .project-number {
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .projects {
+    .heading {
+      h1 {
+        font-size: 64px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+    }
+  }
+  
+  .project {
+    .project-image {
+      .project-img {
+        min-width: 280px;
+      }
+    }
+
+    .link-container {
+      a {
+        padding: 8px 20px;
+
+        &:hover {
+          padding: 8px 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .projects {
+    .heading {
+      h1 {
+        font-size: 48px;
+      }
+      h3 {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .project {
+    .project-number {
+      font-size: 24px;
+    }
+    .project-image {
+      .project-img {
+        min-width: 180px;
+      }
+      .rotate-arrow {
+        right: -50px;
+      }
+    }
+
+    
+    &:hover > .project-image::after {
+      top: 8px;
+      left: 8px;
+      opacity: 1;
+      transition: all 75ms ease-in-out;
+    }
+    &.odd-project {
+      .project-image {
+        .project-img {
+          min-width: 180px;
+        }  
+        .rotate-arrow {
+          right: -50px;
+        }
+      }
+      .project-info {
+        transform: translateY(-50%);
+      }
+      &:hover > .project-image::after {
+        top: 8px;
+        left: -12px;
+        opacity: 1;
+        transition: all 75ms ease-in-out;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+
+  .projects {
+    padding: 0 48px;
+    .heading {
+      h1 {
+        font-size: 32px;
+      }
+      h3 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .project {
+    .project-info {
+      .link-container {
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
 }
 
 

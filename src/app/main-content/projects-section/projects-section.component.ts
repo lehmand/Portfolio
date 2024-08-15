@@ -23,7 +23,7 @@ export class ProjectsSectionComponent {
   projects: Project[] = [
     {
       image: '/assets/img/projects/join.png',
-      projectNumber: '01/04',
+      projectNumber: '01/02',
       name: 'Join',
       tools: 'Angular | TypeScript | HTML | CSS | Firebase',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and    categories.',
@@ -33,7 +33,7 @@ export class ProjectsSectionComponent {
 
     {
       image: '/assets/img/projects/pollo-loco.png',
-      projectNumber: '02/04',
+      projectNumber: '02/02',
       name: 'Pollo Loco',
       tools: 'JavaScript | HTML | CSS',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
