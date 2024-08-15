@@ -419,6 +419,7 @@ $highlight: #00bc8f;
     }
     &.odd-project {
       .project-image {
+        margin-top: 0;
         .project-img {
           min-width: 180px;
         }  
@@ -445,7 +446,7 @@ $highlight: #00bc8f;
     padding: 0 48px;
     .heading {
       h1 {
-        font-size: 32px;
+        font-size: 40px;
       }
       h3 {
         font-size: 14px;
@@ -455,6 +456,12 @@ $highlight: #00bc8f;
 
   .project {
     .project-info {
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 18px;
+      }
       .link-container {
         a {
           font-size: 16px;

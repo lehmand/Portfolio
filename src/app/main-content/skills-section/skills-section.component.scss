@@ -97,7 +97,7 @@ $highlight: #00bc8f;
 .arrow {
   padding: 0 128px;
   background-color: $background;
-  max-height: 300px;
+  min-height: 80px;
   
   img {
     width: 100%;
@@ -233,7 +233,7 @@ $highlight: #00bc8f;
   }
 
   .skills {
-    padding: 0 16px;
+    padding: 12px 16px;
   }
 
   .arrow {
