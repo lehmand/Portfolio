@@ -1,11 +1,9 @@
 <header>
-    <div class="container">
         <div class="header-logo">
             <a href="#top"><h1>[ D L ]</h1></a>
         </div>
         <div class="burger-menu" (click)="toggleMenu()">
             <img [src]="currentImage" alt="">
         </div>
-    </div>
 </header>
 <app-menu *ngIf="isMenuOpen" [@slideUpDown] (linkClicked)="toggleMenu()"></app-menu>

@@ -24,7 +24,7 @@ import { transition, trigger, style, animate } from '@angular/animations';
 })
 export class HeaderComponent {
 
-  isMenuOpen: boolean = false;
+  isMenuOpen: boolean = true;
   burgerImages: string[] = [
     '/assets/icons/burger/burger1.png',
     '/assets/icons/burger/burger2.png',

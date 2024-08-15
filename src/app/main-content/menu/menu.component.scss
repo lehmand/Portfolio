@@ -10,102 +10,161 @@ section {
     background-color: $background;
     position: relative;
     z-index: 100;
+}
 
-    .link-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 35px;
+.background {
+    background-image: url('/assets/img/popup-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 128px;
+    height: 100%;
+}
 
+.container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+}
+
+.left-side {
+    color: $background;
+    h1 {
+        font-family: Syne;
+        font-size: 78px;
+        font-weight: 800;
+        &:hover {
+            color: $highlight;
+            transition: color 125ms ease-in-out;
+            cursor: pointer
+        }
+    }
+    p {
+        font-family: Overpass;
+        font-weight: 300;
+        font-size: 23px;
         a {
             text-decoration: none;
-            color: $primary;
-            font-family: Syne;
-            font-weight: 700;
-            font-size: 96px;
-            position: relative;
-            z-index: 0;
-            padding: 16px 32px;
-            max-width: 520px;
-            width: 100%;
-            text-align: center;
-            
-
-            &::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 48px;
-                border-left: 4px solid $primary;
-                transition: height ease-in-out 125ms;
-                
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 5%;
-                border-bottom: 4px solid $primary;
-                transition: width ease-in-out 125ms, left ease-in-out 125ms;
-                              
-            }
-
-            &:hover::before {
-                height: 0;
-            }
-
-            &:hover::after {
-                width: 65%;
-                left: 35%;
-            }
-        }
-    }
-
-    .background {
-        background-image: url('/assets/img/popup-background.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100% 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 128px;
-
-        .left-side {
             color: $background;
-
-            h1 {
-                font-family: Syne;
-                font-size: 78px;
-                font-weight: 800;
-
-                &:hover {
-                    color: $highlight;
-                    transition: color 125ms ease-in-out;
-                    cursor: pointer
-                }
-            }
-
-            p {
-                font-family: Overpass;
-                font-weight: 300;
-                font-size: 23px;
-
-                a {
-                    text-decoration: none;
-                    color: $background;
-                }
-            }
-        }
-
-        .right-side {
-            display: flex;
-            margin-top: 64px;
-            gap: 48px;
         }
     }
+}
 
+.right-side {
+    display: flex;
+    margin-top: 64px;
+    gap: 48px;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    a {
+        text-decoration: none;
+        color: $primary;
+        font-family: Syne;
+        font-weight: 700;
+        font-size: 96px;
+        position: relative;
+        z-index: 0;
+        padding: 16px 32px;
+        max-width: 520px;
+        width: 100%;
+        text-align: center;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 48px;
+            border-left: 4px solid $primary;
+            transition: height ease-in-out 125ms;            
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 5%;
+            border-bottom: 4px solid $primary;
+            transition: width ease-in-out 125ms, left ease-in-out 125ms;                          
+        }
+        &:hover::before {
+            height: 0;
+        }
+        &:hover::after {
+            width: 65%;
+            left: 35%;
+        }
+    }
+}
+
+@media(max-width: 900px){
+  .left-side {
+    h1 {
+        font-size: 54px;
+    }
+    a {
+        font-size: 18px;
+    }
+  }
+}
+
+@media(max-width: 768px){
+  .background {
+    padding: 128px 64px;
+  }
+}
+
+@media(max-width: 620px){
+  .right-side {
+    display: none;
+  }
+
+  .left-side {
+    h1 {
+        font-size: 64px;
+    }
+  }
+
+  .link-container {
+    a {
+        font-size: 64px;
+        max-width: 368px;
+    }
+  }
+
+  .container {
+    height: 100%;
+    bottom: 64px;
+  }
+}
+
+@media(max-width: 480px){
+  .left-side {
+    h1 {
+        font-size: 48px;
+    }
+  }
+
+  .background {
+    padding: 128px 24px;
+  }
+
+  .link-container {
+    margin-top: 64px;
+    a {
+        font-size: 40px;
+        max-width: 256px;
+        padding: 16px;
+    }
+  }
+}
+
+@media(max-width: 1050px){
+  
 }
