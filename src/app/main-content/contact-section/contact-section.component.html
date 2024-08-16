@@ -72,10 +72,12 @@
         id="checkbox"
         #checkbox="ngModel"
         [(ngModel)]="isChecked"
+        [checked]="isChecked"
         required
         (click)="toggleCheck()"
         >
         <label for="checkbox" class="custom-checkbox" [class.checked]="isChecked"></label>
+        <label for="checkbox" class="privacy">I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined</label>
       </div>
       <div class="error-message" *ngIf="checkbox.invalid && checkbox.touched" [@slide]>
         <p>Please accept the privacy policy.</p>

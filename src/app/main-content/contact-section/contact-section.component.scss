@@ -139,10 +139,9 @@ form {
     color: white;
     position: relative;
     z-index: 1;
-    padding: 8px;
     font-size: 16px;
     font-family: Overpass;
-    padding:  8px 32px;
+    padding:  8px 32px 8px 16px;
 
     &:hover {
       cursor: text;
@@ -164,6 +163,9 @@ form {
   display: flex;
   position: relative;
   align-items: center;
+  top: 0;
+  left: 0;
+  gap: 16px;
 }
 
 input[type="checkbox"]{
@@ -174,11 +176,15 @@ input[type="checkbox"]{
 
 .custom-checkbox {
   position: relative;
-  width: 14px;
-  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
   background-color: transparent;
   z-index: 0;
   cursor: pointer;
+}
+
+.custom-checkbox:hover + label.privacy > a {
+  text-shadow: 0 0 1px $highlight;
 }
 
 .custom-checkbox::before {
@@ -219,6 +225,17 @@ input[type="checkbox"]{
 .custom-checkbox.checked:hover::after {
   background-image: url('/assets/img/checked-hover.png');
   background-position: -1px -1px;
+}
+
+.privacy {
+  color: $background;
+  font-family: Overpass;
+  position: relative;
+  bottom: -4px;
+  a {
+    color: $highlight;
+    text-decoration: none;
+  }
 }
 
 .error-message {
