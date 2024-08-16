@@ -49,6 +49,7 @@ $highlight: #00bc8f;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+  margin-top: 128px;
 
   a.email {
     text-decoration: none;
@@ -62,8 +63,25 @@ $highlight: #00bc8f;
   }
 
   .scroll-down {
-    text-align: center;
-    
+    text-align: center;    
+  }
+}
+
+.arrow {
+  overflow-y: hidden;
+  img {
+    height: 128px;
+    animation: arrowAnimation 2000ms infinite ease-in-out;    
+  }
+}
+
+@keyframes arrowAnimation {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(100%);
   }
 }
 
@@ -79,42 +97,7 @@ $highlight: #00bc8f;
       max-width: 90px;
   }
 
-  .arrow {
-    width: 90px;
-    height: 256px;
-    background-image: url("/assets/icons/animations/scroll-down/arrow-down1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: scrollAnimation 1s infinite ease-in-out;
-  }
-
-  @keyframes scrollAnimation {
-    0% {
-      background-image: url("/assets/icons/animations/scroll-down/arrow-down1.png");
-    }
-    14.28% {
-      background-image: url("/assets/icons/animations/scroll-down/arrow-down2.png");
-    }
-    28.57% {
-      background-image: url("/assets/icons/animations/scroll-down/arrow-down3.png");
-    }
-    42.85% {
-      background-image: url("/assets/icons/animations/scroll-down/arrow-down4.png");
-    }
-    57.14% {
-      background-image: url("/assets/icons/animations/scroll-down/arrow-down5.png");
-    }
-    71.42% {
-      background-image: url("/assets/icons/animations/scroll-down/arrow-down6.png");
-    }
-    85.71% {
-      background-image: url("/assets/icons/animations/scroll-down/arrow-down7.png");
-    }
-    100% {
-      background-image: url("/assets/icons/animations/scroll-down/arrow-down1.png");
-    }
-  }
+  
 }
 
 .mobile-button {
