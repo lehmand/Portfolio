@@ -34,7 +34,7 @@
           id="email"
           name="email"
           required
-          pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
           #email="ngModel"
           class="form-control"
           [(ngModel)]="contact.email"
@@ -67,25 +67,22 @@
       </div>
       <div class="checkbox-row">
         <input 
-        type="checkbox" 
-        id="checkbox" 
-        required 
-        class="form-control"
+        type="checkbox"
         name="checkbox"
-        [(ngModel)]="contact.checkbox"
+        id="checkbox"
         #checkbox="ngModel"
-        />
-        <label class="checkbox" for="checkbox">
-          I've read the <span>privacy policy</span> and agree to the processing
-          of my data as outlined</label
+        [(ngModel)]="isChecked"
+        required
+        (click)="toggleCheck()"
         >
+        <label for="checkbox" class="custom-checkbox" [class.checked]="isChecked"></label>
       </div>
       <div class="error-message" *ngIf="checkbox.invalid && checkbox.touched" [@slide]>
         <p>Please accept the privacy policy.</p>
       </div>
       <div class="button-container">
-        <button class="button-desktop" type="submit" [disabled]="((name.invalid) || (email.invalid) || (message.invalid) || (checkbox.invalid))">Send message</button>
-        <button class="button-mobile" type="submit" [disabled]="((name.invalid) || (email.invalid) || (message.invalid) || (checkbox.invalid))">{{ mobileButton }}</button>
+        <button class="button-desktop" type="submit" [disabled]="contactForm.invalid">Send message</button>
+        <button class="button-mobile" type="submit" [disabled]="contactForm.invalid">{{ mobileButton }}</button>
       </div>
     </form>
   </div>

@@ -7,8 +7,8 @@ footer {
     background-color: black;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 0 128px;
+    justify-content: center;
+    padding: 32px 128px;
     gap: 8px;
 
     .top-side {
@@ -16,6 +16,7 @@ footer {
         justify-content: space-between;
         h1 {
             color: $background;
+            font-family: Syne;
         }
 
         .social-links {
@@ -41,4 +42,22 @@ footer {
             }
         }
     }
+}
+
+
+@media(max-width: 768px){
+    footer {
+        padding: 32px 64px;
+    }
+}
+
+@media(max-width: 500px){
+    footer {
+        gap: 32px;
+    }
+    .top-side,
+    .bottom-side {
+        flex-direction: column;
+        align-items: center;
+  }
 }

@@ -25,7 +25,12 @@ header {
     a {
         text-decoration: none;
         color: $primary;
+        font-family: Syne;
     }
+}
+
+.burger-menu {
+    cursor: pointer;
 }
 
 

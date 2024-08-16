@@ -20,8 +20,13 @@ $highlight: #00bc8f;
     font-weight: 800;
     font-family: Syne;
     position: relative;
-    padding: 128px 0 64px 128px;
+    padding: 256px 0 64px 128px;
     left: 0;
+    &:hover {
+      color: $highlight;
+      cursor: default;
+      transition: color 125ms ease-in-out;
+    }
   }
 }
 
@@ -67,19 +72,6 @@ form {
   width: 100%;
 }
 
-.checkbox-row {
-  color: $background;
-  font-family: Overpass;
-  font-size: 14px;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-
-  label > span {
-    color: $highlight;
-  }
-}
-
 .form-row {
   position: relative;
   img {
@@ -105,7 +97,7 @@ form {
   }
 
   input {
-    padding: 16px;
+    padding: 8px 16px;
     outline: none;
     background-color: transparent;
     border: none;
@@ -135,7 +127,7 @@ form {
     color: $background;
     position: absolute;
     left: 16px;
-    top: 4px;
+    top: 6px;
     cursor: text;
   }
 
@@ -166,6 +158,67 @@ form {
       z-index: 1;
     }
   }
+}
+
+.checkbox-row {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+input[type="checkbox"]{
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.custom-checkbox {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox::before {
+  content: '';
+  border: 2px solid $background;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.custom-checkbox.checked {
+  background-image: url('/assets/img/checked.png');
+}
+
+.custom-checkbox::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: $highlight;
+  position: absolute;
+  z-index: 1;
+  padding: 4px;
+  left: -2px;
+  top: -2px;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.custom-checkbox:hover::after {
+  opacity: 100;
+  transition: all 125ms ease-in-out;
+}
+
+.custom-checkbox.checked:hover::after {
+  background-image: url('/assets/img/checked-hover.png');
+  background-position: -1px -1px;
 }
 
 .error-message {
@@ -285,6 +338,3 @@ form {
   }
 }
 
-@media(max-width: 1050px){
-  
-}

@@ -118,15 +118,8 @@ $highlight: #00bc8f;
   }
 }
 
-@media(max-width: 1250px){
-  .about-me {
-    padding: 0 96px;
-  }
-}
-
 @media(max-width: 1150px){
   .about-me {
-    padding: 0 80px;
     h1 {
       font-size: 64px;
     }
@@ -142,10 +135,6 @@ $highlight: #00bc8f;
 }
 
 @media(max-width: 960px){
-  .about-me {
-    padding: 0 64px;
-  }
-
   .description {
     .text {
       p {

@@ -29,6 +29,7 @@ import { firstValueFrom } from 'rxjs';
 })
 export class ContactSectionComponent implements OnInit {
 
+  isChecked: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -36,7 +37,6 @@ export class ContactSectionComponent implements OnInit {
     name: '',
     email: '',
     message: '',
-    checkbox: false,
   };
 
   mobileButton: string = 'Say hello ;)'
@@ -49,6 +49,8 @@ export class ContactSectionComponent implements OnInit {
     }
   }
 
-
+  toggleCheck(){
+    this.isChecked = !this.isChecked;
+  }
 
 }
