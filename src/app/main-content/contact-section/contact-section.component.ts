@@ -30,19 +30,28 @@ import { firstValueFrom } from 'rxjs';
 export class ContactSectionComponent implements OnInit {
 
   isChecked: boolean = false;
-
+  mobileButton: string = 'Say hello ;)'
+  
   constructor(private http: HttpClient) {}
-
+  
   contact: any = {
     name: '',
     email: '',
     message: '',
   };
-
-  mobileButton: string = 'Say hello ;)'
-
+  
+  
   ngOnInit(): void {}
+  
+  url: string = 'https://daniel-lehmann.dev/sendMail.php';
 
+  onSubmit(formdata: any){
+    this.http.post(this.url, formdata)
+      .subscribe(data => {
+        console.log('Sending data', data);
+      })
+  }
+  
   onBlur(field: NgModel) {
     if (field.untouched) {
       field.control.markAsTouched();

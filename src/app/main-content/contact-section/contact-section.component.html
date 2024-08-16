@@ -6,7 +6,7 @@
       <h2>Want to discuss a new project?</h2>
       <h3>Say hello! let's discuss your ideas and make it happen</h3>
     </div>
-    <form #contactForm="ngForm">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
       <div class="form-row">
         <img *ngIf="name.invalid && name.touched" src="/assets/icons/error.png" class="error" alt="" />
         <img *ngIf="name.valid && name.touched" src="/assets/icons/valid.png" class="valid" alt="" />
