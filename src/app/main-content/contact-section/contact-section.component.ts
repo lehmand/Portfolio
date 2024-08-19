@@ -7,7 +7,7 @@ import {
   HttpErrorResponse,
   HttpHeaders,
 } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
+import { first, firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-contact-section',
@@ -30,7 +30,9 @@ import { firstValueFrom } from 'rxjs';
 export class ContactSectionComponent implements OnInit {
 
   isChecked: boolean = false;
-  mobileButton: string = 'Say hello ;)'
+  mobileButton: string = 'Say hello ;)';
+  isSubmitting: boolean = false;
+  submitMessage: string = '';
   
   constructor(private http: HttpClient) {}
   
@@ -45,11 +47,22 @@ export class ContactSectionComponent implements OnInit {
   
   url: string = 'https://daniel-lehmann.dev/sendMail.php';
 
-  onSubmit(formdata: any){
-    this.http.post(this.url, formdata)
-      .subscribe(data => {
-        console.log('Sending data', data);
-      })
+  async onSubmit(form: NgForm){
+    console.log(this.contact)
+    if(form.valid){
+      this.isSubmitting = true;
+      try {
+        const response: any =  await firstValueFrom(this.http.post(this.url, this.contact));
+        console.log('Mail sent success', response);
+        this.submitMessage = 'Email sent'
+        form.resetForm()
+      } catch (err) {
+        console.error('Error ', err);
+        this.submitMessage = 'Something went wrong'
+      } finally {
+        this.isSubmitting = false;
+      }
+    }
   }
   
   onBlur(field: NgModel) {
