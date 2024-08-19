@@ -1,0 +1,73 @@
+$background: #fffcf3;
+$primary: #000000;
+$highlight: #00bc8f;
+
+.reference-section {
+    background-color: $background;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: Syne;
+    font-size: 78px;
+    font-weight: 800;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.subheader {
+    font-family: Overpass;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 400;
+    padding: 16px 0;
+    max-width: 600px;
+}
+
+.reference-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.reference {
+    border: 4px solid $primary;
+    max-width: 400px;
+    max-height: 344px;
+}
+
+.ref-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 0;
+
+    h3 {
+        font-family: Syne;
+        font-weight: 700;
+        font-size: 22px;
+    }
+
+    h4 {
+        font-family: Overpass;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 18px;
+        font-family: Overpass;
+        font-weight: 400;
+        text-align: center;
+    }
+}

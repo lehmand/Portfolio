@@ -1,0 +1,18 @@
+<section class="reference-section">
+    <div class="heading">
+        <h1>Reference</h1>
+        <h3 class="subheader">I thrive both independently and as part of a team. Here's what my colleagues have to say about working with me.</h3>
+    </div>
+
+    <div class="reference-wrapper">
+        <div *ngFor="let ref of references"  class="reference">
+            <div class="ref-heading">
+                <img src="/assets/icons/quote.png" alt="">
+                <h3> {{ref.name}} </h3>
+                <h4> {{ref.position}} </h4>
+                <p> {{ref.refText}} </p>
+            </div>
+            <p class="subtext"></p>
+        </div>
+    </div>
+</section>

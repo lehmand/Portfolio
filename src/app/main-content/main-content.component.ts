@@ -6,6 +6,7 @@ import { ProjectsSectionComponent } from './projects-section/projects-section.co
 import { ContactSectionComponent } from './contact-section/contact-section.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
+import { ReferenceSectionComponent } from './reference-section/reference-section.component';
 
 @Component({
   selector: 'app-main-content',
@@ -18,6 +19,7 @@ import { MenuComponent } from './menu/menu.component';
     ContactSectionComponent,
     FooterComponent,
     MenuComponent,
+    ReferenceSectionComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
