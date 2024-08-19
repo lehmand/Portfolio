@@ -44,25 +44,10 @@ export class ContactSectionComponent implements OnInit {
   
   
   ngOnInit(): void {}
-  
-  url: string = 'https://daniel-lehmann.dev/sendMail.php';
 
-  async onSubmit(form: NgForm){
-    console.log(this.contact)
-    if(form.valid){
-      this.isSubmitting = true;
-      try {
-        const response: any =  await firstValueFrom(this.http.post(this.url, this.contact));
-        console.log('Mail sent success', response);
-        this.submitMessage = 'Email sent'
-        form.resetForm()
-      } catch (err) {
-        console.error('Error ', err);
-        this.submitMessage = 'Something went wrong'
-      } finally {
-        this.isSubmitting = false;
-      }
-    }
+
+  onSubmit(ngForm: NgForm) {
+    
   }
   
   onBlur(field: NgModel) {

@@ -8,7 +8,7 @@ interface Project {
   tools: string;
   description: string;
   link: string;
-  live: string
+  live: string;
 }
 
 @Component({
@@ -16,19 +16,19 @@ interface Project {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './projects-section.component.html',
-  styleUrl: './projects-section.component.scss'
+  styleUrl: './projects-section.component.scss',
 })
 export class ProjectsSectionComponent {
-
   projects: Project[] = [
     {
       image: '/assets/img/projects/join.png',
       projectNumber: '01/02',
       name: 'Join',
       tools: 'Angular | TypeScript | HTML | CSS | Firebase',
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and    categories.',
+      description:
+        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and    categories.',
       link: 'https://github.com/lehmand/join',
-      live: 'join.daniel-lehmann.dev'
+      live: 'https://join.daniel-lehmann.dev',
     },
 
     {
@@ -36,15 +36,14 @@ export class ProjectsSectionComponent {
       projectNumber: '02/02',
       name: 'Pollo Loco',
       tools: 'JavaScript | HTML | CSS',
-      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      description:
+        'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
       link: 'https://github.com/lehmand/el-pollo-loco',
-      live: 'loco.daniel-lehmann.dev'
-    }
+      live: 'https://loco.daniel-lehmann.dev',
+    },
   ];
 
-
-  getProjectClass(index: number){
-    return index % 2 === 0 ? 'even-project' : 'odd-project'
+  getProjectClass(index: number) {
+    return index % 2 === 0 ? 'even-project' : 'odd-project';
   }
-
 }
