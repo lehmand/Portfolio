@@ -95,6 +95,7 @@ $highlight: #00bc8f;
     .project-info {
       transform: translateX(100%);
       opacity: 0;
+      align-items: flex-end;
     }
 
     &:hover > .project-info {
@@ -199,6 +200,7 @@ $highlight: #00bc8f;
   justify-content: center;
   gap: 10px;
   transform: translateX(-100%);
+  min-width: 430px;
 
   h1 {
     font-family: Syne;
