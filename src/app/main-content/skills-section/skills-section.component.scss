@@ -96,16 +96,9 @@ $highlight: #00bc8f;
 .arrow {
   padding: 0 128px;
   background-color: $background;
-  min-height: 420px;
   
   img {
     width: 100%;
-  }
-}
-
-@media (max-width: 1500px) {
-  .arrow {
-    min-height: 320px;
   }
 }
 
@@ -128,16 +121,6 @@ $highlight: #00bc8f;
 
   .contact-me-wrapper {
     padding: 0 48px;
-  }
-
-  .arrow {
-    min-height: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .arrow {
-    min-height: 160px;
   }
 }
 
