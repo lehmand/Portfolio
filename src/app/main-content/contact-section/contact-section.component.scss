@@ -10,6 +10,24 @@ $highlight: #00bc8f;
   background-color: $background;
 }
 
+.submit-message-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-message {
+  color: $background;
+  text-align: center;
+  font-family: Overpass;
+  font-size: 22px;
+  font-weight: 400;
+  background-color: $highlight;
+  max-width: 512px;
+  width: 100%;
+  border-radius: 4px;
+  padding: 4px;
+}
+
 .background {
   background-image: url("/assets/img/contact-background.png");
   background-repeat: no-repeat;
@@ -335,6 +353,10 @@ input[type="checkbox"] {
       margin-bottom: 4px;
     }
   }
+
+  .submit-message {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -368,5 +390,9 @@ input[type="checkbox"] {
     .button-mobile {
       display: initial;
     }
+  }
+
+  .submit-message {
+    font-size: 14px;
   }
 }

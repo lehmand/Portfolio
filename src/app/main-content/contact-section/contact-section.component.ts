@@ -31,41 +31,34 @@ export class ContactSectionComponent implements OnInit {
 
   isChecked: boolean = false;
   mobileButton: string = 'Say hello ;)';
+  submitMessage: string = '';
   
   constructor(private http: HttpClient) {}
   
   contact: any = {
-    name: 'Daniel',
-    email: 'daniel@dnaile.de',
-    message: 'SDLKFJDLKJFDSKJLKFjSLDSJKLJKFLJFLKJFDSKLJDFSlSFJKLFJSKLFJLFJDSKLFDJSKLFDSDJSLFDSJSKLFDSJLFSDDJSLfDSJLDSF',
+    name: '',
+    email: '',
+    message: '',
   };
   
   
   ngOnInit(): void {}
 
-  post = {
-    endPoint: 'https://daniel-lehmann.dev/sendMail.php',
-    body: (payload: any) => JSON.stringify(payload),
-    options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
-    },
-  };
+  url: string = 'https://daniel-lehmann.dev/sendMail.php';
 
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid) {
-      this.http.post(this.post.endPoint, this.post.body(this.contact))
-        .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
+  async onSubmit(form: NgForm){
+    if(form.valid){
+      try {
+        const response = await firstValueFrom(this.http.post<any>(this.url, this.contact));
+        if(response.status === 'success'){
+          this.submitMessage = 'Message sent! I answer as soon as possible!';
+          form.resetForm();
+        } else {
+          this.submitMessage = `Error: ${response.message}`;
+        }
+      } catch (err) {
+        console.error('Something went wrong...', err);
+      }
     }
   }
   
