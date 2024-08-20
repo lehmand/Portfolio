@@ -37,17 +37,21 @@ export class ContactSectionComponent implements OnInit {
   constructor(private http: HttpClient) {}
   
   contact: any = {
-    name: '',
-    email: '',
-    message: '',
+    name: 'Daniel',
+    email: 'daniel@dnaile.de',
+    message: 'SDLKFJDLKJFDSKJLKFjSLDSJKLJKFLJFLKJFDSKLJDFSlSFJKLFJSKLFJLFJDSKLFDJSKLFDSDJSLFDSJSKLFDSJLFSDDJSLfDSJLDSF',
   };
   
   
   ngOnInit(): void {}
 
+  url: string = 'https://daniel-lehmann.dev/sendMail.php'
 
-  onSubmit(ngForm: NgForm) {
-    
+  async onSubmit(form: NgForm) {
+    if(form.valid){
+      const response = await firstValueFrom(this.http.post(this.url, this.contact));
+      console.log('This is the response', response);
+    }
   }
   
   onBlur(field: NgModel) {
