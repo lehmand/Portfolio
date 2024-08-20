@@ -59,7 +59,6 @@ export class ContactSectionComponent implements OnInit {
       this.http.post(this.post.endPoint, this.post.body(this.contact))
         .subscribe({
           next: (response) => {
-            console.log(response);
             ngForm.resetForm();
           },
           error: (error) => {
