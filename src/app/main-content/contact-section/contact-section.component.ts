@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModel, NgForm } from '@angular/forms';
 import { trigger, animate, transition, style } from '@angular/animations';
@@ -31,8 +31,6 @@ export class ContactSectionComponent implements OnInit {
 
   isChecked: boolean = false;
   mobileButton: string = 'Say hello ;)';
-  isSubmitting: boolean = false;
-  submitMessage: string = '';
   
   constructor(private http: HttpClient) {}
   
@@ -45,12 +43,30 @@ export class ContactSectionComponent implements OnInit {
   
   ngOnInit(): void {}
 
-  url: string = 'https://daniel-lehmann.dev/sendMail.php'
+  post = {
+    endPoint: 'https://daniel-lehmann.dev/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
 
-  async onSubmit(form: NgForm) {
-    if(form.valid){
-      const response = await firstValueFrom(this.http.post(this.url, this.contact));
-      console.log('This is the response', response);
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid) {
+      this.http.post(this.post.endPoint, this.post.body(this.contact))
+        .subscribe({
+          next: (response) => {
+            console.log(response);
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
     }
   }
   
