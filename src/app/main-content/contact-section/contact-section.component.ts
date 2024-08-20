@@ -51,7 +51,7 @@ export class ContactSectionComponent implements OnInit {
       try {
         const response = await firstValueFrom(this.http.post<any>(this.url, this.contact));
         if(response.status === 'success'){
-          this.submitMessage = 'Message sent! I answer as soon as possible!';
+          this.submitMessage = 'Message sent! I answer as soon as possible :)';
           form.resetForm();
         } else {
           this.submitMessage = `Error: ${response.message}`;
