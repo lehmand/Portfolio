@@ -1,10 +1,7 @@
 <section class="projects" id="projects">
   <div class="heading">
     <h1>Portfolio</h1>
-    <h3>
-      Explore a selection of my work here - Interact with projects to see my
-      skill in action
-    </h3>
+    <h3> {{translations.heading.h3}} </h3>
   </div>
 
   <div class="project-wrapper">
@@ -25,7 +22,7 @@
       <div class="project-info">
         <h1>{{ project.name }}</h1>
         <h2>{{ project.tools }}</h2>
-        <p>{{ project.description }}</p>
+        <p> {{getDescription(i)}} </p>
         <div class="link-container">
           <a [href]="project.live" target="_blank">Live</a>
           <a [href]="project.link" target="_blank">Github</a>

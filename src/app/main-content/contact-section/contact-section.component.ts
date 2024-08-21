@@ -1,13 +1,13 @@
 import { CommonModule, JsonPipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule, NgModel, NgForm } from '@angular/forms';
 import { trigger, animate, transition, style } from '@angular/animations';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
-} from '@angular/common/http';
-import { first, firstValueFrom } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom, Subscription } from 'rxjs';
+import { CONTACTTRANSLATIONS } from '../../shared/translations';
+import { LanguageService } from '../../shared/language.service';
+
+type Language = 'en' | 'de';
 
 @Component({
   selector: 'app-contact-section',
@@ -27,13 +27,18 @@ import { first, firstValueFrom } from 'rxjs';
     ]),
   ],
 })
-export class ContactSectionComponent implements OnInit {
+export class ContactSectionComponent implements OnInit, OnDestroy {
+
+  currentLanguage: Language = 'en';
+  translations = CONTACTTRANSLATIONS[this.currentLanguage];
 
   isChecked: boolean = false;
   mobileButton: string = 'Say hello ;)';
   submitMessage: string = '';
   
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private lang: LanguageService) {}
+
+  private langSub: Subscription | undefined; 
   
   contact: any = {
     name: '',
@@ -42,7 +47,18 @@ export class ContactSectionComponent implements OnInit {
   };
   
   
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.langSub = this.lang.german$.subscribe(isGerman => {
+      this.translations = isGerman ? CONTACTTRANSLATIONS.de : CONTACTTRANSLATIONS.en;
+    });
+    this.translations = this.lang.isGerman() ? CONTACTTRANSLATIONS.de : CONTACTTRANSLATIONS.en;
+  }
+
+  ngOnDestroy(): void {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
+  }
 
   url: string = 'https://daniel-lehmann.dev/sendMail.php';
 

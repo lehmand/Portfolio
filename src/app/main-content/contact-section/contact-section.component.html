@@ -1,10 +1,10 @@
 <section class="contact">
   <div class="background">
-    <h1>Say Hi!</h1>
+    <h1> {{translations.headings.h1}} </h1>
   <div class="form-container">
     <div class="form-header">
-      <h2>Want to discuss a new project?</h2>
-      <h3>Say hello! let's discuss your ideas and make it happen</h3>
+      <h2> {{translations.headings.h2}} </h2>
+      <h3> {{translations.headings.h3}} </h3>
     </div>
     <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
       <div class="form-row">
@@ -21,7 +21,7 @@
           [(ngModel)]="contact.name"
           (blur)="onBlur(name)"
         />
-        <label class="name" for="name">Your name</label>
+        <label class="name" for="name">{{ translations.labels.name }}</label>
     </div>
     <div class="error-message" *ngIf="name.invalid && name.touched" [@slide]>
       <p>Please enter a your name.</p>
@@ -41,7 +41,7 @@
           (blur)="onBlur(email)"
         />
         
-        <label class="email" for="email">Your email</label>
+        <label class="email" for="email">{{ translations.labels.email }}</label>
       </div>
       <div class="error-message" *ngIf="email.invalid && email.touched" [@slide]>
         <p>Please enter a your email.</p>
@@ -60,7 +60,7 @@
           [(ngModel)]="contact.message"
           (blur)="onBlur(message)"
         ></textarea>
-        <label class="message" for="textarea">Your message</label>
+        <label class="message" for="textarea">{{ translations.labels.message }}</label>
       </div>
       <div class="error-message" *ngIf="message.invalid && message.touched" [@slide]>
         <p>Please enter a your message (Minimum length 50).</p>
@@ -77,7 +77,7 @@
         (click)="toggleCheck()"
         >
         <label for="checkbox" class="custom-checkbox" [class.checked]="isChecked"></label>
-        <label for="checkbox" class="privacy">I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined</label>
+        <label for="checkbox" class="privacy" [innerHTML]="translations.privacy"></label>
       </div>
       <div class="error-message" *ngIf="checkbox.invalid && checkbox.touched" [@slide]>
         <p>Please accept the privacy policy.</p>
@@ -88,8 +88,8 @@
         </div>
       </div>
       <div class="button-container">
-        <button class="button-desktop" type="submit" [disabled]="contactForm.invalid">Send message</button>
-        <button class="button-mobile" type="submit" [disabled]="contactForm.invalid">{{ mobileButton }}</button>
+        <button class="button-desktop" type="submit" [disabled]="contactForm.invalid">{{ translations.buttons.desktop }}</button>
+        <button class="button-mobile" type="submit" [disabled]="contactForm.invalid">{{ translations.buttons.mobile }}</button>
       </div>
     </form>
   </div>

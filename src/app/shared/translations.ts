@@ -26,11 +26,135 @@ export const ABOUTMETRANSLATIONS = {
 export const MYSKILLSTRANSLATIONS = {
   en: {
     header: 'My Skills',
-    subText: `Don't see the skill you need? <a href="#contact" class="highlight-link">Contact me</a>, I'm always ready to learn!`
+    subText: `Don't see the skill you need? <a href="#contact">Contact me</a>, I'm always ready to learn!`
   },
   de: {
     header: 'Meine Skills',
-    subText: `Sie sehen die benötigte Fähigkeit nicht? <a href="#contact" class="highlight-link">Kontaktieren Sie mich</a>, ich bin immer bereit zu lernen!`
+    subText: `Sie sehen die benötigte Fähigkeit nicht? <a href="#contact">Kontaktieren Sie mich</a>, ich bin immer bereit zu lernen!`
   }
 };
+
+
+interface ProjectDescription {
+  description: string;
+}
+
+interface Translation {
+  heading: {
+    h3: string;
+  };
+  projects: ProjectDescription[];
+}
+
+interface Translations {
+  en: Translation;
+  de: Translation;
+}
+
+export const PROJECTTRANSLATIONS: Translations = {
+  en: {
+    heading: {
+      h3: "Explore a selection of my work here - Interact with projects to see my skill in action",
+    },
+    projects: [
+      {
+        description:
+          "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+      },
+      {
+        description:
+          "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+      },
+    ],
+  },
+  de: {
+    heading: {
+      h3: "Entdecken Sie hier eine Auswahl meiner Arbeit - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen",
+    },
+    projects: [
+      {
+        description:
+          "Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+      },
+      {
+        description:
+          "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Helfen Sie Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
+      },
+    ],
+  },
+};
+
+
+export const CONTACTTRANSLATIONS = {
+  en: {
+    headings: {
+      h1: "Say Hi!",
+      h2: "Want to discuss a new project?",
+      h3: "Say hello! Let's discuss your ideas and make it happen",
+    },
+    labels: {
+      name: "Your name",
+      email: "Your email",
+      message: "Your message",
+    },
+    errors: {
+      name: "Please enter your name.",
+      email: "Please enter your email.",
+      message: "Please enter your message (Minimum length 50).",
+      privacy: "Please accept the privacy policy.",
+    },
+    privacy: `I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined.`,
+    buttons: {
+      desktop: "Send message",
+      mobile: "Send",
+    },
+  },
+  de: {
+    headings: {
+      h1: "Sag Hallo!",
+      h2: "Möchten Sie ein neues Projekt besprechen?",
+      h3: "Sag Hallo! Lassen Sie uns Ihre Ideen besprechen und es Wirklichkeit werden lassen",
+    },
+    labels: {
+      name: "Ihr Name",
+      email: "Ihre E-Mail",
+      message: "Ihre Nachricht",
+    },
+    errors: {
+      name: "Bitte geben Sie Ihren Namen ein.",
+      email: "Bitte geben Sie Ihre E-Mail ein.",
+      message: "Bitte geben Sie Ihre Nachricht ein (Mindestlänge 50).",
+      privacy: "Bitte akzeptieren Sie die Datenschutzerklärung.",
+    },
+    privacy: `Ich habe die <a href="imprint">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.`,
+    buttons: {
+      desktop: "Nachricht senden",
+      mobile: "Senden",
+    },
+  },
+};
+
+export const POPUPTRANSLATIONS = {
+  en: {
+    links: {
+      aboutMe: "About me",
+      skills: "My skills",
+      portfolio: "Portfolio",
+    },
+    heading: "Say Hi!",
+    contactEmail: "contact@daniel-lehmann.dev",
+  },
+  de: {
+    links: {
+      aboutMe: "Über mich",
+      skills: "Meine Skills",
+      portfolio: "Portfolio",
+    },
+    heading: "Sag Hallo!",
+    contactEmail: "contact@daniel-lehmann.dev",
+  }
+};
+
+
+
 

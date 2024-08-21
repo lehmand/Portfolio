@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { LanguageService } from '../../shared/language.service';
+import { Subscription } from 'rxjs';
+import { PROJECTTRANSLATIONS } from '../../shared/translations';
 
 interface Project {
   image: string;
@@ -11,6 +14,8 @@ interface Project {
   live: string;
 }
 
+type Language = 'en' | 'de';
+
 @Component({
   selector: 'app-projects-section',
   standalone: true,
@@ -18,7 +23,16 @@ interface Project {
   templateUrl: './projects-section.component.html',
   styleUrl: './projects-section.component.scss',
 })
-export class ProjectsSectionComponent {
+export class ProjectsSectionComponent implements OnInit, OnDestroy {
+
+  constructor(private lang: LanguageService){
+  }
+
+  private langSub: Subscription | undefined; 
+ 
+  currentLanguage: Language = 'en';
+  translations = PROJECTTRANSLATIONS[this.currentLanguage];
+
   projects: Project[] = [
     {
       image: '/assets/img/projects/join.png',
@@ -45,5 +59,27 @@ export class ProjectsSectionComponent {
 
   getProjectClass(index: number) {
     return index % 2 === 0 ? 'even-project' : 'odd-project';
+  }
+
+  ngOnInit(): void {
+    this.langSub = this.lang.german$.subscribe(isGerman => {
+      this.translations = isGerman ? PROJECTTRANSLATIONS.de : PROJECTTRANSLATIONS.en;
+    });
+    this.translations = this.lang.isGerman() ? PROJECTTRANSLATIONS.de : PROJECTTRANSLATIONS.en;
+  }
+
+  ngOnDestroy(): void {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
+  }
+
+  getDescription(index: number): string {
+    return this.translations.projects[index].description;
+  }
+
+  switchLanguage(language: Language) {
+    this.currentLanguage = language;
+    this.translations = PROJECTTRANSLATIONS[this.currentLanguage];
   }
 }

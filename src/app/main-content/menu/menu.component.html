@@ -1,14 +1,14 @@
 <section class="popup">
     <div class="link-container">
-        <a href="#about-me" (click)="onLinkClicked()" >About me</a>
-        <a href="#skills" (click)="onLinkClicked()" >My skills</a>
-        <a href="#projects" (click)="onLinkClicked()" >Portfolio</a>
+        <a href="#about-me" (click)="onLinkClicked()">{{ translations.links.aboutMe }}</a>
+        <a href="#skills" (click)="onLinkClicked()" >{{ translations.links.skills }}</a>
+        <a href="#projects" (click)="onLinkClicked()" >{{ translations.links.portfolio }}</a>
     </div>
     
     <div class="background">
       <div class="container">
         <div class="left-side">
-          <h1>Say Hi!</h1>
+          <h1>{{ translations.heading }}</h1>
           <p><a href="mailto:contact@daniel-lehmann.dev">contact&#64;daniel-lehmann.dev</a></p>
         </div>
         <div class="right-side">
