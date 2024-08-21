@@ -2,8 +2,16 @@
         <div class="header-logo">
             <a href="#top"><h1>[ D L ]</h1></a>
         </div>
-        <div class="burger-menu" (click)="toggleMenu()">
-            <img [src]="currentImage" alt="">
+        <div class="right-side">
+            <div class="switch-container">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="burger-menu" (click)="toggleMenu()">
+                <img [src]="currentImage" alt="">
+            </div>
         </div>
 </header>
 <app-menu *ngIf="isMenuOpen" [@slideUpDown] (linkClicked)="toggleMenu()"></app-menu>
