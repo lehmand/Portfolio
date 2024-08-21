@@ -1,7 +1,7 @@
 <section class="skills" id="skills">
   <div class="content-wrapper">
     <div class="headline-wrapper">
-      <h1>My skills</h1>
+      <h1> {{translations.header}} </h1>
     </div>
     <div class="icons-wrapper">
       <div *ngFor="let skill of skills; let i = index" class="icon-box">
@@ -18,10 +18,7 @@
     </div>
     <div class="contact-me-wrapper">
       <img src="/assets/icons/skills/learning.png" alt="" />
-      <p>
-        Don't see the skill you need? <a href="#contact">Contact me</a> I'm always ready
-        to learn!
-      </p>
+      <p [innerHTML]="translations.subText"></p>
     </div>
   </div>
 </section>

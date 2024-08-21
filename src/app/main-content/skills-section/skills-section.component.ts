@@ -1,13 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import {
-  trigger,
-  state,
-  animate,
-  style,
-  keyframes,
-  transition,
-} from '@angular/animations';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { trigger, state, animate, style, transition } from '@angular/animations';
+import { LanguageService } from '../../shared/language.service';
+import { Subscription } from 'rxjs';
+import { MYSKILLSTRANSLATIONS } from '../../shared/translations';
 
 interface Skill {
   name: string;
@@ -43,10 +39,10 @@ interface Skill {
     ]),
   ],
 })
-export class SkillsSectionComponent {
+export class SkillsSectionComponent implements OnInit, OnDestroy {
   status: 'initial' | 'animated' = 'initial';
 
-  constructor() {}
+  constructor(private lang: LanguageService) {}
 
   arrowToRight: string[] = [
     '/assets/icons/animations/arrow-to-right/arrow-to-right1.png',
@@ -57,6 +53,7 @@ export class SkillsSectionComponent {
   currentIndex: number = 0;
   currentImage: string = this.arrowToRight[this.currentIndex];
   private animationId: any;
+  private langSub: Subscription | undefined;
 
   skills: Skill[] = [
     {
@@ -102,6 +99,21 @@ export class SkillsSectionComponent {
       status: 'initial',
     },
   ];
+
+  translations: any = {}
+
+  ngOnInit(): void {
+    this.langSub = this.lang.german$.subscribe(isGerman => {
+      this.translations = isGerman ? MYSKILLSTRANSLATIONS.de : MYSKILLSTRANSLATIONS.en;
+    });
+    this.translations = this.lang.isGerman() ? MYSKILLSTRANSLATIONS.de : MYSKILLSTRANSLATIONS.en;
+  }
+
+  ngOnDestroy(): void {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
+  }
 
   playAnimation() {
     this.animationId = setInterval(() => {
