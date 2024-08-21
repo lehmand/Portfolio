@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { LanguageService } from '../../shared/language.service';
 
 @Component({
   selector: 'app-hero-section',
@@ -9,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './hero-section.component.scss',
 })
 export class HeroSectionComponent {
+
+  constructor(public lang: LanguageService){}
   
   email: string = 'contact@daniel-lehmann.dev';
+
+  
    
 }

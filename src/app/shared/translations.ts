@@ -25,12 +25,10 @@ export const ABOUTMETRANSLATIONS = {
 
 export const MYSKILLSTRANSLATIONS = {
   en: {
-    header: 'My Skills',
-    subText: `Don't see the skill you need? <a href="#contact">Contact me</a>, I'm always ready to learn!`
+    header: 'My Skills'
   },
   de: {
-    header: 'Meine Skills',
-    subText: `Sie sehen die benötigte Fähigkeit nicht? <a href="#contact">Kontaktieren Sie mich</a>, ich bin immer bereit zu lernen!`
+    header: 'Meine Skills'
   }
 };
 

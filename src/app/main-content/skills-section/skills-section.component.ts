@@ -102,10 +102,14 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
 
   translations: any = {}
 
+  isGerman: boolean = false;
+
   ngOnInit(): void {
     this.langSub = this.lang.german$.subscribe(isGerman => {
+      this.isGerman = isGerman;
       this.translations = isGerman ? MYSKILLSTRANSLATIONS.de : MYSKILLSTRANSLATIONS.en;
     });
+    this.isGerman = this.lang.isGerman();
     this.translations = this.lang.isGerman() ? MYSKILLSTRANSLATIONS.de : MYSKILLSTRANSLATIONS.en;
   }
 
