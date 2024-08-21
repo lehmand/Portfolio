@@ -1,8 +1,8 @@
 <section class="popup">
     <div class="link-container">
-        <a href="#about-me" (click)="onLinkClicked()">{{ translations.links.aboutMe }}</a>
-        <a href="#skills" (click)="onLinkClicked()" >{{ translations.links.skills }}</a>
-        <a href="#projects" (click)="onLinkClicked()" >{{ translations.links.portfolio }}</a>
+        <a href="#about-me" (click)="onLinkClicked()" [ngStyle]="{ 'font-size': isGerman ? '80px' : '96px' }">{{ translations.links.aboutMe }}</a>
+        <a href="#skills" (click)="onLinkClicked()" [ngStyle]="{ 'font-size': isGerman ? '80px' : '96px' }">{{ translations.links.skills }}</a>
+        <a href="#projects" (click)="onLinkClicked()" [ngStyle]="{ 'font-size': isGerman ? '80px' : '96px' }">{{ translations.links.portfolio }}</a>
     </div>
     
     <div class="background">

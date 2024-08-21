@@ -15,24 +15,25 @@ type Language = 'en' | 'de';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent implements OnInit, OnDestroy {
+
+  isGerman: boolean = false;
+  currentLanguage: Language = 'en';
+  translations = POPUPTRANSLATIONS[this.currentLanguage];
   
   constructor(private lang: LanguageService){
-    
+    this.isGerman = this.lang.isGerman();
   }
 
   private langSub: Subscription | undefined;
   @Output() linkClicked = new EventEmitter<void>();
 
-  currentLanguage: Language = 'en';
-  translations = POPUPTRANSLATIONS[this.currentLanguage];
-
-
-
   ngOnInit(): void {
     this.langSub = this.lang.german$.subscribe(isGerman => {
+      this.isGerman = isGerman;
       this.translations = isGerman ? POPUPTRANSLATIONS.de : POPUPTRANSLATIONS.en;
     });
-    this.translations = this.lang.isGerman() ? POPUPTRANSLATIONS.de : POPUPTRANSLATIONS.en;
+    this.isGerman = this.lang.isGerman();
+    this.translations = this.isGerman ? POPUPTRANSLATIONS.de : POPUPTRANSLATIONS.en;
   }
 
   ngOnDestroy(): void {
