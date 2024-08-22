@@ -469,7 +469,8 @@ $highlight: #00bc8f;
       }
       .project-info {
         transform: translateY(0);
-        h2 {
+        h2,
+        p {
           text-align: left;
         }
       }
