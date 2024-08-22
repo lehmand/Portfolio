@@ -21,3 +21,15 @@ $highlight: #00bc8f;
         padding: 2px;
     }
 }
+
+@media(max-width: 768px){
+    .legal-notice {
+        padding: 64px;
+    }
+}
+
+@media(max-width: 470px){
+    .legal-notice {
+        padding: 32px;
+    }
+}
