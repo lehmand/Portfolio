@@ -4,7 +4,7 @@
         </div>
         <div class="right-side">
             <div class="switch-container">
-                <label class="switch">
+                <label class="switch" *ngIf="isMenuOpen">
                     <input type="checkbox" (click)="lang.toggleLanguage()">
                     <span class="slider"></span>
                 </label>

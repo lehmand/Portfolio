@@ -32,8 +32,6 @@ $highlight: #00bc8f;
 
   .img {
     position: relative;
-    max-width: 553px;
-    max-height: 553px;
     
     &::after {
       content: '';
@@ -54,8 +52,7 @@ $highlight: #00bc8f;
     }
 
     .profile-img {
-      height: 100%;
-      width: 100%;
+      max-width: 553px;
     }
   }
 
