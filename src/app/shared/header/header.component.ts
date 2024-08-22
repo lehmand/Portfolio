@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from '../../main-content/menu/menu.component';
 import { transition, trigger, style, animate } from '@angular/animations';
 import { LanguageService } from '../language.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MenuComponent, CommonModule],
+  imports: [MenuComponent, CommonModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations: [
