@@ -53,6 +53,7 @@ $highlight: #00bc8f;
 
     .profile-img {
       max-width: 553px;
+      width: 100%;
     }
   }
 
@@ -109,10 +110,6 @@ $highlight: #00bc8f;
 @media(max-width: 1450px){
   .description {
 
-    .img {
-      max-width: 368px;
-      max-height: 368px;
-    }
   }
 }
 
@@ -120,14 +117,6 @@ $highlight: #00bc8f;
   .about-me {
     h1 {
       font-size: 64px;
-    }
-  }
-
-  .description {
-
-    .img {
-      max-width: 300px;
-      max-height: 300px;
     }
   }
 }
@@ -166,9 +155,7 @@ $highlight: #00bc8f;
     }
 
     .img {
-      max-width: 512px;
-      max-height: 512px;
-
+      
       &:hover::after {
         top: 3px;
         left: 3px;

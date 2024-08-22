@@ -103,10 +103,6 @@ section {
     }
 }
 
-.large-font a {
-  font-size: 80px;
-}
-
 @media(max-width: 900px){
   .left-side {
     h1 {
@@ -137,7 +133,7 @@ section {
 
   .link-container {
     a {
-        font-size: 64px;
+        font-size: 64px !important;
         max-width: 368px;
     }
   }
@@ -162,13 +158,9 @@ section {
   .link-container {
     margin-top: 64px;
     a {
-        font-size: 40px;
+        font-size: 40px !important;
         max-width: 256px;
         padding: 16px;
     }
   }
-}
-
-@media(max-width: 1050px){
-  
 }
