@@ -19,12 +19,12 @@ h3 {
 
 @media (max-width: 768px) {
     .legal {
-        padding: 64px;
+        padding: 128px 64px;
     }
 }
 
 @media (max-width: 480px) {
     .legal {
-        padding: 24px;
+        padding: 128px 24px;
     }
 }

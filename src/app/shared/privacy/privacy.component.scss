@@ -10,26 +10,16 @@ $highlight: #00bc8f;
 
 .legal-notice {
     padding: 128px;
-
-    h1,
-    h2,
-    h3 {
-        padding: 16px 0;
-    }
-
-    li {
-        padding: 2px;
-    }
 }
 
 @media(max-width: 768px){
     .legal-notice {
-        padding: 64px;
+        padding: 128px 64px;
     }
 }
 
 @media(max-width: 470px){
     .legal-notice {
-        padding: 32px;
+        padding: 128px 24px;
     }
 }
