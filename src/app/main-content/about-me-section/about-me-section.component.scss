@@ -32,6 +32,7 @@ $highlight: #00bc8f;
 
   .img {
     position: relative;
+    height: 100%;
     
     &::after {
       content: '';
@@ -52,8 +53,8 @@ $highlight: #00bc8f;
     }
 
     .profile-img {
-      max-width: 553px;
-      width: 100%;
+      max-height: 553px;
+      height: 100%;
     }
   }
 
@@ -112,6 +113,14 @@ $highlight: #00bc8f;
       font-size: 64px;
     }
   }
+
+  .description {
+    .img {
+      .profile-img {
+        max-height: 400px;
+      }
+    }
+  }
 }
 
 @media(max-width: 960px){
@@ -148,6 +157,10 @@ $highlight: #00bc8f;
     }
 
     .img {
+
+      .profile-img {
+        max-height: 700px;
+      }
       
       &:hover::after {
         top: 3px;
@@ -171,6 +184,14 @@ $highlight: #00bc8f;
       font-size: 48px;
     }
   }
+
+  .description {
+    .img {
+      .profile-img {
+        max-height: 550px;
+      }
+    }
+  }
 }
 
 @media(max-width: 430px){
@@ -190,6 +211,14 @@ $highlight: #00bc8f;
 
   .arrow {
     padding: 0;
+  }
+
+  .description {
+    .img {
+      .profile-img {
+        max-height: 380px;
+      }
+    }
   }
 }
 
