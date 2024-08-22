@@ -158,7 +158,7 @@ export const HEROSECTIONTRANSLATIONS = {
   },
   de: {
     sendMessageButton: 'Nachricht senden',
-    scrollDownText: 'Scrollen runter!',
+    scrollDownText: 'Scroll runter!',
   }
 };
 
