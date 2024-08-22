@@ -101,7 +101,6 @@ export const CONTACTTRANSLATIONS = {
       message: "Please enter your message (Minimum length 50).",
       privacy: "Please accept the privacy policy.",
     },
-    privacy: `I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined.`,
     buttons: {
       desktop: "Send message",
       mobile: "Send",
@@ -124,7 +123,6 @@ export const CONTACTTRANSLATIONS = {
       message: "Bitte geben Sie Ihre Nachricht ein (Mindestlänge 50).",
       privacy: "Bitte akzeptieren Sie die Datenschutzerklärung.",
     },
-    privacy: `Ich habe die <a href="imprint">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.`,
     buttons: {
       desktop: "Nachricht senden",
       mobile: "Senden",
@@ -150,6 +148,17 @@ export const POPUPTRANSLATIONS = {
     },
     heading: "Sag Hallo!",
     contactEmail: "contact@daniel-lehmann.dev",
+  }
+};
+
+export const HEROSECTIONTRANSLATIONS = {
+  en: {
+    sendMessageButton: 'Send message',
+    scrollDownText: 'Scroll down!',
+  },
+  de: {
+    sendMessageButton: 'Nachricht senden',
+    scrollDownText: 'Scrollen runter!',
   }
 };
 

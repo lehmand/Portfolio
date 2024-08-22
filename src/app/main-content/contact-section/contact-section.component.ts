@@ -46,11 +46,14 @@ export class ContactSectionComponent implements OnInit, OnDestroy {
     message: '',
   };
   
-  
+  isGerman: boolean = false;
+
   ngOnInit(): void {
     this.langSub = this.lang.german$.subscribe(isGerman => {
+      this.isGerman = isGerman;
       this.translations = isGerman ? CONTACTTRANSLATIONS.de : CONTACTTRANSLATIONS.en;
     });
+    this.isGerman = this.lang.isGerman();
     this.translations = this.lang.isGerman() ? CONTACTTRANSLATIONS.de : CONTACTTRANSLATIONS.en;
   }
 

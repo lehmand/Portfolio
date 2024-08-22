@@ -77,7 +77,8 @@
         (click)="toggleCheck()"
         >
         <label for="checkbox" class="custom-checkbox" [class.checked]="isChecked"></label>
-        <label for="checkbox" class="privacy" [innerHTML]="translations.privacy"></label>
+        <label for="checkbox" class="privacy" *ngIf="!isGerman">I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined.</label>
+        <label for="checkbox" class="privacy" *ngIf="isGerman">Ich habe die <a href="imprint">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</label>
       </div>
       <div class="error-message" *ngIf="checkbox.invalid && checkbox.touched" [@slide]>
         <p> {{translations.errors.privacy}} </p>
