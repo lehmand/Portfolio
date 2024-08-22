@@ -170,7 +170,11 @@ $highlight: #00bc8f;
         font-size: 28px;
       }
     }
+    .contact-container {
+      bottom: 0;
+    }
   }
+
 }
 
 @media(max-width: 680px){
@@ -203,6 +207,13 @@ $highlight: #00bc8f;
         font-size: 24px;
       }
     }
+    
+    .mobile-button {
+      display: block;
+      a {
+        font-size: 16px;
+      }
+    }
   }
 }
 
@@ -219,14 +230,8 @@ $highlight: #00bc8f;
         font-size: 16px;
       }
     }
-
-    .mobile-button {
-      display: block;
-      a {
-        font-size: 16px;
-      }
-    }
   }
+
 }
 
 

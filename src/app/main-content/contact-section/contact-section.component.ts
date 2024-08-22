@@ -6,13 +6,14 @@ import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, Subscription } from 'rxjs';
 import { CONTACTTRANSLATIONS } from '../../shared/translations';
 import { LanguageService } from '../../shared/language.service';
+import { RouterModule } from '@angular/router';
 
 type Language = 'en' | 'de';
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss',
   animations: [

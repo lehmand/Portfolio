@@ -163,9 +163,7 @@ $highlight: #00bc8f;
       }
       
       &:hover::after {
-        top: 3px;
-        left: 3px;
-        opacity: 100;
+        display: none;
       }
     }
   }
