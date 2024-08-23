@@ -10,6 +10,6 @@ import { HeaderComponent } from './shared/header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent{
   title = 'portfolio-ng';
 }

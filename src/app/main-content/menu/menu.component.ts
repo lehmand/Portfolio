@@ -1,6 +1,6 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../../shared/language.service';
 import { Subscription } from 'rxjs';
 import { POPUPTRANSLATIONS } from '../../shared/translations';
@@ -15,14 +15,18 @@ type Language = 'en' | 'de';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent implements OnInit, OnDestroy {
+  constructor(
+    private lang: LanguageService,
+    private router: Router, 
+    private route: ActivatedRoute
+  ){
+    this.isGerman = this.lang.isGerman();
+  }
 
   isGerman: boolean = false;
   currentLanguage: Language = 'en';
   translations = POPUPTRANSLATIONS[this.currentLanguage];
   
-  constructor(private lang: LanguageService){
-    this.isGerman = this.lang.isGerman();
-  }
 
   private langSub: Subscription | undefined;
   @Output() linkClicked = new EventEmitter<void>();
@@ -42,8 +46,22 @@ export class MenuComponent implements OnInit, OnDestroy {
     }
   }
 
-  onLinkClicked(){
+  onLinkClicked(fragment: string){
     this.linkClicked.emit();
+    this.router.navigate(['/'], { fragment: fragment }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    });
   }
 
+  getFontSize(): string {
+    if (this.isGerman && window.innerHeight <= 700) {
+      return '24px';
+    }
+    return '32px';
+  }
 }

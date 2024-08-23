@@ -8,6 +8,8 @@ $highlight: #00bc8f;
   display: flex;
   justify-content: center;
   padding: 0 128px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .content-wrapper {
@@ -97,6 +99,8 @@ $highlight: #00bc8f;
   padding: 0 128px;
   background-color: $background;
   min-height: 420px;
+  max-width: 1920px;
+  margin: 0 auto;
   
   img {
     width: 100%;

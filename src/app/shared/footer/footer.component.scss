@@ -4,12 +4,15 @@ $highlight: #00bc8f;
 
 
 footer {
+    box-sizing: border-box;
     background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 32px 128px;
     gap: 8px;
+    max-width: 1920px;
+    margin: 0 auto;
 
     .top-side {
         display: flex;

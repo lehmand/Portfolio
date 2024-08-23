@@ -5,6 +5,8 @@ $highlight: #00bc8f;
 .about-me {
   background-color: $background;
   padding: 0 128px;
+  max-width: 1920px;
+  margin: 0 auto;
 
   h1 {
     font-family: Syne;
@@ -102,6 +104,8 @@ $highlight: #00bc8f;
   justify-content: flex-end;
   padding: 64px 128px;
   min-height: 80px;
+  max-width: 1920px;
+  margin: 0 auto;
   img {
     width: 100%;
   }

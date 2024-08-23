@@ -10,6 +10,8 @@ section {
     background-color: $background;
     position: relative;
     z-index: 100;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .background {
@@ -162,5 +164,12 @@ section {
         max-width: 256px;
         padding: 16px;
     }
+  }
+}
+
+
+@media (max-height: 700px) {
+  .container {
+    bottom: 24px;
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -9,5 +9,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  constructor(private router: Router){}
 
+  navigateToLegal() {
+    this.router.navigate(['/legal']).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
 }

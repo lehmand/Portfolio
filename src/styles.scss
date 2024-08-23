@@ -105,8 +105,9 @@ $highlight: #00bc8f;
   scroll-behavior: smooth;
 }
 
-html {
+html{
   scroll-padding-top: 128px;
+  background-color: $background;
 }
 
 ::-webkit-scrollbar {

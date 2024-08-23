@@ -8,6 +8,8 @@ $highlight: #00bc8f;
 
 .contact {
   background-color: $background;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .submit-message-container {
@@ -32,6 +34,7 @@ $highlight: #00bc8f;
   background-image: url("/assets/img/contact-background.png");
   background-repeat: no-repeat;
   background-size: cover;
+
   h1 {
     color: $background;
     font-size: 78px;

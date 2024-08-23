@@ -6,6 +6,8 @@ $highlight: #00bc8f;
 .legal {
     padding: 93px 128px;
     background-color: $background;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 h2 {
@@ -14,6 +16,15 @@ h2 {
 
 h3 {
     margin: 4px 0;
+}
+
+h2,
+h3 {
+    font-family: Syne;
+}
+
+p {
+    font-family: Overpass;
 }
 
 
