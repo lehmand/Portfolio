@@ -8,8 +8,8 @@ $highlight: #00bc8f;
 
 .contact {
   background-color: $background;
-  max-width: 1920px;
-  margin: 0 auto;
+  // max-width: 1920px;
+  // margin: 0 auto;
 }
 
 .submit-message-container {
@@ -43,6 +43,8 @@ $highlight: #00bc8f;
     position: relative;
     padding: 256px 0 48px 164px;
     left: 0;
+    max-width: 1920px;
+    margin: 0 auto;
     &:hover {
       color: $highlight;
       cursor: default;

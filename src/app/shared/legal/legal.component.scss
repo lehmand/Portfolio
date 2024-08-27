@@ -4,10 +4,11 @@ $highlight: #00bc8f;
 
 
 .legal {
-    padding: 93px 128px;
+    padding: 128px;
     background-color: $background;
     max-width: 1920px;
     margin: 0 auto;
+    height: 100vh;
 }
 
 h2 {
@@ -37,5 +38,11 @@ p {
 @media (max-width: 480px) {
     .legal {
         padding: 93px 24px;
+    }
+}
+
+@media (max-height: 1270px) {
+    .legal {
+        height: unset;
     }
 }
