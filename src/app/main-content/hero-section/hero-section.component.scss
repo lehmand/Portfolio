@@ -8,13 +8,13 @@ $highlight: #00bc8f;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   position: relative;
-  padding: 0 128px;
+  padding: 128px 128px 0 128px;
   max-width: 1920px;
   margin: 0 auto;
-
+  gap: 64px;
   .hero-text {
 
     h1 {
@@ -48,20 +48,16 @@ $highlight: #00bc8f;
 
 .contact-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 128px;
 
   a.email {
     text-decoration: none;
-    rotate: (270deg);
     color: $primary;
     font-size: 22px;
     font-family: Overpass;
-    rotate: (270deg);
-    position: absolute;
-    left: 0;
+    writing-mode: sideways-lr;
   }
 
   .scroll-down {
@@ -102,6 +98,21 @@ $highlight: #00bc8f;
   
 }
 
+.top-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-content {
+  width: 100%;
+  width: 100%;
+  display: flex;
+  gap: 38px;
+  flex-direction: column;
+}
+
 .mobile-button {
   display: none;
   margin-top: 64px;
@@ -133,6 +144,12 @@ $highlight: #00bc8f;
   }
 }
 
+@media (max-width: 1030px) and (max-height: 1400px) {
+  .hero {
+    gap: 512px;
+  }
+}
+
 @media(max-width: 920px){
   .hero {
     .hero-text{
@@ -161,7 +178,8 @@ $highlight: #00bc8f;
 
 @media(max-width: 768px){
   .hero {
-    padding: 0 80px;
+    padding: 93px 80px 0 80px;
+    gap: 196px;
     .hero-text{
       h1 {
         font-size: 64px;
@@ -181,7 +199,8 @@ $highlight: #00bc8f;
 
 @media(max-width: 680px){
   .hero {
-    padding: 0 24px;
+    padding: 94px 24px 0 24px;
+    gap: 128px;
     .hero-text{
       h1 {
         font-size: 64px;
@@ -195,9 +214,15 @@ $highlight: #00bc8f;
   }
 }
 
+@media(max-width: 680px) and (max-height: 667px){
+  .hero {
+    gap: 64px;
+  }
+}
+
 @media(max-width: 530px){
   .hero {
-    padding: 0 24px;
+    padding: 93px 24px 0 24px;
     .hero-text{
       h1 {
         font-size: 48px;
@@ -221,6 +246,7 @@ $highlight: #00bc8f;
 
 @media(max-width: 420px){
   .hero {
+    padding: 93px 24px 0 24px;
     .hero-text{
       h1 {
         font-size: 32px;
@@ -234,9 +260,4 @@ $highlight: #00bc8f;
     }
   }
 
-}
-
-
-@media(max-width: 1050px){
-  
 }

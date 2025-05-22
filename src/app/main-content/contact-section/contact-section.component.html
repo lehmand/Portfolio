@@ -1,99 +1,174 @@
 <section class="contact">
   <div class="background">
-    <h1> {{translations.headings.h1}} </h1>
-  <div class="form-container">
-    <div class="form-header">
-      <h2> {{translations.headings.h2}} </h2>
-      <h3> {{translations.headings.h3}} </h3>
-    </div>
-    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
-      <div class="form-row">
-        <img *ngIf="name.invalid && name.touched" src="/assets/icons/error.png" class="error" alt="" />
-        <img *ngIf="name.valid && name.touched" src="/assets/icons/valid.png" class="valid" alt="" />
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          minlength="4"
-          #name="ngModel"
-          class="form-control"
-          [(ngModel)]="contact.name"
-          (blur)="onBlur(name)"
-        />
-        <label class="name" for="name">{{ translations.labels.name }}</label>
-    </div>
-    <div class="error-message" *ngIf="name.invalid && name.touched" [@slide]>
-      <p> {{translations.errors.name}} </p>
-    </div>
-      <div class="form-row">
-        <img *ngIf="email.invalid && email.touched" src="/assets/icons/error.png" class="error" alt="" />
-        <img *ngIf="email.valid && email.touched" src="/assets/icons/valid.png" class="valid" alt="" />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-          #email="ngModel"
-          class="form-control"
-          [(ngModel)]="contact.email"
-          (blur)="onBlur(email)"
-        />
-        
-        <label class="email" for="email">{{ translations.labels.email }}</label>
+    <h1>{{ translations.headings.h1 }}</h1>
+    <div class="form-container">
+      <div class="form-header">
+        <h2>{{ translations.headings.h2 }}</h2>
+        <h3>{{ translations.headings.h3 }}</h3>
       </div>
-      <div class="error-message" *ngIf="email.invalid && email.touched" [@slide]>
-        <p> {{translations.errors.email}} </p>
-      </div>
-      <div class="form-row" id="contact">
-        <img *ngIf="message.invalid && message.touched" src="/assets/icons/error.png" class="error" alt="" />
-        <img *ngIf="message.valid && message.touched" src="/assets/icons/valid.png" class="valid" alt="" />
-        <textarea
-          name="message"
-          rows="10"
-          id="textarea"
-          required
-          #message="ngModel"
-          class="form-control"
-          minlength="50"
-          [(ngModel)]="contact.message"
-          (blur)="onBlur(message)"
-        ></textarea>
-        <label class="message" for="textarea">{{ translations.labels.message }}</label>
-      </div>
-      <div class="error-message" *ngIf="message.invalid && message.touched" [@slide]>
-        <p> {{translations.errors.message}} </p>
-      </div>
-      <div class="checkbox-row">
-        <input 
-        type="checkbox"
-        name="checkbox"
-        id="checkbox"
-        #checkbox="ngModel"
-        [(ngModel)]="isChecked"
-        [checked]="isChecked"
-        required
-        (click)="toggleCheck()"
-        >
-        <label for="checkbox" class="custom-checkbox" [class.checked]="isChecked"></label>
-        <label for="checkbox" class="privacy" *ngIf="!isGerman">I've read the <a [routerLink]="['/privacy']">privacy policy</a> and agree to the processing of my data as outlined.</label>
-        <label for="checkbox" class="privacy" *ngIf="isGerman">Ich habe die <a [routerLink]="['/privacy']">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</label>
-      </div>
-      <div class="error-message" *ngIf="checkbox.invalid && checkbox.touched" [@slide]>
-        <p> {{translations.errors.privacy}} </p>
-      </div>
-      <div *ngIf="submitMessage" class="submit-message-container" [@slide]>
-        <div class="submit-message">
-          <p> {{submitMessage}} </p>
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+        <div class="form-row">
+          <img
+            *ngIf="name.invalid && name.touched"
+            src="/assets/icons/error.png"
+            class="error"
+            alt=""
+          />
+          <img
+            *ngIf="name.valid && name.touched"
+            src="/assets/icons/valid.png"
+            class="valid"
+            alt=""
+          />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            minlength="4"
+            #name="ngModel"
+            class="form-control"
+            [(ngModel)]="contact.name"
+            (blur)="onBlur(name)"
+          />
+          <label class="name" for="name">{{ translations.labels.name }}</label>
         </div>
-      </div>
-      <div class="button-container">
-        <button class="button-desktop" type="submit" [disabled]="contactForm.invalid">{{ translations.buttons.desktop }}</button>
-        <button class="button-mobile" type="submit" [disabled]="contactForm.invalid">{{ translations.buttons.mobile }}</button>
-      </div>
-    </form>
-  </div>
-  <a href="#top"><img class="top-arrow" src="/assets/img/arrow-up.png" alt=""></a>
+        <div
+          class="error-message"
+          *ngIf="name.invalid && name.touched"
+          [@slide]
+        >
+          <p>{{ translations.errors.name }}</p>
+        </div>
+        <div class="form-row">
+          <img
+            *ngIf="email.invalid && email.touched"
+            src="/assets/icons/error.png"
+            class="error"
+            alt=""
+          />
+          <img
+            *ngIf="email.valid && email.touched"
+            src="/assets/icons/valid.png"
+            class="valid"
+            alt=""
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            #email="ngModel"
+            class="form-control"
+            [(ngModel)]="contact.email"
+            (blur)="onBlur(email)"
+          />
+
+          <label class="email" for="email">{{
+            translations.labels.email
+          }}</label>
+        </div>
+        <div
+          class="error-message"
+          *ngIf="email.invalid && email.touched"
+          [@slide]
+        >
+          <p>{{ translations.errors.email }}</p>
+        </div>
+        <div class="form-row" id="contact">
+          <img
+            *ngIf="message.invalid && message.touched"
+            src="/assets/icons/error.png"
+            class="error"
+            alt=""
+          />
+          <img
+            *ngIf="message.valid && message.touched"
+            src="/assets/icons/valid.png"
+            class="valid"
+            alt=""
+          />
+          <textarea
+            name="message"
+            rows="10"
+            id="textarea"
+            required
+            #message="ngModel"
+            class="form-control"
+            minlength="50"
+            [(ngModel)]="contact.message"
+            (blur)="onBlur(message)"
+          ></textarea>
+          <label class="message" for="textarea">{{
+            translations.labels.message
+          }}</label>
+        </div>
+        <div
+          class="error-message"
+          *ngIf="message.invalid && message.touched"
+          [@slide]
+        >
+          <p>{{ translations.errors.message }}</p>
+        </div>
+        <div class="checkbox-row">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            #checkbox="ngModel"
+            [(ngModel)]="isChecked"
+            [checked]="isChecked"
+            required
+            (click)="toggleCheck()"
+          />
+          <label
+            for="checkbox"
+            class="custom-checkbox"
+            [class.checked]="isChecked"
+          ></label>
+          <label for="checkbox" class="privacy" *ngIf="!isGerman"
+            >I've read the <a [routerLink]="['/privacy']">privacy policy</a> and
+            agree to the processing of my data as outlined.</label
+          >
+          <label for="checkbox" class="privacy" *ngIf="isGerman"
+            >Ich habe die
+            <a [routerLink]="['/privacy']">Datenschutzerklärung</a> gelesen und
+            stimme der Verarbeitung meiner Daten zu.</label
+          >
+        </div>
+        <div
+          class="error-message"
+          *ngIf="checkbox.invalid && checkbox.touched"
+          [@slide]
+        >
+          <p>{{ translations.errors.privacy }}</p>
+        </div>
+        <div *ngIf="submitMessage" class="submit-message-container" [@slide]>
+          <div class="submit-message">
+            <p>{{ submitMessage }}</p>
+          </div>
+        </div>
+        <div class="button-container">
+          <button
+            class="button-desktop"
+            type="submit"
+            [disabled]="contactForm.invalid"
+          >
+            {{ translations.buttons.desktop }}
+          </button>
+          <button
+            class="button-mobile"
+            type="submit"
+            [disabled]="contactForm.invalid"
+          >
+            {{ translations.buttons.mobile }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <a href="#top"
+      ><img class="top-arrow" src="/assets/img/arrow-up.png" alt=""
+    /></a>
   </div>
 </section>
