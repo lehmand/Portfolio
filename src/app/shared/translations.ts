@@ -103,7 +103,7 @@ export const CONTACTTRANSLATIONS = {
     },
     buttons: {
       desktop: "Send message",
-      mobile: "Send",
+      mobile: "Say hello",
     },
   },
   de: {

@@ -325,6 +325,12 @@ input[type="checkbox"] {
   display: none;
 }
 
+@media (max-width: 1024px) {
+  .top-arrow {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .background {
     h1 {
