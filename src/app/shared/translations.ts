@@ -1,7 +1,7 @@
 export const ABOUTMETRANSLATIONS = {
   en: {
     header: 'About me',
-    subText: `I am a Front-end developer from Mannheim, Germany.
+    subText: `I am a Fullstack developer from Mannheim, Germany.
               I help designers and companies to bring their ideas to real life. 
               Creativity and logical thinking are skills that I have developed 
               to connect ideas into quality products.
@@ -12,7 +12,7 @@ export const ABOUTMETRANSLATIONS = {
   },
   de: {
     header: 'Über mich',
-    subText: `Ich bin ein Frontend-Entwickler aus Mannheim, Deutschland.
+    subText: `Ich bin ein Fullstack-Entwickler aus Mannheim, Deutschland.
               Ich helfe Designern und Unternehmen, ihre Ideen in die Realität umzusetzen.
               Kreativität und logisches Denken sind Fähigkeiten, die ich entwickelt habe,
               um Ideen in hochwertige Produkte zu verwandeln.
@@ -63,6 +63,10 @@ export const PROJECTTRANSLATIONS: Translations = {
         description:
           "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
       },
+      {
+        description:
+          'Videoflix is a streaming platform where users can watch videos.'
+      }
     ],
   },
   de: {
@@ -78,6 +82,10 @@ export const PROJECTTRANSLATIONS: Translations = {
         description:
           "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Helfen Sie Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
       },
+      {
+        description:
+          'Videoflix ist eine streaming Plattform auf der User Videos schauen können.'
+      }
     ],
   },
 };

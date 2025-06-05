@@ -4,12 +4,7 @@ import { trigger, state, animate, style, transition } from '@angular/animations'
 import { LanguageService } from '../../shared/language.service';
 import { Subscription } from 'rxjs';
 import { MYSKILLSTRANSLATIONS } from '../../shared/translations';
-
-interface Skill {
-  name: string;
-  iconUrl: string;
-  status: string;
-}
+import { skills } from '../../shared/skills';
 
 @Component({
   selector: 'app-skills-section',
@@ -41,68 +36,22 @@ interface Skill {
 })
 export class SkillsSectionComponent implements OnInit, OnDestroy {
   status: 'initial' | 'animated' = 'initial';
-
-  constructor(private lang: LanguageService) {}
-
   arrowToRight: string[] = [
     '/assets/icons/animations/arrow-to-right/arrow-to-right1.png',
     '/assets/icons/animations/arrow-to-right/arrow-to-right2.png',
     '/assets/icons/animations/arrow-to-right/arrow-to-right3.png',
   ];
-
   currentIndex: number = 0;
   currentImage: string = this.arrowToRight[this.currentIndex];
+  translations: any = {}
+  skills: Array<any> = []
+  isGerman: boolean = false;
   private animationId: any;
   private langSub: Subscription | undefined;
 
-  skills: Skill[] = [
-    {
-      name: 'Angular',
-      iconUrl: '/assets/icons/skills/angular.png',
-      status: 'initial',
-    },
-    {
-      name: 'TypeScript',
-      iconUrl: '/assets/icons/skills/typescript.png',
-      status: 'initial',
-    },
-    {
-      name: 'JavaScript',
-      iconUrl: '/assets/icons/skills/javascript.png',
-      status: 'initial',
-    },
-    {
-      name: 'HTML',
-      iconUrl: '/assets/icons/skills/html.png',
-      status: 'initial',
-    },
-    { name: 'CSS', iconUrl: '/assets/icons/skills/css.png', status: 'initial' },
-    {
-      name: 'Firebase',
-      iconUrl: '/assets/icons/skills/firebase.png',
-      status: 'initial',
-    },
-    { name: 'Git', iconUrl: '/assets/icons/skills/git.png', status: 'initial' },
-    {
-      name: 'Scrum',
-      iconUrl: '/assets/icons/skills/scrum.png',
-      status: 'initial',
-    },
-    {
-      name: 'Rest-Api',
-      iconUrl: '/assets/icons/skills/api.png',
-      status: 'initial',
-    },
-    {
-      name: 'Material Design',
-      iconUrl: '/assets/icons/skills/material.png',
-      status: 'initial',
-    },
-  ];
+  constructor(private lang: LanguageService) {}
 
-  translations: any = {}
 
-  isGerman: boolean = false;
 
   ngOnInit(): void {
     this.langSub = this.lang.german$.subscribe(isGerman => {
@@ -111,6 +60,7 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
     });
     this.isGerman = this.lang.isGerman();
     this.translations = this.lang.isGerman() ? MYSKILLSTRANSLATIONS.de : MYSKILLSTRANSLATIONS.en;
+    this.skills = skills
   }
 
   ngOnDestroy(): void {
