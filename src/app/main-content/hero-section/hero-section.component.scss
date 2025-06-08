@@ -220,6 +220,13 @@ $highlight: #00bc8f;
   }
 }
 
+@media(max-width: 375px) and (max-height: 667px){
+  .hero {
+    gap: 64px;
+    justify-content: unset;
+  }
+}
+
 @media(max-width: 530px){
   .hero {
     padding: 93px 24px 0 24px;
