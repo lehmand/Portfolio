@@ -110,13 +110,12 @@ $highlight: #00bc8f;
   width: 100%;
   width: 100%;
   display: flex;
-  gap: 38px;
+  gap: 64px;
   flex-direction: column;
 }
 
 .mobile-button {
   display: none;
-  margin-top: 64px;
 
   a {
     text-decoration: none;
@@ -125,6 +124,7 @@ $highlight: #00bc8f;
     padding: 20px 60px;
     font-family: Overpass;
     font-size: 23px;
+    display: block;
   }
 }
 
@@ -180,7 +180,6 @@ $highlight: #00bc8f;
 @media(max-width: 768px){
   .hero {
     padding: 93px 80px 0 80px;
-    gap: 196px;
     .hero-text{
       h1 {
         font-size: 64px;
@@ -201,7 +200,6 @@ $highlight: #00bc8f;
 @media(max-width: 680px){
   .hero {
     padding: 94px 24px 0 24px;
-    gap: 128px;
     justify-content: center;
     .hero-text{
       h1 {
@@ -238,7 +236,8 @@ $highlight: #00bc8f;
     }
     
     .mobile-button {
-      display: block;
+      display: flex;
+      justify-content: center;
       a {
         font-size: 16px;
       }
@@ -260,6 +259,10 @@ $highlight: #00bc8f;
         font-size: 16px;
       }
     }
+  }
+
+  .mobile-button a {
+    padding: 12px 40px;
   }
 
 }
