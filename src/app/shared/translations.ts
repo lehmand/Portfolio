@@ -1,7 +1,7 @@
 export const ABOUTMETRANSLATIONS = {
   en: {
     header: 'About me',
-    subText: `I am a Fullstack developer from Mannheim, Germany.
+    subText: `I am a Fullstack Developer from Mannheim, Germany.
               I help designers and companies to bring their ideas to real life. 
               Creativity and logical thinking are skills that I have developed 
               to connect ideas into quality products.
@@ -12,7 +12,7 @@ export const ABOUTMETRANSLATIONS = {
   },
   de: {
     header: 'Über mich',
-    subText: `Ich bin ein Fullstack-Entwickler aus Mannheim, Deutschland.
+    subText: `Ich bin ein Fullstack Entwickler aus Mannheim, Deutschland.
               Ich helfe Designern und Unternehmen, ihre Ideen in die Realität umzusetzen.
               Kreativität und logisches Denken sind Fähigkeiten, die ich entwickelt habe,
               um Ideen in hochwertige Produkte zu verwandeln.

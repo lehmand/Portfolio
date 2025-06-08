@@ -20,7 +20,7 @@
       </div>
 
       <div class="project-info">
-        <h1>{{ project.name }}</h1>
+        <h1 [class.videoflix]="project.name === 'videoflix'">{{ project.name }}</h1>
         <h2>{{ project.tools }}</h2>
         <p> {{getDescription(i)}} </p>
         <div class="link-container">

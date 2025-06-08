@@ -6,7 +6,7 @@
     <div class="right-side">
       <div class="switch-container">
         <label class="switch" *ngIf="isMenuOpen">
-          <input type="checkbox" (click)="lang.toggleLanguage()" />
+          <input type="checkbox" [checked]="lang.german$ | async" (click)="lang.toggleLanguage()" />
           <span class="slider"></span>
         </label>
       </div>
