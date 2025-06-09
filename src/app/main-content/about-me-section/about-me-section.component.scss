@@ -6,97 +6,97 @@ $highlight: #00bc8f;
   background-color: $background;
   padding: 0 128px;
   max-width: 1920px;
-  margin: 0 auto;
+  margin: 0 auto;  
+}
 
-  h1 {
-    font-family: Syne;
-    font-weight: 800;
-    font-size: 78px;
-
-    &:hover {
-      color: $highlight;
-      transition: color ease-in-out 125ms;
-    }
+h1 {
+  font-family: Syne;
+  font-weight: 800;
+  font-size: 78px;
+  &:hover {
+    color: $highlight;
+    transition: color ease-in-out 125ms;
   }
 }
 
 .description {
   display: flex;
   justify-content: space-between;
+}
 
-  .text {
-    p {
-      font-size: 22px;
-      font-family: Overpass;
-      max-width: 600px;
-    }
+.text {
+  p {
+    font-size: 22px;
+    font-family: Overpass;
+    max-width: 600px;
   }
+} 
 
-  .img {
-    position: relative;
+.img {
+  position: relative;
+  height: 100%;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
     height: 100%;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      border: 4px solid $primary;
-      transition: all ease-in-out 75ms;
-      opacity: 0;
-    }
-    
-    &:hover::after {
-      top: 15px;
-      left: 15px;
-      opacity: 100;
-    }
-
-    .profile-img {
-      max-height: 553px;
-      height: 100%;
-    }
+    border: 4px solid $primary;
+    transition: all ease-in-out 75ms;
+    opacity: 0;
   }
-
-  .location {
-    display: flex;
-    align-items: center;
-    margin-top: 48px;
-    margin-bottom: 16px;
-    gap: 8px;
+  
+  &:hover::after {
+    top: 15px;
+    left: 15px;
+    opacity: 100;
   }
+}
 
-  .optional {
-    display: flex;
-    align-items: center;
-    margin-bottom: 48px;
-    gap: 8px;
-  }
+.profile-img {
+  max-height: 553px;
+  height: 100%;
+}
 
-  .button {
-    display: flex;
-    justify-content: center;
+.location {
+  display: flex;
+  align-items: center;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  gap: 8px;
+}
 
-    a {
-      border: 4px solid black;
-      background-color: transparent;
-      padding: 20px 60px;
-      font-family: Overpass;
-      font-size: 23px;
-      cursor: pointer;
-      transition: padding ease-in-out 100ms;
-      text-decoration: none;
-      color: $primary;
+.optional {
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+  gap: 8px;
+}
 
-      &:hover {
-        padding: 20px 80px;
-        text-shadow: 0 0 1px $primary;
-      }
+.button {
+  display: flex;
+  justify-content: center;
+
+  a {
+    border: 4px solid black;
+    background-color: transparent;
+    padding: 20px 60px;
+    font-family: Overpass;
+    font-size: 23px;
+    cursor: pointer;
+    transition: padding ease-in-out 100ms;
+    text-decoration: none;
+    color: $primary;
+
+    &:hover {
+      padding: 20px 80px;
+      text-shadow: 0 0 1px $primary;
     }
   }
 }
+
 
 .arrow {
   background-color: $background;
@@ -111,117 +111,6 @@ $highlight: #00bc8f;
   }
 }
 
-@media(max-width: 1150px){
-  .about-me {
-    h1 {
-      font-size: 64px;
-    }
-  }
 
-  .description {
-    .img {
-      .profile-img {
-        max-height: 400px;
-      }
-    }
-  }
-}
-
-@media(max-width: 960px){
-  .description {
-    .text {
-      p {
-        font-size: 18px;
-      }
-    }
-  }
-}
-
-@media(max-width: 768px){
-
-  .about-me {
-    padding: 0 16px;
-    h1 {
-      display: flex;
-      justify-content: center;
-      font-size: 64px;
-    }
-  }
-  .description {
-    flex-direction: column;
-    align-items: center;
-    .text {
-      p {
-        font-size: 22px;
-      }
-
-      .button {
-        margin-bottom: 16px;
-      }
-    }
-
-    .img {
-
-      .profile-img {
-        max-height: 700px;
-      }
-      
-      &:hover::after {
-        display: none;
-      }
-    }
-  }
-
-  .arrow {
-    padding: 64px;
-  }
-}
-
-@media(max-width: 550px){
-  .about-me {
-    padding: 0 16px;
-    h1 {
-      display: flex;
-      justify-content: center;
-      font-size: 48px;
-    }
-  }
-
-  .description {
-    .img {
-      .profile-img {
-        max-height: 550px;
-      }
-    }
-  }
-}
-
-@media(max-width: 430px){
-  .about-me {
-    h1 {
-      display: flex;
-      justify-content: center;
-      font-size: 36px;
-    }
-
-    .text {
-      p {
-        font-size: 16px;
-      }
-    }
-  }
-
-  .arrow {
-    padding: 0;
-  }
-
-  .description {
-    .img {
-      .profile-img {
-        max-height: 380px;
-      }
-    }
-  }
-}
 
 

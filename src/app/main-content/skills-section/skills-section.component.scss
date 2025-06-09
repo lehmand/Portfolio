@@ -29,31 +29,31 @@ $highlight: #00bc8f;
   gap: 78px 128px;
   max-width: 1012px;
 
-  .icon-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    gap: 10px;
-    width: 64px;
+}
 
-    &:hover > p {
-      color: $highlight;
-    }
-
-    p {
-      font-family: Overpass;
-      font-size: 16px;
-      font-weight: 700;
-      max-width: 100px;
-    }
-
-    .skill-icon {
-        width: 64px;
-        height: 64px;
-    }
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 64px;
+  &:hover > p {
+    color: $highlight;
   }
+}
+
+p {
+  font-family: Overpass;
+  font-size: 16px;
+  font-weight: 700;
+  max-width: 100px;
+}
+
+.skill-icon {
+    width: 64px;
+    height: 64px;
 }
 
 .contact-me-wrapper {
@@ -63,35 +63,36 @@ $highlight: #00bc8f;
   gap: 16px;
   margin: 24px 0;
 
-  p {
-    font-size: 22px;
-    font-family: Overpass;
-  }
+}
 
-  a {
-    text-decoration: none;
-    color: $highlight;
-  }
+p {
+  font-size: 22px;
+  font-family: Overpass;
+}
+
+a {
+  text-decoration: none;
+  color: $highlight;
 }
 
 .headline-wrapper {
   display: flex;
   justify-content: center;
-  h1 {
-    text-align: center;
-    position: relative;
-    bottom: 52px;
-    padding: 0 24px;
-    background-color: $background;
-    font-size: 78px;
-    font-weight: 800;
-    font-family: Syne;
-    transition: color ease-in-out 125ms;
+}
 
-    &:hover {
-      color: $highlight;
-      cursor: default;
-    }
+h1 {
+  text-align: center;
+  position: relative;
+  bottom: 52px;
+  padding: 0 24px;
+  background-color: $background;
+  font-size: 78px;
+  font-weight: 800;
+  font-family: Syne;
+  transition: color ease-in-out 125ms;
+  &:hover {
+    color: $highlight;
+    cursor: default;
   }
 }
 
@@ -107,157 +108,4 @@ $highlight: #00bc8f;
   }
 }
 
-@media (max-width: 1500px) {
-  .arrow {
-    min-height: 310px;
-  }
-}
 
-@media (max-width: 1250px) {
-  .icons-wrapper {
-    gap: 32px 86px;
-    justify-content: center;
-  }
-
-  .arrow {
-    min-height: 260px;
-  }
-}
-
-@media (max-width: 1050px) {
-    .icons-wrapper {
-        padding: 0 48px;
-    }
-  .headline-wrapper {
-    h1 {
-      font-size: 72px;
-    }
-  }
-  .contact-me-wrapper {
-    padding: 0 48px;
-  }
-  .arrow {
-    min-height: 200px;
-  }
-}
-
-@media (max-width: 840px) {
-  .skills {
-    padding: 0 64px;
-  }
-  .headline-wrapper {
-    h1 {
-      font-size: 64px;
-      bottom: 48px;
-    }
-  }
-  .arrow {
-    padding: 0 64px;
-    min-height: 180px;
-  }
-}
-
-@media (max-width: 620px) {
-    .headline-wrapper {
-        h1 {
-          font-size: 32px;
-          bottom: 24px;
-        }
-      }
-    .icons-wrapper {
-        .icon-box {
-            width: 48px;
-           .skill-icon {
-            width: 48px;
-            height: 48px;
-           }
-        }
-    }
-    .contact-me-wrapper {
-      align-items: center;
-      img {
-        width: 48px;
-      }
-
-      p {
-        font-size: 18px;
-      }
-    }
-    .arrow {
-      min-height: 125px;
-    }
-}
-
-@media (max-width: 550px) {
-  .skills {
-    padding: 0 16px;
-  }
-  .headline-wrapper {
-      h1 {
-        font-size: 32px;
-        bottom: 24px;
-      }
-    }
-
-  .icons-wrapper {
-      padding: 0 12px;
-      .icon-box {
-          width: 32px;
-          p {
-            font-size: 14px;
-          }
-         .skill-icon {
-          width: 32px;
-          height: 32px;
-         }
-      }
-  }
-
-  .contact-me-wrapper {
-    padding: 0 24px;
-    img {
-      width: 32px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-  }
-}
-
-@media (max-width: 450px) {
-  .icons-wrapper {
-    gap: 24px 48px;
-  }
-  
-  .contact-me-wrapper {
-    padding: 0 12px;
-
-    p {
-      font-size: 13px;
-
-      a {
-        margin: 0;
-      }
-    }
-  }
-
-  .headline-wrapper {
-    h1 {
-      font-size: 24px;
-      bottom: 16px;
-    }
-  }
-
-  .skills {
-    padding: 12px 16px;
-  }
-
-  .arrow {
-    padding: 0 12px;
-  }
-}
-
-
-@media (max-width: 1050px) {
-}

@@ -2,65 +2,48 @@ $background: #fffcf3;
 $primary: #000000;
 $highlight: #00bc8f;
 
-
 footer {
-    box-sizing: border-box;
-    background-color: black;
-    padding: 32px 128px;
-    gap: 8px;
-    .content {
-        max-width: 1920px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .top-side {
-        display: flex;
-        justify-content: space-between;
-        h1 {
-            color: $background;
-            font-family: Syne;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-    }
-
-    .bottom-side {
-        display: flex;
-        justify-content: space-between;
-        font-family: Overpass;
-        p {
-            color: $background;
-            font-size: 16px;
-        }
-
-        .legal-container {
-            a {
-                text-decoration: none;
-                color: $background;
-                
-            }
-        }
-    }
+  box-sizing: border-box;
+  background-color: black;
+  padding: 32px 128px;
+  gap: 8px;
 }
 
-
-@media(max-width: 768px){
-    footer {
-        padding: 32px 64px;
-    }
+.content {
+  max-width: 1920px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-@media(max-width: 500px){
-    footer {
-        gap: 32px;
-    }
-    .top-side,
-    .bottom-side {
-        flex-direction: column;
-        align-items: center;
+.top-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  color: $background;
+  font-family: Syne;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.bottom-side {
+  display: flex;
+  justify-content: space-between;
+  font-family: Overpass;
+}
+
+p {
+  color: $background;
+  font-size: 16px;
+}
+
+.legal-container {
+  a {
+    text-decoration: none;
+    color: $background;
   }
 }

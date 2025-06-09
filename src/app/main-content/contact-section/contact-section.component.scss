@@ -8,8 +8,6 @@ $highlight: #00bc8f;
 
 .contact {
   background-color: $background;
-  // max-width: 1920px;
-  // margin: 0 auto;
 }
 
 .submit-message-container {
@@ -35,22 +33,22 @@ $highlight: #00bc8f;
   background-image: url("/assets/img/contact-background.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
 
-  h1 {
-    color: $background;
-    font-size: 78px;
-    font-weight: 800;
-    font-family: Syne;
-    position: relative;
-    padding: 256px 0 48px 164px;
-    left: 0;
-    max-width: 1920px;
-    margin: 0 auto;
-    &:hover {
-      color: $highlight;
-      cursor: default;
-      transition: color 125ms ease-in-out;
-    }
+h1 {
+  color: $background;
+  font-size: 78px;
+  font-weight: 800;
+  font-family: Syne;
+  position: relative;
+  padding: 256px 0 48px 164px;
+  left: 0;
+  max-width: 1920px;
+  margin: 0 auto;
+  &:hover {
+    color: $highlight;
+    cursor: default;
+    transition: color 125ms ease-in-out;
   }
 }
 
@@ -64,19 +62,20 @@ $highlight: #00bc8f;
 
 .form-header {
   text-align: center;
-  h2 {
-    color: $highlight;
-    font-size: 32px;
-    font-weight: 700;
-    font-family: Overpass;
-  }
+}
 
-  h3 {
-    color: $background;
-    font-size: 22px;
-    font-weight: 400;
-    font-family: Overpass;
-  }
+h2 {
+  color: $highlight;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: Overpass;
+}
+
+h3 {
+  color: $background;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: Overpass;
 }
 
 .form-container {
@@ -97,13 +96,7 @@ form {
 }
 
 .form-row {
-  position: relative;
-  img {
-    position: absolute;
-    z-index: 10;
-    right: 0;
-  }
-
+  position: relative;  
   &::after {
     content: "";
     position: absolute;
@@ -113,91 +106,92 @@ form {
     left: 0;
     bottom: 0;
     z-index: 0;
-  }
-
+  }  
   &:hover::after {
     height: 100%;
     border: 4px solid $background;
-  }
+  }  
+}
 
-  input {
-    padding: 8px 16px;
-    outline: none;
-    background-color: transparent;
-    border: none;
-    color: $background;
-    font-size: 16px;
-    font-family: Overpass;
-    position: relative;
-    z-index: 1;
-    width: 100%;
+img {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+}
 
-    &:focus + label,
-    &:valid + label {
-      top: -16px;
-      left: 24px;
-      background-color: $primary;
-      transition: all 175ms ease-in-out;
-      padding: 0 4px;
-      z-index: 2;
-    }
-  }
-
-  input.ng-touched + label {
+input {
+  padding: 8px 16px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: $background;
+  font-size: 16px;
+  font-family: Overpass;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  &:focus + label,
+  &:valid + label {
     top: -16px;
     left: 24px;
     background-color: $primary;
+    transition: all 175ms ease-in-out;
     padding: 0 4px;
     z-index: 2;
   }
+}
 
-  label.name,
-  label.email,
-  label.message {
-    font-family: Overpass;
-    font-size: 16px;
-    color: $background;
-    position: absolute;
-    left: 16px;
-    top: 6px;
+input.ng-touched + label {
+  top: -16px;
+  left: 24px;
+  background-color: $primary;
+  padding: 0 4px;
+  z-index: 2;
+}
+
+label.name,
+label.email,
+label.message {
+  font-family: Overpass;
+  font-size: 16px;
+  color: $background;
+  position: absolute;
+  left: 16px;
+  top: 6px;
+  cursor: text;
+}
+
+textarea {
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  font-family: Overpass;
+  padding: 8px 32px 8px 16px;
+  &:hover {
     cursor: text;
   }
-
-  textarea {
-    outline: none;
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    color: white;
-    position: relative;
-    z-index: 1;
-    font-size: 16px;
-    font-family: Overpass;
-    padding: 8px 32px 8px 16px;
-
-
-    &:hover {
-      cursor: text;
-    }
-
-    &:focus + label,
-    &:valid + label {
-      top: -16px;
-      left: 24px;
-      background-color: $primary;
-      padding: 0 4px;
-      transition: all 125ms ease-in-out;
-      z-index: 1;
-    }
-  }
-
-  textarea.ng-touched + label {
+  &:focus + label,
+  &:valid + label {
     top: -16px;
     left: 24px;
     background-color: $primary;
     padding: 0 4px;
-    z-index: 2;
+    transition: all 125ms ease-in-out;
+    z-index: 1;
   }
+}
+
+textarea.ng-touched + label {
+  top: -16px;
+  left: 24px;
+  background-color: $primary;
+  padding: 0 4px;
+  z-index: 2;
 }
 
 .checkbox-row {
@@ -292,32 +286,30 @@ input[type="checkbox"] {
   justify-content: center;
   position: relative;
   z-index: 0;
+}
 
-  button {
+button {
+  padding: 20px 60px;
+  border: 4px solid #bbbbbb;
+  background-color: transparent;
+  opacity: 100%;
+  color: $background;
+  font-family: Overpass;
+  font-size: 23px;
+  z-index: 1;
+  cursor: pointer;
+  &:hover:not(.button-mobile) {
+    padding: 20px 80px;
+    transition: padding 125ms ease-in-out;
+  }
+  &:disabled {
     padding: 20px 60px;
     border: 4px solid #bbbbbb;
     background-color: transparent;
-    opacity: 100%;
+    opacity: 50%;
     color: $background;
     font-family: Overpass;
     font-size: 23px;
-    z-index: 1;
-    cursor: pointer;
-
-    &:hover:not(.button-mobile) {
-      padding: 20px 80px;
-      transition: padding 125ms ease-in-out;
-    }
-
-    &:disabled {
-      padding: 20px 60px;
-      border: 4px solid #bbbbbb;
-      background-color: transparent;
-      opacity: 50%;
-      color: $background;
-      font-family: Overpass;
-      font-size: 23px;
-    }
   }
 }
 
@@ -325,86 +317,4 @@ input[type="checkbox"] {
   display: none;
 }
 
-@media (max-width: 1024px) {
-  .top-arrow {
-    display: none;
-  }
-}
 
-@media (max-width: 768px) {
-  .background {
-    h1 {
-      font-size: 64px;
-      padding: 128px 0 48px 64px;
-    }
-  }
-}
-
-@media (max-width: 680px) {
-  .background {
-    h1 {
-      font-size: 64px;
-      padding: 128px 0 32px 64px;
-    }
-  }
-
-  form {
-    max-width: 512px;
-  }
-}
-
-@media (max-width: 550px) {
-  form {
-    max-width: 368px;
-  }
-
-  .form-header {
-    padding: 0 64px;
-    h2 {
-      line-height: 38px;
-      margin-bottom: 4px;
-    }
-  }
-
-  .submit-message {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .background {
-    h1 {
-      font-size: 48px;
-      padding: 128px 0 32px 24px;
-    }
-  }
-
-  .form-header {
-    padding: 0 24px;
-  }
-}
-
-@media (max-width: 400px) {
-  form {
-    max-width: 288px;
-  }
-  .background {
-    h1 {
-      font-size: 40px;
-    }
-  }
-
-  .button-container {
-    .button-desktop {
-      display: none;
-    }
-
-    .button-mobile {
-      display: initial;
-    }
-  }
-
-  .submit-message {
-    font-size: 14px;
-  }
-}
