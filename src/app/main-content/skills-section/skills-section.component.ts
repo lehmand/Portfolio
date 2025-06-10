@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -11,6 +11,7 @@ import { LanguageService } from '../../services/language-service/language.servic
 import { Subscription } from 'rxjs';
 import { MYSKILLSTRANSLATIONS } from '../../shared/translations';
 import { skills } from '../../shared/skills';
+import { ImageService } from '../../services/image-service/image.service';
 
 @Component({
   selector: 'app-skills-section',
@@ -42,18 +43,13 @@ import { skills } from '../../shared/skills';
 })
 export class SkillsSectionComponent implements OnInit, OnDestroy {
   status: 'initial' | 'animated' = 'initial';
-  arrowToRight: string[] = [
-    '/assets/icons/animations/arrow-to-right/arrow-to-right1.png',
-    '/assets/icons/animations/arrow-to-right/arrow-to-right2.png',
-    '/assets/icons/animations/arrow-to-right/arrow-to-right3.png',
-  ];
-  currentIndex: number = 0;
-  currentImage: string = this.arrowToRight[this.currentIndex];
+  
   translations: any = {};
   skills: Array<any> = [];
   isGerman: boolean = false;
   private animationId: any;
   private langSub: Subscription | undefined;
+  public imgService = inject(ImageService)
 
   constructor(private lang: LanguageService) {}
 
@@ -79,17 +75,17 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
 
   playAnimation() {
     this.animationId = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.arrowToRight.length;
-      this.currentImage = this.arrowToRight[this.currentIndex];
-      if (this.currentIndex === 2) {
+      this.imgService.currentIndexRight = (this.imgService.currentIndexRight + 1) % this.imgService.arrowToRight.length;
+      this.imgService.currentImageRight = this.imgService.arrowToRight[this.imgService.currentIndexRight];
+      if (this.imgService.currentIndexRight === 2) {
         clearInterval(this.animationId);
       }
     }, 75);
   }
 
   resetAnimation() {
-    this.currentIndex = 0;
-    this.currentImage = this.arrowToRight[this.currentIndex];
+    this.imgService.currentIndexRight = 0;
+    this.imgService.currentImageRight = this.imgService.arrowToRight[this.imgService.currentIndexRight];
   }
 
   animate(index: number) {

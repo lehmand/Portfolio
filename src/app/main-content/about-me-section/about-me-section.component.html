@@ -13,9 +13,9 @@
   </div>
 </section>
 <div class="mobile-arrow" *ngIf="imgService.isMobile">
-  <img [src]="imgService.currentImage" alt="">
+  <img [src]="imgService.currentImageLeft" alt="">
 </div>
 <div class="arrow" *ngIf="!imgService.isMobile">
-  <img (mouseenter)="toggleAnimation()" (mouseleave)="resetAnimation()" [src]="imgService.currentImage" alt="" />
+  <img (mouseenter)="toggleAnimation()" (mouseleave)="resetAnimation()" [src]="imgService.currentImageLeft" alt="" />
 </div>
  

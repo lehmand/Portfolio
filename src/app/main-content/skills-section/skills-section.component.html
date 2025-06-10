@@ -18,11 +18,9 @@
     </div>
   </div>
 </section>
-<div class="arrow">
-  <img 
-  [src]="currentImage"
-  alt=""
-  (mouseenter)="playAnimation()"
-  (mouseleave)="resetAnimation()" 
-  />
+<div class="mobile-arrow" *ngIf="imgService.isMobile">
+  <img [src]="imgService.currentImageRight" alt="">
+</div>
+<div class="arrow" *ngIf="!imgService.isMobile">
+  <img (mouseenter)="playAnimation()" (mouseleave)="resetAnimation()" [src]="imgService.currentImageRight" alt="" />
 </div>

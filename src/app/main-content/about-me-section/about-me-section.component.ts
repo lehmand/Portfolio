@@ -31,10 +31,10 @@ export class AboutMeSectionComponent implements OnInit, OnDestroy {
       : ABOUTMETRANSLATIONS.en;
     window.addEventListener('resize', this.resizeHandler);
     window.addEventListener('resize', () => {
-      this.imgService.currentIndex = this.imgService.isMobile ? 2 : 0;
-      this.imgService.currentImage = this.imgService.isMobile
-        ? this.imgService.mobileArrowToLeft[this.imgService.currentIndex]
-        : this.imgService.arrowToLeft[this.imgService.currentIndex];
+      this.imgService.currentIndexLeft = this.imgService.isMobile ? 2 : 0;
+      this.imgService.currentImageLeft = this.imgService.isMobile
+        ? this.imgService.mobileArrowToLeft[this.imgService.currentIndexLeft]
+        : this.imgService.arrowToLeft[this.imgService.currentIndexLeft];
     });
   }
 
@@ -55,9 +55,9 @@ export class AboutMeSectionComponent implements OnInit, OnDestroy {
 
   playAnimation() {
     const animationId = setInterval(() => {
-      this.imgService.currentIndex = (this.imgService.currentIndex + 1) % this.imgService.arrowToLeft.length;
-      this.imgService.currentImage = this.imgService.arrowToLeft[this.imgService.currentIndex];
-      if (this.imgService.currentIndex === 2) {
+      this.imgService.currentIndexLeft = (this.imgService.currentIndexLeft + 1) % this.imgService.arrowToLeft.length;
+      this.imgService.currentImageLeft = this.imgService.arrowToLeft[this.imgService.currentIndexLeft];
+      if (this.imgService.currentIndexLeft === 2) {
         clearInterval(animationId);
       }
     }, 125);
@@ -65,7 +65,7 @@ export class AboutMeSectionComponent implements OnInit, OnDestroy {
 
   resetAnimation() {
     clearInterval(this.imgService.animationId);
-    this.imgService.currentIndex = 0;
-    this.imgService.currentImage = this.imgService.arrowToLeft[this.imgService.currentIndex];
+    this.imgService.currentIndexLeft = 0;
+    this.imgService.currentImageLeft = this.imgService.arrowToLeft[this.imgService.currentIndexLeft];
   }
 }
