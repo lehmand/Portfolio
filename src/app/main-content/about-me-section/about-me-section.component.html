@@ -3,14 +3,6 @@
   <div class="description">
     <div class="text">
       <p> {{translations.subText}} </p>
-      <div class="location">
-        <img src="/assets/icons/house.png" alt="" />
-        <p> {{translations.info1}} </p>
-      </div>
-      <div class="optional">
-        <img src="/assets/icons/laptop.png" alt="" />
-        <p> {{translations.info2}} </p>
-      </div>
       <div class="button">
         <a href="#contact"> {{translations.button}} </a>
       </div>
@@ -20,6 +12,10 @@
     </div>
   </div>
 </section>
-<div class="arrow">
+<div class="mobile-arrow" *ngIf="isMobile">
+  <img [src]="currentImage" alt="">
+</div>
+<div class="arrow" *ngIf="!isMobile">
   <img (mouseenter)="toggleAnimation()" (mouseleave)="resetAnimation()" [src]="currentImage" alt="" />
 </div>
+ 
