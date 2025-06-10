@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { LanguageService } from '../language.service';
+import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
@@ -8,17 +8,16 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './legal.component.html',
-  styleUrl: './legal.component.scss'
+  styleUrl: './legal.component.scss',
 })
 export class LegalComponent implements OnInit, OnDestroy {
-
-  constructor(private lang: LanguageService){}
+  constructor(private lang: LanguageService) {}
 
   private langSub: Subscription | undefined;
   isGerman: boolean = false;
 
   ngOnInit(): void {
-    this.langSub = this.lang.german$.subscribe(isGerman => {
+    this.langSub = this.lang.german$.subscribe((isGerman) => {
       this.isGerman = isGerman;
     });
     this.isGerman = this.lang.isGerman();

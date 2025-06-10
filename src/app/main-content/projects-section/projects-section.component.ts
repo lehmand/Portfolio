@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { LanguageService } from '../../shared/language.service';
+import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { PROJECTTRANSLATIONS } from '../../shared/translations';
 
@@ -24,12 +24,10 @@ type Language = 'en' | 'de';
   styleUrl: './projects-section.component.scss',
 })
 export class ProjectsSectionComponent implements OnInit, OnDestroy {
+  constructor(private lang: LanguageService) {}
 
-  constructor(private lang: LanguageService){
-  }
+  private langSub: Subscription | undefined;
 
-  private langSub: Subscription | undefined; 
- 
   currentLanguage: Language = 'en';
   translations = PROJECTTRANSLATIONS[this.currentLanguage];
 
@@ -72,10 +70,14 @@ export class ProjectsSectionComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.langSub = this.lang.german$.subscribe(isGerman => {
-      this.translations = isGerman ? PROJECTTRANSLATIONS.de : PROJECTTRANSLATIONS.en;
+    this.langSub = this.lang.german$.subscribe((isGerman) => {
+      this.translations = isGerman
+        ? PROJECTTRANSLATIONS.de
+        : PROJECTTRANSLATIONS.en;
     });
-    this.translations = this.lang.isGerman() ? PROJECTTRANSLATIONS.de : PROJECTTRANSLATIONS.en;
+    this.translations = this.lang.isGerman()
+      ? PROJECTTRANSLATIONS.de
+      : PROJECTTRANSLATIONS.en;
   }
 
   ngOnDestroy(): void {

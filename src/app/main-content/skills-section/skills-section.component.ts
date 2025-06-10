@@ -1,7 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { trigger, state, animate, style, transition } from '@angular/animations';
-import { LanguageService } from '../../shared/language.service';
+import {
+  trigger,
+  state,
+  animate,
+  style,
+  transition,
+} from '@angular/animations';
+import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { MYSKILLSTRANSLATIONS } from '../../shared/translations';
 import { skills } from '../../shared/skills';
@@ -43,24 +49,26 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
   ];
   currentIndex: number = 0;
   currentImage: string = this.arrowToRight[this.currentIndex];
-  translations: any = {}
-  skills: Array<any> = []
+  translations: any = {};
+  skills: Array<any> = [];
   isGerman: boolean = false;
   private animationId: any;
   private langSub: Subscription | undefined;
 
   constructor(private lang: LanguageService) {}
 
-
-
   ngOnInit(): void {
-    this.langSub = this.lang.german$.subscribe(isGerman => {
+    this.langSub = this.lang.german$.subscribe((isGerman) => {
       this.isGerman = isGerman;
-      this.translations = isGerman ? MYSKILLSTRANSLATIONS.de : MYSKILLSTRANSLATIONS.en;
+      this.translations = isGerman
+        ? MYSKILLSTRANSLATIONS.de
+        : MYSKILLSTRANSLATIONS.en;
     });
     this.isGerman = this.lang.isGerman();
-    this.translations = this.lang.isGerman() ? MYSKILLSTRANSLATIONS.de : MYSKILLSTRANSLATIONS.en;
-    this.skills = skills
+    this.translations = this.lang.isGerman()
+      ? MYSKILLSTRANSLATIONS.de
+      : MYSKILLSTRANSLATIONS.en;
+    this.skills = skills;
   }
 
   ngOnDestroy(): void {
@@ -73,13 +81,13 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
     this.animationId = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.arrowToRight.length;
       this.currentImage = this.arrowToRight[this.currentIndex];
-      if(this.currentIndex === 2){
+      if (this.currentIndex === 2) {
         clearInterval(this.animationId);
       }
     }, 75);
   }
 
-  resetAnimation(){
+  resetAnimation() {
     this.currentIndex = 0;
     this.currentImage = this.arrowToRight[this.currentIndex];
   }
@@ -91,6 +99,6 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
   animationDone(index: number) {
     setTimeout(() => {
       this.skills[index].status = 'initial';
-    },250)
+    }, 250);
   }
 }

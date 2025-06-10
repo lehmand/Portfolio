@@ -12,10 +12,10 @@
     </div>
   </div>
 </section>
-<div class="mobile-arrow" *ngIf="isMobile">
-  <img [src]="currentImage" alt="">
+<div class="mobile-arrow" *ngIf="imgService.isMobile">
+  <img [src]="imgService.currentImage" alt="">
 </div>
-<div class="arrow" *ngIf="!isMobile">
-  <img (mouseenter)="toggleAnimation()" (mouseleave)="resetAnimation()" [src]="currentImage" alt="" />
+<div class="arrow" *ngIf="!imgService.isMobile">
+  <img (mouseenter)="toggleAnimation()" (mouseleave)="resetAnimation()" [src]="imgService.currentImage" alt="" />
 </div>
  

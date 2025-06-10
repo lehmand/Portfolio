@@ -14,20 +14,20 @@ $highlight: #00bc8f;
 .content-wrapper {
   box-sizing: border-box;
   border: 4px solid black;
-  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 8px;
 }
 
 .icons-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 78px 128px;
+  justify-content: space-around;
+  gap: 54px 12px;
   max-width: 1012px;
-
+  overflow: hidden;
 }
 
 .icon-box {
@@ -51,8 +51,8 @@ p {
 }
 
 .skill-icon {
-    width: 64px;
-    height: 64px;
+    width: 54px;
+    height: 54px;
 }
 
 .contact-me-wrapper {
@@ -64,8 +64,8 @@ p {
 
 }
 
-p {
-  font-size: 22px;
+.skill-name {
+  font-size: 16px;
   font-family: Overpass;
 }
 
@@ -91,15 +91,7 @@ h1 {
 }
 
 .arrow {
-  padding: 0 128px;
-  background-color: $background;
-  min-height: 420px;
-  max-width: 1920px;
-  margin: 0 auto;
   
-  img {
-    width: 100%;
-  }
 }
 
 

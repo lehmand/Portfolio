@@ -13,13 +13,8 @@
           (mouseover)="animate(i)"
           (@iconAnimation.done)="animationDone(i)"
         />
-        <p>{{ skill.name }}</p>
+        <p class="skill-name">{{ skill.name }}</p>
       </div>
-    </div>
-    <div class="contact-me-wrapper">
-      <img src="/assets/icons/skills/learning.png" alt="" />
-      <p *ngIf="!isGerman">Don't see the skill you need? <a href="#contact">Contact me</a>, I'm always ready to learn!</p>
-      <p *ngIf="isGerman">Sie sehen die benötigte Fähigkeit nicht? <a href="#contact">Kontaktieren Sie mich</a>, ich bin immer bereit zu lernen!</p>
     </div>
   </div>
 </section>

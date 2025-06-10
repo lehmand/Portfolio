@@ -5,7 +5,7 @@ import { trigger, animate, transition, style } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, Subscription } from 'rxjs';
 import { CONTACTTRANSLATIONS } from '../../shared/translations';
-import { LanguageService } from '../../shared/language.service';
+import { LanguageService } from '../../services/language-service/language.service';
 import { RouterModule } from '@angular/router';
 
 type Language = 'en' | 'de';
@@ -29,33 +29,36 @@ type Language = 'en' | 'de';
   ],
 })
 export class ContactSectionComponent implements OnInit, OnDestroy {
-
   currentLanguage: Language = 'en';
   translations = CONTACTTRANSLATIONS[this.currentLanguage];
 
   isChecked: boolean = false;
   mobileButton: string = 'Say hello ;)';
   submitMessage: string = '';
-  
+
   constructor(private http: HttpClient, private lang: LanguageService) {}
 
-  private langSub: Subscription | undefined; 
-  
+  private langSub: Subscription | undefined;
+
   contact: any = {
     name: '',
     email: '',
     message: '',
   };
-  
+
   isGerman: boolean = false;
 
   ngOnInit(): void {
-    this.langSub = this.lang.german$.subscribe(isGerman => {
+    this.langSub = this.lang.german$.subscribe((isGerman) => {
       this.isGerman = isGerman;
-      this.translations = isGerman ? CONTACTTRANSLATIONS.de : CONTACTTRANSLATIONS.en;
+      this.translations = isGerman
+        ? CONTACTTRANSLATIONS.de
+        : CONTACTTRANSLATIONS.en;
     });
     this.isGerman = this.lang.isGerman();
-    this.translations = this.lang.isGerman() ? CONTACTTRANSLATIONS.de : CONTACTTRANSLATIONS.en;
+    this.translations = this.lang.isGerman()
+      ? CONTACTTRANSLATIONS.de
+      : CONTACTTRANSLATIONS.en;
   }
 
   ngOnDestroy(): void {
@@ -66,11 +69,13 @@ export class ContactSectionComponent implements OnInit, OnDestroy {
 
   url: string = 'https://daniel-lehmann.dev/sendMail.php';
 
-  async onSubmit(form: NgForm){
-    if(form.valid){
+  async onSubmit(form: NgForm) {
+    if (form.valid) {
       try {
-        const response = await firstValueFrom(this.http.post<any>(this.url, this.contact));
-        if(response.status === 'success'){
+        const response = await firstValueFrom(
+          this.http.post<any>(this.url, this.contact)
+        );
+        if (response.status === 'success') {
           this.submitMessage = 'Message sent! I answer as soon as possible :)';
           form.resetForm();
         } else {
@@ -81,15 +86,14 @@ export class ContactSectionComponent implements OnInit, OnDestroy {
       }
     }
   }
-  
+
   onBlur(field: NgModel) {
     if (field.untouched) {
       field.control.markAsTouched();
     }
   }
 
-  toggleCheck(){
+  toggleCheck() {
     this.isChecked = !this.isChecked;
   }
-
 }
