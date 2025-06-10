@@ -8,7 +8,6 @@ $highlight: #00bc8f;
   justify-content: center;
   align-items: center;
   background-color: $background;
-  padding: 0 128px;
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -23,7 +22,7 @@ $highlight: #00bc8f;
 h1 {
   font-family: Syne;
   font-weight: 800;
-  font-size: 78px;
+  font-size: 28px;
   transition: color 125ms ease-in-out;
   &:hover {
     cursor: default;
@@ -33,7 +32,7 @@ h1 {
 
 h3 {
   font-family: Overpass;
-  font-size: 22px;
+  font-size: 16px;
   max-width: 525px;
   text-align: center;
 }
@@ -43,108 +42,128 @@ h3 {
   flex-direction: column;
   width: 100%;
   position: relative;
+  align-items: center;
+  gap: 32px;
 }
 
 .project-number {
-  position: absolute;
-  z-index: 0;
-  right: 0;
-  top: 0;
   font-family: Syne;
-  font-size: 48px;
+  font-size: 24px;
 }
 
 .project {
   display: flex;
-  padding: 48px 0;
   position: relative;
-  gap: 256px;
-  &:hover > .project-image > .rotate-arrow {
-    scale: 1;
-    rotate: 0deg;
-    transition: scale 250ms ease-in-out 50ms normal,
-      rotate 125ms ease-in-out 250ms normal;
-  }
-  &:hover > .project-image {
-    filter: grayscale(0);
-    transition: filter 250ms ease-in-out;
-  }
-  &:hover > .project-image::after {
-    top: 15px;
-    left: 15px;
-    opacity: 1;
-    transition: all 75ms ease-in-out;
-  }
-  &:hover > .project-info {
-    transform: translateX(0);
-    display: flex;
-    opacity: 100;
-    transition: transform 125ms ease-in-out, opacity 125ms ease-in-out 20ms;
-  }
+  flex-direction: column;
+  max-width: 254px;
+  gap: 8px;
 }
+
+.odd-project > .project-number {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.odd-project > .project-info {
+  text-align: right;
+}
+
+.odd-project > .project-info > .link-container {
+  justify-content: flex-end;
+}
+
+.odd-project > .project-image > .rotate-arrow {
+  top: calc(50% + 4px);
+  left: -4px
+}
+
+// .project:hover > .project-image > .rotate-arrow {
+//   scale: 1;
+//   rotate: 0deg;
+//   transition: scale 250ms ease-in-out 50ms normal,
+//     rotate 125ms ease-in-out 250ms normal;
+// }
+
+// .project:hover > .project-image {
+//   filter: grayscale(0);
+//   transition: filter 250ms ease-in-out;
+// }
+
+.project > .project-image::after {
+  top: 4px;
+  left: 1px;
+  opacity: 1;
+  transition: all 75ms ease-in-out;
+}
+
+.odd-project > .project-image::after {
+  top: 4px;
+  left: -6px;
+  opacity: 1;
+  transition: all 75ms ease-in-out;
+}
+
+// .project:hover > .project-info {
+//   transform: translateX(0);
+//   display: flex;
+//   opacity: 100;
+//   transition: transform 125ms ease-in-out, opacity 125ms ease-in-out 20ms;
+// }
 
 .project-image {
   position: relative;
-  filter: grayscale(100%);
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 4px solid $primary;
-    opacity: 0;
-  }
-  &:hover > .rotate-arrow {
-    scale: 1;
-    rotate: 0deg;
-    transition: scale 250ms ease-in-out 50ms normal,
-      rotate 125ms ease-in-out 250ms normal;
-  }
+  max-width: 254px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-self: center;
+}
 
+.project-image::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid $primary;
+  opacity: 1;
 }
 
 .rotate-arrow {
   position: absolute;
-  right: -65px;
-  top: 42%;
   z-index: 10;
-  rotate: 135deg;
-  scale: 0;
+  top: calc(50% + 4px);
+  left: calc(100% + 4px);
+  transform: translateY(-50%) translateX(-50%) rotate(135deg) scale(0.35);
 }
 
 .project-img {
   width: 100%;
-  height: 100%;
-  max-width: 630px;
 }
 
 .project-info {
-  opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
-  transform: translateX(-100%);
-  min-width: 430px;
+  gap: 4px;
 }
 
-h1 {
+.portfolio-header {
   font-family: Syne;
   font-weight: 800;
-  font-size: 45px;
+  font-size: 36px;
 }
 
 h2 {
   font-family: Overpass;
-  font-size: 23px;
+  font-size: 16px;
   color: $highlight;
 }
 
 p {
   font-family: Overpass;
-  font-size: 16px;
+  font-size: 14px;
   max-width: 400px;
 }
 
@@ -152,18 +171,13 @@ p {
   display: flex;
   max-height: 80px;
   gap: 16px;
-  a {
-    text-decoration: none;
-    color: $primary;
-    border: 4px solid $primary;
-    padding: 20px 60px;
-    font-family: Overpass;
-    font-size: 23px;
+}
 
-    &:hover {
-      text-shadow: 0 0 1px $primary;
-      padding: 20px 80px;
-      transition: all 125ms ease-in-out;
-    }
-  }
+a {
+  text-decoration: none;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 4px 24px;
+  font-family: Overpass;
+  font-size: 16px;
 }
