@@ -29,7 +29,7 @@ export class AboutMeSectionComponent implements OnInit, OnDestroy {
     this.translations = this.lang.isGerman()
       ? ABOUTMETRANSLATIONS.de
       : ABOUTMETRANSLATIONS.en;
-    window.addEventListener('resize', this.resizeHandler);
+    window.addEventListener('resize', this.imgService.resizeHandler);
     window.addEventListener('resize', () => {
       this.imgService.currentIndexLeft = this.imgService.isMobile ? 2 : 0;
       this.imgService.currentImageLeft = this.imgService.isMobile
@@ -44,9 +44,7 @@ export class AboutMeSectionComponent implements OnInit, OnDestroy {
     }
   }
 
-  resizeHandler = () => {
-    this.imgService.isMobile = window.innerWidth <= 767;
-  };
+  
 
   toggleAnimation() {
     this.imgService.isAnimated = !this.imgService.isAnimated;

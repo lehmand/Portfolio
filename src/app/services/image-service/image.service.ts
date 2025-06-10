@@ -32,8 +32,12 @@ export class ImageService {
   currentImageLeft: string = this.mobileArrowToLeft[this.currentIndexLeft];
   currentIndexRight: number = 2;
   currentImageRight: string = this.mobileArrowToRight[this.currentIndexRight];
-  isMobile: boolean = window.innerWidth <= 767;
+  isMobile: boolean = window.innerWidth <= 1023;
   public animationId: any;
 
   constructor() {}
+
+  resizeHandler = () => {
+    this.isMobile = window.innerWidth <= 1023;
+  };
 }

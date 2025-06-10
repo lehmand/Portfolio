@@ -3,15 +3,20 @@ $primary: #000000;
 $highlight: #00bc8f;
 
 app-menu {
-    position: absolute;
-    top: 96px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $background;
+  position: absolute;
+  top: 96px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $background;
 }
 
 .padding-border {
-    padding: 0 8px;
+  padding: 0 8px;
 }
 
+@media (min-width: 768px) {
+  .padding-border {
+    padding: 0 24px;
+  }
+}

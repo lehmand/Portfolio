@@ -25,7 +25,6 @@ type Language = 'en' | 'de';
 })
 export class ProjectsSectionComponent implements OnInit, OnDestroy {
   constructor(private lang: LanguageService) {}
-
   private langSub: Subscription | undefined;
 
   currentLanguage: Language = 'en';
