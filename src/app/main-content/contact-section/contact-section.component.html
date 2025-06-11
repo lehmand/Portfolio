@@ -151,6 +151,7 @@
         </div>
         <div class="button-container">
           <button
+            *ngIf="!imgService.isMobile"
             class="button-desktop"
             type="submit"
             [disabled]="contactForm.invalid"
@@ -158,6 +159,7 @@
             {{ translations.buttons.desktop }}
           </button>
           <button
+            *ngIf="imgService.isMobile"
             class="button-mobile"
             type="submit"
             [disabled]="contactForm.invalid"
@@ -167,8 +169,6 @@
         </div>
       </form>
     </div>
-    <a href="#top"
-      ><img class="top-arrow" src="/assets/img/arrow-up.png" alt=""
-    /></a>
+    <a *ngIf="!imgService.isMobile" href="#top"><img class="top-arrow" src="/assets/img/arrow-up.png" alt=""/></a>
   </div>
 </section>
