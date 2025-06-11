@@ -7,6 +7,7 @@ section {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     background-color: $background;
     position: relative;
     z-index: 100;
@@ -16,14 +17,13 @@ section {
     background-image: url('/assets/img/popup-background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 128px;
-    height: 100%;
 }
+
 
 .container {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     height: 100%;
     max-width: 1920px;
@@ -32,24 +32,29 @@ section {
 
 .left-side {
     color: $background;
-    h1 {
-        font-family: Syne;
-        font-size: 78px;
-        font-weight: 800;
-        &:hover {
-            color: $highlight;
-            transition: color 125ms ease-in-out;
-            cursor: pointer
-        }
-    }
-    p {
-        font-family: Overpass;
-        font-weight: 300;
-        font-size: 23px;
-        a {
-            text-decoration: none;
-            color: $background;
-        }
+    padding: 124px 0px;
+}
+
+h1 {
+    font-family: Syne;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+h1:hover {
+        color: $highlight;
+        transition: color 125ms ease-in-out;
+        cursor: pointer
+}
+
+
+p {
+    font-family: Overpass;
+    font-weight: 300;
+    font-size: 23px;
+    a {
+        text-decoration: none;
+        color: $background;
     }
 }
 
@@ -64,43 +69,50 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 35px;
-    a {
-        text-decoration: none;
-        color: $primary;
-        font-family: Syne;
-        font-weight: 700;
-        font-size: 96px;
-        position: relative;
-        z-index: 0;
-        padding: 16px 32px;
-        max-width: 520px;
-        width: 100%;
-        text-align: center;
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 48px;
-            border-left: 4px solid $primary;
-            transition: height ease-in-out 125ms;            
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 5%;
-            border-bottom: 4px solid $primary;
-            transition: width ease-in-out 125ms, left ease-in-out 125ms;                          
-        }
-        &:hover::before {
-            height: 0;
-        }
-        &:hover::after {
-            width: 65%;
-            left: 35%;
-        }
-    }
 }
 
+.navigation-link {
+    text-decoration: none;
+    color: $primary;
+    font-family: Syne;
+    font-weight: 700;
+    font-size: 48px;
+    position: relative;
+    z-index: 0;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-link {
+    font-size: 16px;
+}
+
+.navigation-link::before {
+        content: '';
+        position: absolute;
+        left: 4px;
+        bottom: 0;
+        height: 24px;
+        border-left: 4px solid $primary;
+        transition: height ease-in-out 125ms;            
+}
+
+.navigation-link::after {
+        content: '';
+        position: absolute;
+        left: 4px;
+        bottom: 0;
+        width: 24px;
+        border-bottom: 4px solid $primary;
+        transition: width ease-in-out 125ms, left ease-in-out 125ms;                          
+}
+
+// a:hover::before {
+//         height: 0;
+// }
+
+// a:hover::after {
+//         width: 65%;
+//         left: 35%;
+// }

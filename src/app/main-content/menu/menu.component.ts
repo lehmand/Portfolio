@@ -2,6 +2,7 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 import {
   Component,
   EventEmitter,
+  inject,
   OnDestroy,
   OnInit,
   Output,
@@ -10,6 +11,7 @@ import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { POPUPTRANSLATIONS } from '../../shared/translations';
+import { ImageService } from '../../services/image-service/image.service';
 
 type Language = 'en' | 'de';
 
@@ -21,6 +23,14 @@ type Language = 'en' | 'de';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent implements OnInit, OnDestroy {
+
+  isGerman: boolean = false;
+  currentLanguage: Language = 'en';
+  translations = POPUPTRANSLATIONS[this.currentLanguage];
+  @Output() linkClicked = new EventEmitter<void>();
+  private langSub: Subscription | undefined;
+  public imgService = inject(ImageService)
+
   constructor(
     private lang: LanguageService,
     private router: Router,
@@ -28,13 +38,6 @@ export class MenuComponent implements OnInit, OnDestroy {
   ) {
     this.isGerman = this.lang.isGerman();
   }
-
-  isGerman: boolean = false;
-  currentLanguage: Language = 'en';
-  translations = POPUPTRANSLATIONS[this.currentLanguage];
-
-  private langSub: Subscription | undefined;
-  @Output() linkClicked = new EventEmitter<void>();
 
   ngOnInit(): void {
     this.langSub = this.lang.german$.subscribe((isGerman) => {

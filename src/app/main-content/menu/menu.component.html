@@ -1,17 +1,17 @@
 <section class="popup">
     <div class="link-container">
-        <a [routerLink]="['/']" [fragment]="'about-me'" (click)="onLinkClicked('about-me')" (click)="$event.preventDefault()" [ngStyle]="{ 'font-size': isGerman ? '80px' : '96px' }">{{ translations.links.aboutMe }}</a>
-        <a [routerLink]="['/']" [fragment]="'skills'" (click)="onLinkClicked('skills')" [ngStyle]="{ 'font-size': isGerman ? '80px' : '96px' }">{{ translations.links.skills }}</a>
-        <a [routerLink]="['/']" [fragment]="'projects'" (click)="onLinkClicked('projects')" [ngStyle]="{ 'font-size': isGerman ? '80px' : '96px' }">{{ translations.links.portfolio }}</a>
+        <a class="navigation-link" [routerLink]="['/']" [fragment]="'about-me'" (click)="onLinkClicked('about-me')" (click)="$event.preventDefault()">{{ translations.links.aboutMe }}</a>
+        <a class="navigation-link" [routerLink]="['/']" [fragment]="'skills'" (click)="onLinkClicked('skills')">{{ translations.links.skills }}</a>
+        <a class="navigation-link" [routerLink]="['/']" [fragment]="'projects'" (click)="onLinkClicked('projects')">{{ translations.links.portfolio }}</a>
     </div>
     
     <div class="background">
       <div class="container">
         <div class="left-side">
-          <h1 [ngStyle]="{'font-size': getFontSize()}">{{ translations.heading }}</h1>
-          <p><a href="mailto:contact@daniel-lehmann.dev">contact&#64;daniel-lehmann.dev</a></p>
+          <h1>{{ translations.heading }}</h1>
+          <p><a class="contact-link" href="mailto:contact@daniel-lehmann.dev">contact&#64;daniel-lehmann.dev</a></p>
         </div>
-        <div class="right-side">
+        <div class="right-side" *ngIf="!imgService.isMobile">
           <a href="https://github.com/lehmand" target="_blank"><img src="/assets/icons/socials/github.png" alt="" /></a>
           <a href="mailto:contact@daniel-lehmann.dev"><img src="/assets/icons/socials/email.png" alt="" /></a>
           <a href="https://www.linkedin.com/in/daniel-lehmann-856358324/" target="_blank"><img src="/assets/icons/socials/linkedin.png" alt="" /></a>
