@@ -12,6 +12,8 @@ footer {
   flex-direction: column;
   gap: 16px;
   padding-bottom: 32px;
+      position: relative;
+    z-index: 10;
 }
 
 .top-side {
