@@ -13,9 +13,19 @@ section {
 }
 
 .background {
-    background-image: url('/assets/img/popup-background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+}
+
+.skewed-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  transform: skewY(6deg);
+  transform-origin: top left;
+  z-index: 0;
 }
 
 
