@@ -1,6 +1,5 @@
-$background: #fffcf3;
-$primary: #000000;
-$highlight: #00bc8f;
+
+@use '../../shared/styles/colors' as *;
 
 footer {
   box-sizing: border-box;

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { PROJECTTRANSLATIONS } from '../../shared/translations';
+import { ImageService } from '../../services/image-service/image.service';
 
 interface Project {
   image: string;
@@ -26,6 +27,7 @@ type Language = 'en' | 'de';
 export class ProjectsSectionComponent implements OnInit, OnDestroy {
   constructor(private lang: LanguageService) {}
   private langSub: Subscription | undefined;
+  public imgService = inject(ImageService)
 
   currentLanguage: Language = 'en';
   translations = PROJECTTRANSLATIONS[this.currentLanguage];

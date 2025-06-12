@@ -1,6 +1,5 @@
-$background: #fffcf3;
-$primary: #000000;
-$highlight: #00bc8f;
+@use '../../shared/styles/animations';
+@use '../../shared/styles/colors' as *;
 
 .skills {
   background-color: $background;
@@ -83,12 +82,13 @@ h1 {
   padding: 0 12px;
   font-weight: 800;
   font-family: Syne;
-  transition: color ease-in-out 125ms;
-  &:hover {
-    color: $highlight;
-    cursor: default;
-  }
+  animation: 3s infinite pulse;
 }
+
+// h1:hover {
+//     color: $highlight;
+//     cursor: default;
+// }
 
 
 

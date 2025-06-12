@@ -1,6 +1,5 @@
-$background: #fffcf3;
-$primary: #000000;
-$highlight: #00bc8f;
+@use "../../shared/styles/animations";
+@use "../../shared/styles/colors" as *;
 
 
 section {
@@ -32,13 +31,14 @@ section {
 
 .left-side {
     color: $background;
-    padding: 124px 0px;
+    padding: 154px 0px;
 }
 
 h1 {
     font-family: Syne;
     font-size: 36px;
     font-weight: 800;
+    animation: 3s infinite pulse-contact;
 }
 
 h1:hover {
@@ -69,6 +69,7 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 35px;
+    margin: 0 24px
 }
 
 .navigation-link {

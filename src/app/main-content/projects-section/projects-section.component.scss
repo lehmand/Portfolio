@@ -1,6 +1,5 @@
-$background: #fffcf3;
-$primary: #000000;
-$highlight: #00bc8f;
+@use "../../shared/styles/animations";
+@use "../../shared/styles/colors" as *;
 
 .projects {
   display: flex;
@@ -23,12 +22,13 @@ h1 {
   font-family: Syne;
   font-weight: 800;
   font-size: 28px;
-  transition: color 125ms ease-in-out;
-  &:hover {
-    cursor: default;
-    color: $highlight;
-  }
+  animation: 3s infinite pulse;
 }
+
+// h1:hover {
+//   cursor: default;
+//   color: $highlight;
+// }
 
 h3 {
   font-family: Overpass;
@@ -48,9 +48,16 @@ h3 {
 
 .project-number {
   font-family: Syne;
+  font-weight: 800;
   font-size: 24px;
   display: flex;
   justify-content: flex-end;
+}
+
+.project-name {
+  font-family: Syne;
+  font-weight: 800;
+  font-size: 28px;
 }
 
 .project {
@@ -155,7 +162,7 @@ h3 {
   font-size: 36px;
 }
 
-h2 {
+h4 {
   font-family: Overpass;
   font-size: 16px;
   color: $highlight;
@@ -180,4 +187,9 @@ a {
   padding: 4px 24px;
   font-family: Overpass;
   font-size: 16px;
+}
+
+.mobile-arrow {
+  display: flex;
+  justify-content: flex-end;
 }

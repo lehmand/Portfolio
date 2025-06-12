@@ -1,0 +1,31 @@
+@use '../../shared/styles/colors' as *;
+
+@keyframes pulse {
+  0% {
+    color: black;
+  }
+  15%{
+    color: $highlight;
+  }
+  85% {
+    color: $highlight;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes pulse-contact {
+  0% {
+    color: $background;
+  }
+  15%{
+    color: $highlight;
+  }
+  85% {
+    color: $highlight;
+  }
+  100% {
+    color: $background;
+  }
+}

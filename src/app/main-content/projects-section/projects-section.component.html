@@ -9,7 +9,7 @@
       *ngFor="let project of projects; let i = index"
       [ngClass]="getProjectClass(i)"
       class="project">
-      <h1 class="project-number">{{ project.projectNumber }}</h1>
+      <h3 class="project-number">{{ project.projectNumber }}</h3>
       <div class="project-image">
         <img
           class="rotate-arrow"
@@ -20,8 +20,8 @@
       </div>
 
       <div class="project-info">
-        <h1 [class.videoflix]="project.name === 'videoflix'">{{ project.name }}</h1>
-        <h2>{{ project.tools }}</h2>
+        <h2 class="project-name" [class.videoflix]="project.name === 'videoflix'">{{ project.name }}</h2>
+        <h4>{{ project.tools }}</h4>
         <p> {{getDescription(i)}} </p>
         <div class="link-container">
           <a [href]="project.live" target="_blank">Live</a>
@@ -31,3 +31,6 @@
     </div>
   </div>
 </section>
+<div class="mobile-arrow" *ngIf="imgService.isMobile">
+  <img [src]="imgService.currentImageLeft" alt="">
+</div>
