@@ -62,10 +62,11 @@ p {
     font-family: Overpass;
     font-weight: 300;
     font-size: 23px;
-    a {
-        text-decoration: none;
-        color: $background;
-    }
+}
+
+a {
+    text-decoration: none;
+    color: $background;
 }
 
 .right-side {
@@ -127,3 +128,27 @@ p {
 //         width: 65%;
 //         left: 35%;
 // }
+
+@media (min-width: 768px) {
+    .navigation-link {
+        font-size: 64px;
+    }
+
+    .navigation-link::before {
+        height: 48px;
+        left: 48px;
+    }
+
+    .navigation-link::after {
+        width: 48px;
+        left: 48px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .contact-link {
+        font-size: 18px;
+    }
+}

@@ -30,7 +30,7 @@ h1 {
 //   color: $highlight;
 // }
 
-h3 {
+h3.subheader {
   font-family: Overpass;
   font-size: 16px;
   max-width: 525px;
@@ -192,4 +192,66 @@ a {
 .mobile-arrow {
   display: flex;
   justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .portfolio-header {
+    font-size: 48px;
+  }
+
+  h3.subheader {
+    font-size: 18px;
+  }
+
+  .project {
+    gap: 16px;
+  }
+
+  .project > .project-image::after {
+    left: 4px;
+    border: 3px solid black;
+  }
+
+  .rotate-arrow {
+    top: calc(50% + 4px);
+    left: calc(100% + 8px);
+    transform: translateY(-50%) translateX(-50%) rotate(180deg) scale(0.65);
+  }
+
+  .odd-project {
+    align-items: flex-end;
+  }
+
+  .odd-project > .project-image::after {
+    top: 4px;
+    left: -8px;
+  }
+
+  .odd-project > .project-image > .rotate-arrow {
+    top: calc(50% + 4px);
+    left: -8px;
+    transform: translateY(-50%) translateX(-50%) rotate(90deg) scale(0.65);
+  }
+
+  .project-info {
+    gap: 6px;
+  }
+
+  .project-name {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+  
+  a {
+    border: 3px solid #000000;
+    padding: 8px 32px;
+    font-size: 18px;
+  }
 }

@@ -16,12 +16,10 @@ $highlight: #00bc8f;
   padding-top: 93px;
 }
 
-.hero-text {
-  h1 {
-    font-family: Syne;
-    font-weight: 800;
-    font-size: 32px;
-  }
+h1 {
+  font-family: Syne;
+  font-weight: 800;
+  font-size: 32px;
 }
 
 .hero-name {
@@ -89,7 +87,7 @@ img {
   align-items: center;
 }
 
-h2 {
+h2.scroll-text {
   font-weight: 300;
   font-family: Overpass;
   font-size: 22px;
@@ -121,5 +119,19 @@ h2 {
     padding: 12px 34px;
     font-family: Overpass;
     font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 64px;
+  }
+  .name {
+    font-size: 28px;
+  }
+  .line {
+    border: 2px solid black;
+    min-width: 280px;
+    width: 100%;
   }
 }

@@ -76,7 +76,7 @@ a {
 h1 {
   text-align: center;
   position: relative;
-  bottom: 24px;
+  transform: translateY(-50%);
   background-color: $background;
   font-size: 36px;
   padding: 0 12px;
@@ -90,5 +90,18 @@ h1 {
 //     cursor: default;
 // }
 
+@media (min-width: 768px) {
+  .icons-wrapper {
+    gap: 54px 24px;
+    padding: 0 24px;
+  }
 
+  h1 {
+    font-size: 48px;
+  }
+
+  .content-wrapper {
+    padding-bottom: 28px;
+  }
+}
 

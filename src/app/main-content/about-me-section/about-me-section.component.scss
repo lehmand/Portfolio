@@ -51,7 +51,7 @@ h1 {
   width: 100%;
   height: 100%;
   border: 3px solid $primary;
-  animation: 2000ms infinite pulse-border;
+  animation: 3s infinite pulse-border;
 }
 
 // .img:hover::after {
@@ -66,7 +66,7 @@ h1 {
     left: 0;
     opacity: 1;
   }
-  25% {
+  10% {
     top: 4px;
     left: 6px;
     opacity: 100;
@@ -102,4 +102,18 @@ a {
 a:hover {
   padding: 20px 80px;
   text-shadow: 0 0 1px $primary;
+}
+
+@media (min-width: 768px) {
+  .description {
+    flex-direction: row;
+    gap: 48px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  .mobile-arrow {
+    display: flex;
+    justify-content: flex-end;
+  }
 }

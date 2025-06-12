@@ -331,3 +331,10 @@ button:disabled {
   font-family: Overpass;
   font-size: 23px;
 }
+
+@media (min-width: 768px) {
+  h1 {
+    text-align: center;
+    margin: 68px 0;
+  }
+}
