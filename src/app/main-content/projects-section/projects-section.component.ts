@@ -58,7 +58,7 @@ export class ProjectsSectionComponent implements OnInit, OnDestroy {
       image: '/assets/img/projects/videoflix.png',
       projectNumber: '03/03',
       name: 'Videoflix',
-      tools: 'Angular | SCSS | Python | Django | Django-Restframework',
+      tools: 'Angular | Django | Django-Restframework',
       description:
         'Videoflix is a streaming platform that allows users to watch videos.',
       link: 'https://github.com/lehmand/videoflix_backend',

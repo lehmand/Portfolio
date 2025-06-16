@@ -54,3 +54,13 @@ p {
     color: $background;
   }
 }
+
+@media (min-width: 1024px) {
+  .top-side,
+  .bottom-side {
+    flex-direction: initial;
+  }
+  .content {
+    padding: 32px 96px;
+  }
+}

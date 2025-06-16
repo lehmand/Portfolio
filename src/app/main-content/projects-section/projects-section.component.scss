@@ -252,3 +252,38 @@ a {
     font-size: 18px;
   }
 }
+
+@media (min-width: 1024px) {
+  .portfolio-header {
+    font-size: 68px;
+  }
+  h3.subheader {
+    font-size: 22px;
+  }
+  .projects {
+    gap: 32px;
+  }
+  .project-wrapper {
+    gap: 64px;
+  }
+  .project {
+    flex-direction: initial;
+    gap: 54px;
+  }
+  .odd-project {
+    flex-direction: row-reverse;
+  }
+  .odd-project > .project-info {
+    text-align: left;
+    align-items: flex-start;
+  }
+  .project-number {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .odd-project > .project-number {
+    left: 0;
+  }
+}

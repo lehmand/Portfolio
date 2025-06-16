@@ -3,6 +3,7 @@
     <div class="skewed-background"></div>
     <h1>{{ translations.headings.h1 }}</h1>
     <div class="form-container">
+      <a class="top-arrow" *ngIf="!imgService.isMobile" href="#top"><img src="/assets/img/arrow-up.png" alt=""/></a>
       <div class="form-header">
         <h2>{{ translations.headings.h2 }}</h2>
         <h3>{{ translations.headings.h3 }}</h3>
@@ -170,6 +171,5 @@
         </div>
       </form>
     </div>
-    <a *ngIf="!imgService.isMobile" href="#top"><img class="top-arrow" src="/assets/img/arrow-up.png" alt=""/></a>
   </div>
 </section>

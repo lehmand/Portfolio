@@ -107,3 +107,15 @@ app-menu {
   bottom: 0;
   background-color: $background;
 }
+
+@media(min-width: 768px) {
+  header {
+    padding: 4px 48px;
+  }
+}
+
+@media(min-width: 1024px) {
+  header {
+    padding: 4px 96px;
+  }
+}
