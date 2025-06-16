@@ -74,6 +74,7 @@ h3.subheader {
 
 .odd-project > .project-info {
   text-align: right;
+  align-items: flex-end;
 }
 
 .odd-project > .project-info > .link-container {
@@ -216,10 +217,6 @@ a {
     top: calc(50% + 4px);
     left: calc(100% + 8px);
     transform: translateY(-50%) translateX(-50%) rotate(180deg) scale(0.65);
-  }
-
-  .odd-project {
-    align-items: flex-end;
   }
 
   .odd-project > .project-image::after {

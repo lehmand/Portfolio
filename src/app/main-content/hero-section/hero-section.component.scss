@@ -135,3 +135,20 @@ h2.scroll-text {
     width: 100%;
   }
 }
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 86px;
+  }
+  .name {
+    font-size: 36px;
+  }
+  .line {
+    border: 2px solid black;
+    min-width: 368px;
+    width: 100%;
+  }
+  .mobile-button {
+    display: none;
+  }
+}

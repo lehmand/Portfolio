@@ -20,3 +20,9 @@ app-menu {
     padding: 0 48px;
   }
 }
+
+@media (min-width: 1024px) {
+  .padding-border {
+    padding: 0 96px;
+  }
+}
