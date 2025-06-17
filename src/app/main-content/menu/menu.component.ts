@@ -37,6 +37,7 @@ export class MenuComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute
   ) {
     this.isGerman = this.lang.isGerman();
+    window.addEventListener('resize', this.imgService.resizeHandler);
   }
 
   ngOnInit(): void {

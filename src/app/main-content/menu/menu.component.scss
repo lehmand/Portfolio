@@ -1,19 +1,18 @@
 @use "../../shared/styles/animations";
 @use "../../shared/styles/colors" as *;
 
-
 section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: $background;
-    position: relative;
-    z-index: 100;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $background;
+  position: relative;
+  z-index: 100;
 }
 
 .background {
-    position: relative;
+  position: relative;
 }
 
 .skewed-background {
@@ -28,127 +27,151 @@ section {
   z-index: 0;
 }
 
-
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    height: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .left-side {
-    color: $background;
-    padding: 154px 0px;
+  color: $background;
+  padding: 154px 0px;
 }
 
 h1 {
-    font-family: Syne;
-    font-size: 36px;
-    font-weight: 800;
-    animation: 3s infinite pulse-contact;
+  font-family: Syne;
+  font-size: 36px;
+  font-weight: 800;
+  animation: 3s infinite pulse-contact;
 }
 
 h1:hover {
-        color: $highlight;
-        transition: color 125ms ease-in-out;
-        cursor: pointer
+  color: $highlight;
+  transition: color 125ms ease-in-out;
+  cursor: pointer;
 }
 
-
 p {
-    font-family: Overpass;
-    font-weight: 300;
-    font-size: 23px;
+  font-family: Overpass;
+  font-weight: 300;
+  font-size: 23px;
 }
 
 a {
-    text-decoration: none;
-    color: $background;
-}
-
-.right-side {
-    display: flex;
-    margin-top: 64px;
-    gap: 48px;
+  text-decoration: none;
+  color: $background;
 }
 
 .link-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-    margin: 0 24px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  margin: 0 24px;
 }
 
 .navigation-link {
-    text-decoration: none;
-    color: $primary;
-    font-family: Syne;
-    font-weight: 700;
-    font-size: 42px;
-    position: relative;
-    z-index: 0;
-    max-width: 520px;
-    width: 100%;
-    text-align: center;
+  text-decoration: none;
+  color: $primary;
+  font-family: Syne;
+  font-weight: 700;
+  font-size: 42px;
+  position: relative;
+  z-index: 0;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
 }
 
 .contact-link {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .navigation-link::before {
-        content: '';
-        position: absolute;
-        left: 4px;
-        bottom: 0;
-        height: 24px;
-        border-left: 4px solid $primary;
-        transition: height ease-in-out 125ms;            
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 0;
+  height: 24px;
+  border-left: 4px solid $primary;
+  transition: height ease-in-out 125ms;
 }
 
 .navigation-link::after {
-        content: '';
-        position: absolute;
-        left: 4px;
-        bottom: 0;
-        width: 24px;
-        border-bottom: 4px solid $primary;
-        transition: width ease-in-out 125ms, left ease-in-out 125ms;                          
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 0;
+  width: 24px;
+  border-bottom: 4px solid $primary;
+  transition: width ease-in-out 125ms, left ease-in-out 125ms;
 }
 
-// a:hover::before {
-//         height: 0;
-// }
-
-// a:hover::after {
-//         width: 65%;
-//         left: 35%;
-// }
-
 @media (min-width: 768px) {
-    .navigation-link {
-        font-size: 64px;
-    }
+  .navigation-link {
+    font-size: 64px;
+  }
 
-    .navigation-link::before {
-        height: 48px;
-        left: 48px;
-    }
+  .navigation-link::before {
+    height: 48px;
+    left: 48px;
+  }
 
-    .navigation-link::after {
-        width: 48px;
-        left: 48px;
-    }
+  .navigation-link::after {
+    width: 48px;
+    left: 48px;
+  }
 
-    h1 {
-        font-size: 48px;
-    }
+  h1 {
+    font-size: 48px;
+  }
 
-    .contact-link {
-        font-size: 18px;
-    }
+  .contact-link {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navigation-link {
+    font-size: 96px;
+    max-width: 620px;
+  }
+  .navigation-link::before {
+    height: 48px;
+    left: -48px;
+  }
+
+  .navigation-link::after {
+    width: 48px;
+    left: -48px;
+  }
+
+  a:hover::before {
+    height: 0;
+  }
+
+  a:hover::after {
+    width: 65%;
+    left: 35%;
+  }
+
+  .left-side {
+    padding: 0;
+  }
+
+  .right-side {
+    display: flex;
+    gap: 32px;
+  }
+
+  .container {
+    padding: 128px 0;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 96px;
+  }
 }
