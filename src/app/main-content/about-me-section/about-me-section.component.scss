@@ -52,11 +52,11 @@ h1 {
   animation: 3s infinite pulse-border;
 }
 
-// .img:hover::after {
-//   top: 4px;
-//   left: 6px;
-//   opacity: 100;
-// }
+.mobile-arrow {
+  display: flex;
+  justify-content: center;
+}
+
 
 @keyframes pulse-border {
   0% {
