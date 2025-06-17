@@ -81,7 +81,7 @@ a {
   font-size: 42px;
   position: relative;
   z-index: 0;
-  max-width: 520px;
+  max-width: 320px;
   width: 100%;
   text-align: center;
 }
@@ -113,16 +113,17 @@ a {
 @media (min-width: 768px) {
   .navigation-link {
     font-size: 64px;
+    max-width: 520px;
   }
 
   .navigation-link::before {
     height: 48px;
-    left: 48px;
+    left: 18px;
   }
 
   .navigation-link::after {
     width: 48px;
-    left: 48px;
+    left: 18px;
   }
 
   h1 {

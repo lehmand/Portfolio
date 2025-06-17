@@ -142,7 +142,7 @@ export const POPUPTRANSLATIONS = {
   en: {
     links: {
       aboutMe: "About me",
-      skills: "My skills",
+      skills: "Skills",
       portfolio: "Portfolio",
     },
     heading: "Say Hi!",
@@ -151,7 +151,7 @@ export const POPUPTRANSLATIONS = {
   de: {
     links: {
       aboutMe: "Über mich",
-      skills: "Meine Skills",
+      skills: "Skills",
       portfolio: "Portfolio",
     },
     heading: "Sag Hallo!",
