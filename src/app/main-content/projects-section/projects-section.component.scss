@@ -113,6 +113,7 @@ h3.subheader {
   display: flex;
   justify-content: center;
   align-self: center;
+  z-index: 2;
 }
 
 .project-image::after {
@@ -143,6 +144,7 @@ h3.subheader {
   flex-direction: column;
   justify-content: center;
   gap: 4px;
+  z-index: 1;
 }
 
 .portfolio-header {
@@ -263,12 +265,18 @@ a {
     flex-direction: initial;
     gap: 54px;
   }
+  .project-info {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
   .odd-project {
     flex-direction: row-reverse;
   }
   .odd-project > .project-info {
     text-align: left;
     align-items: flex-start;
+    opacity: 0;
+    transform: translateX(100%);
   }
   .project-number {
     position: absolute;
@@ -301,7 +309,7 @@ a {
     top: 8px;
     left: 8px;
     opacity: 1;
-    transition: left 250ms ease 200ms, top 250ms ease 200ms, opacity 125ms;
+    transition: left 125ms ease 200ms, top 125ms ease 200ms, opacity 125ms;
   }
   .odd-project:hover > .project-image::after {
     left: -16px;
@@ -326,9 +334,21 @@ a {
      transform: translateY(-50%) translateX(-50%) rotate(-270deg) scale(0.65);
      transition: transform 250ms ease-out 400ms;
   }
+  .project:hover > .project-info {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 175ms ease;
+  }
+  .odd-project:hover > .project-info {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 175ms ease;
+  }
   a {
     &:hover {
-      padding: 12px 32px;
+      background-color: $highlight;
+      color: rgb(0, 0, 0);
+      transition: all 250ms ease;
     }
   }
 }
