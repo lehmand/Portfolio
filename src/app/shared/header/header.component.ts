@@ -24,7 +24,7 @@ import { MenuComponent } from '../../main-content/menu/menu.component';
   ],
 })
 export class HeaderComponent {
-  isMenuOpen: boolean = true;
+  isMenuOpen: boolean = false;
   burgerImages: string[] = [
     '/assets/icons/burger/burger1.png',
     '/assets/icons/burger/burger2.png',

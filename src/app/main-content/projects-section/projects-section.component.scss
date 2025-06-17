@@ -49,7 +49,7 @@ h3.subheader {
 
 .project-number {
   font-family: Syne;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 24px;
   display: flex;
   justify-content: flex-end;
@@ -246,7 +246,7 @@ a {
   p {
     font-size: 16px;
   }
-  
+
   a {
     border: 3px solid #000000;
     padding: 8px 32px;
@@ -286,5 +286,53 @@ a {
   }
   .odd-project > .project-number {
     left: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .portfolio-header {
+    font-size: 78px;
+  }
+  .project-number {
+    font-size: 48px;
+  }
+  .project-name {
+    font-size: 45px;
+  }
+  h4 {
+    font-size: 23px;
+  }
+  a {
+    border: 4px solid #000000;
+    padding: 10px 50px;
+    font-size: 23px;
+  }
+  .project {
+    gap: 96px;
+  }
+  .rotate-arrow {
+    top: calc(50% + 8px);
+    left: calc(100% + 16px);
+    transform: translateY(-50%) translateX(-50%) rotate(180deg) scale(1);
+  }
+  .odd-project > .project-image > .rotate-arrow {
+    left: -16px;
+    transform: translateY(-50%) translateX(-50%) rotate(90deg) scale(1);
+  }
+  .project > .project-image::after {
+    border: 4px solid $primary;
+  }
+  .project > .project-image::after {
+    top: 8px;
+    left: 8px;
+    opacity: 1;
+    transition: all 75ms ease-in-out;
+  }
+
+  .odd-project > .project-image::after {
+    top: 8px;
+    left: -16px;
+    opacity: 1;
+    transition: all 75ms ease-in-out;
   }
 }

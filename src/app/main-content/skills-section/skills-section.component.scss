@@ -118,3 +118,16 @@ h1 {
   }
 }
 
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 78px;
+  }
+  .skill-icon {
+    width: 74px;
+    height: 74px;
+  }
+  .icons-wrapper {
+    gap: 54px 76px;
+  }
+}
+

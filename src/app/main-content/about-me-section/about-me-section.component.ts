@@ -42,9 +42,7 @@ export class AboutMeSectionComponent implements OnInit, OnDestroy {
     if (this.langSub) {
       this.langSub.unsubscribe();
     }
-  }
-
-  
+  }  
 
   toggleAnimation() {
     this.imgService.isAnimated = !this.imgService.isAnimated;
