@@ -350,6 +350,7 @@ button:disabled {
     font-size: 68px;
     color: $background;
     animation: unset;
+    transition: color ease-in-out 125ms;
     &:hover {
       color: $highlight;
     }

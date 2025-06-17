@@ -18,6 +18,7 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 8px;
+  width: 100%;
 }
 
 .icons-wrapper {
@@ -25,8 +26,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 54px 12px;
-  max-width: 1012px;
+  max-width: 1024px;
   overflow: hidden;
+  padding: 24px;
 }
 
 .icon-box {
@@ -111,6 +113,7 @@ h1 {
     font-size: 68px;
     color: black;
     animation: unset;
+    transition: color ease-in-out 125ms;
     &:hover {
       color: $highlight;
     }

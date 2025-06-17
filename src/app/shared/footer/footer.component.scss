@@ -1,5 +1,4 @@
-
-@use '../../shared/styles/colors' as *;
+@use "../../shared/styles/colors" as *;
 
 footer {
   box-sizing: border-box;
@@ -14,6 +13,8 @@ footer {
   padding-bottom: 6px;
   position: relative;
   z-index: 10;
+  max-width: 1920px;
+  margin: auto;
 }
 
 .top-side {

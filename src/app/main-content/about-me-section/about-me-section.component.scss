@@ -3,10 +3,12 @@
 
 .about-me {
   background-color: $background;
-  max-width: 1920px;
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin: auto;
+  align-items: center;
 }
 
 h1 {
@@ -104,6 +106,7 @@ a:hover {
   .description {
     flex-direction: row;
     gap: 48px;
+    width: 100%;
   }
   h1 {
     font-size: 48px;
@@ -111,6 +114,9 @@ a:hover {
   .mobile-arrow {
     display: flex;
     justify-content: flex-end;
+  }
+  .about-me {
+    align-items: flex-start;
   }
 }
 
