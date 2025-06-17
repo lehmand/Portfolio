@@ -14,12 +14,8 @@ h1 {
   font-weight: 800;
   font-size: 36px;
   animation: 3s infinite pulse;
+  cursor: default;
 }
-
-// h1:hover {
-//   color: $highlight;
-//   transition: color ease-in-out 125ms;
-// }
 
 .description {
   display: flex;
@@ -129,11 +125,34 @@ a:hover {
   }
   h1 {
     font-size: 68px;
+    color: black;
+    animation: unset;
+    transition: color ease-in-out 125ms;
+    &:hover {
+      color: $highlight;
+    }
   }
   .text {
     p {
       font-size: 24px;
     }
+  }
+  .img::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 4px solid $primary;
+    animation: unset;
+    opacity: 0;
+  }
+  .img:hover::after {
+    left: 8px;
+    top: 8px;
+    opacity: 1;
+    transition: left 125ms ease 200ms, top 125ms ease 200ms, opacity 125ms ease;
   }
 }
 

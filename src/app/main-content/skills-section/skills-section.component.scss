@@ -83,6 +83,7 @@ h1 {
   font-weight: 800;
   font-family: Syne;
   animation: 3s infinite pulse;
+  cursor: default;
 }
 
 // h1:hover {
@@ -108,6 +109,11 @@ h1 {
 @media (min-width: 1024px) {
   h1 {
     font-size: 68px;
+    color: black;
+    animation: unset;
+    &:hover {
+      color: $highlight;
+    }
   }
   .skill-icon {
     width: 64px;

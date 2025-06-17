@@ -174,4 +174,19 @@ a {
     justify-content: space-between;
     margin: 0 96px;
   }
+
+  h1 {
+    color: $background;
+    animation: unset;
+    font-size: 68px;
+    &:hover {
+      color: $highlight;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 78px;
+  }
 }

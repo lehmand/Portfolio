@@ -24,6 +24,7 @@ h1 {
   font-weight: 800;
   font-size: 28px;
   animation: 3s infinite pulse;
+  cursor: default;
 }
 
 // h1:hover {
@@ -257,6 +258,11 @@ a {
 @media (min-width: 1024px) {
   .portfolio-header {
     font-size: 68px;
+    color: black;
+    animation: unset;
+    &:hover {
+      color: $highlight;
+    }
   }
   h3.subheader {
     font-size: 22px;

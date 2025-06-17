@@ -57,6 +57,7 @@ h1 {
   animation: 3s infinite pulse-contact;
   text-align: center;
   margin: 32px 0;
+  cursor: default;
 }
 
 // h1:hover {
@@ -347,11 +348,22 @@ button:disabled {
     margin: 86px 0;
     padding: 0 96px;
     font-size: 68px;
+    color: $background;
+    animation: unset;
+    &:hover {
+      color: $highlight;
+    }
   }
   h2 {
     font-size: 32px;
   }
   h3 {
     font-size: 23px;
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 78px;
   }
 }
