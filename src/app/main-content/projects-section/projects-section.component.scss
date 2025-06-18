@@ -99,7 +99,6 @@ h3.subheader {
   position: relative;
   display: flex;
   justify-content: center;
-  align-self: center;
   z-index: 2;
 }
 
@@ -248,7 +247,7 @@ a {
     font-size: 22px;
   }
   .projects {
-    gap: 32px;
+    gap: 64px;
   }
   .project-wrapper {
     gap: 64px;
@@ -260,6 +259,8 @@ a {
   .project-info {
     opacity: 0;
     transform: translateX(-100%);
+    align-items: flex-end;
+    text-align: right;
   }
   .odd-project {
     flex-direction: row-reverse;
@@ -365,7 +366,7 @@ a {
     font-size: 23px;
   }
   .project {
-    gap: 196px;
+    gap: 96px;
   }
   .rotate-arrow {
     top: calc(50% + 8px);
