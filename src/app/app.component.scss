@@ -7,4 +7,17 @@ $highlight: #00bc8f;
   background-color: black;
   height: 100px;
   width: 100%;
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .black-bar {
+    display: block;
+  }
+}
+
+@media (min-width: 2100px) {
+  .black-bar {
+    height: 200px;
+  }
 }

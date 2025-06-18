@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  max-width: 1920px;
+  max-width: 1520px;
   margin: 0 auto;
 }
 
@@ -136,6 +136,12 @@ h1 {
   }
   .icons-wrapper {
     gap: 54px 76px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .icons-wrapper {
+    padding: 0 156px;
   }
 }
 

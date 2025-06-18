@@ -376,3 +376,14 @@ button:disabled:hover {
     font-size: 78px;
   }
 }
+
+@media (min-width: 2000px) {
+  h1 {
+    max-width: 1920px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 86px auto;
+    padding: 0;
+  }
+}
