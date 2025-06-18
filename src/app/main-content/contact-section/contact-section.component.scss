@@ -322,8 +322,9 @@ button {
 }
 
 button:hover:not(.button-mobile) {
-  padding: 20px 80px;
-  transition: padding 125ms ease-in-out;
+  border-color: $highlight;
+  color: $highlight;
+  transition: all 125ms ease;
 }
 
 button:disabled {
@@ -334,6 +335,11 @@ button:disabled {
   color: $background;
   font-family: Overpass;
   font-size: 23px;
+}
+
+button:disabled:hover {
+  border: 4px solid #bbbbbb;
+  color: $background;
 }
 
 @media (min-width: 768px) {
