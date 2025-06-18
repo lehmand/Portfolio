@@ -32,14 +32,14 @@ h1 {
 
 .line {
   border: 1px solid black;
-  min-width: 180px;
+  min-width: 140px;
   width: 100%;
 }
 
 .name {
   font-family: Overpass;
   color: $highlight;
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
@@ -119,6 +119,18 @@ h2.scroll-text {
     padding: 12px 34px;
     font-family: Overpass;
     font-size: 16px;
+  }
+}
+
+@media (min-width: 520px) {
+  h1 {
+    font-size: 48px;
+  }
+  .name {
+    font-size: 22px;
+  }
+  .line {
+    min-width: 180px;
   }
 }
 

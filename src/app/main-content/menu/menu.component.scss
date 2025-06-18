@@ -93,7 +93,7 @@ a {
 .navigation-link::before {
   content: "";
   position: absolute;
-  left: 4px;
+  left: -8px;
   bottom: 0;
   height: 24px;
   border-left: 4px solid $primary;
@@ -103,7 +103,7 @@ a {
 .navigation-link::after {
   content: "";
   position: absolute;
-  left: 4px;
+  left: -8px;
   bottom: 0;
   width: 24px;
   border-bottom: 4px solid $primary;

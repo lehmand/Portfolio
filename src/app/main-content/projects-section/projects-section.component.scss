@@ -84,18 +84,6 @@ h3.subheader {
   transform: translateY(-50%) translateX(-50%) rotate(90deg) scale(0.35);
 }
 
-// .project:hover > .project-image > .rotate-arrow {
-//   scale: 1;
-//   rotate: 0deg;
-//   transition: scale 250ms ease-in-out 50ms normal,
-//     rotate 125ms ease-in-out 250ms normal;
-// }
-
-// .project:hover > .project-image {
-//   filter: grayscale(0);
-//   transition: filter 250ms ease-in-out;
-// }
-
 .project > .project-image::after {
   top: 4px;
   left: 1px;
@@ -351,8 +339,9 @@ a {
   }
   a {
     &:hover {
+      border-color: $highlight;
       background-color: $highlight;
-      color: rgb(0, 0, 0);
+      color: $background;
       transition: all 250ms ease;
     }
   }

@@ -92,14 +92,15 @@ a {
   font-family: Overpass;
   font-size: 23px;
   cursor: pointer;
-  transition: padding ease-in-out 100ms;
   text-decoration: none;
   color: $primary;
 }
 
 a:hover {
-  padding: 20px 80px;
-  text-shadow: 0 0 1px $primary;
+  border-color: $highlight;
+  background-color: $highlight;
+  color: $background;
+  transition: all 250ms ease;
 }
 
 @media (min-width: 768px) {
