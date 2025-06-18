@@ -104,7 +104,7 @@ h3 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 42px;
   position: relative;
   max-width: 612px;
   width: 100%;
@@ -295,6 +295,8 @@ input[type="checkbox"] {
 }
 
 .error-message {
+  position: absolute;
+  bottom: -24px;
   p {
     color: red;
     font-family: Overpass;

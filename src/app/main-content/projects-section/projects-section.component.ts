@@ -95,4 +95,25 @@ export class ProjectsSectionComponent implements OnInit, OnDestroy {
     this.currentLanguage = language;
     this.translations = PROJECTTRANSLATIONS[this.currentLanguage];
   }
+
+  toggleAnimation() {
+    this.imgService.isAnimated = !this.imgService.isAnimated;
+    this.playAnimation();
+  }
+
+  playAnimation() {
+    const animationId = setInterval(() => {
+      this.imgService.currentIndexLeft = (this.imgService.currentIndexLeft + 1) % this.imgService.arrowToLeft.length;
+      this.imgService.currentImageLeft = this.imgService.arrowToLeft[this.imgService.currentIndexLeft];
+      if (this.imgService.currentIndexLeft === 2) {
+        clearInterval(animationId);
+      }
+    }, 125);
+  }
+
+  resetAnimation() {
+    clearInterval(this.imgService.animationId);
+    this.imgService.currentIndexLeft = 0;
+    this.imgService.currentImageLeft = this.imgService.arrowToLeft[this.imgService.currentIndexLeft];
+  }
 }

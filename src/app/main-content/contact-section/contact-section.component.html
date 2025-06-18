@@ -34,13 +34,13 @@
             (blur)="onBlur(name)"
           />
           <label class="name" for="name">{{ translations.labels.name }}</label>
-        </div>
-        <div
-          class="error-message"
-          *ngIf="name.invalid && name.touched"
-          [@slide]
-        >
-          <p>{{ translations.errors.name }}</p>
+          <div
+            class="error-message"
+            *ngIf="name.invalid && name.touched"
+            [@slide]
+          >
+            <p>{{ translations.errors.name }}</p>
+          </div>
         </div>
         <div class="form-row">
           <img
@@ -70,13 +70,13 @@
           <label class="email" for="email">{{
             translations.labels.email
           }}</label>
-        </div>
         <div
           class="error-message"
           *ngIf="email.invalid && email.touched"
           [@slide]
         >
           <p>{{ translations.errors.email }}</p>
+        </div>
         </div>
         <div class="form-row" id="contact">
           <img
@@ -105,13 +105,13 @@
           <label class="message" for="textarea">{{
             translations.labels.message
           }}</label>
-        </div>
         <div
           class="error-message"
           *ngIf="message.invalid && message.touched"
           [@slide]
         >
           <p>{{ translations.errors.message }}</p>
+        </div>
         </div>
         <div class="checkbox-row">
           <input
@@ -138,13 +138,13 @@
             <a [routerLink]="['/privacy']">Datenschutzerklärung</a> gelesen und
             stimme der Verarbeitung meiner Daten zu.</label
           >
-        </div>
-        <div
-          class="error-message"
-          *ngIf="checkbox.invalid && checkbox.touched"
-          [@slide]
-        >
-          <p>{{ translations.errors.privacy }}</p>
+          <div
+            class="error-message"
+            *ngIf="checkbox.invalid && checkbox.touched"
+            [@slide]
+          >
+            <p>{{ translations.errors.privacy }}</p>
+          </div>
         </div>
         <div *ngIf="submitMessage" class="submit-message-container" [@slide]>
           <div class="submit-message">

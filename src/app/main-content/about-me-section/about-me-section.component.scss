@@ -3,7 +3,6 @@
 
 .about-me {
   background-color: $background;
-  max-width: 1280px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -100,7 +99,7 @@ a:hover {
   border-color: $highlight;
   background-color: $highlight;
   color: $background;
-  transition: all 250ms ease;
+  transition: all 125ms ease;
 }
 
 @media (min-width: 768px) {
