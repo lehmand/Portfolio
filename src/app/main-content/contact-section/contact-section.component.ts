@@ -7,7 +7,6 @@ import { firstValueFrom, Subscription } from 'rxjs';
 import { CONTACTTRANSLATIONS } from '../../shared/translations';
 import { LanguageService } from '../../services/language-service/language.service';
 import { RouterModule } from '@angular/router';
-import { ImageService } from '../../services/image-service/image.service';
 
 type Language = 'en' | 'de';
 
@@ -42,7 +41,6 @@ export class ContactSectionComponent implements OnInit, OnDestroy {
     message: '',
   };
   isGerman: boolean = false;
-  public imgService = inject(ImageService)
 
   constructor(private http: HttpClient, private lang: LanguageService) {}
 

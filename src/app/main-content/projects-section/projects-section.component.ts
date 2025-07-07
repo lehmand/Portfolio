@@ -3,7 +3,6 @@ import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { PROJECTTRANSLATIONS } from '../../shared/translations';
-import { ImageService } from '../../services/image-service/image.service';
 
 interface Project {
   image: string;
@@ -27,7 +26,6 @@ type Language = 'en' | 'de';
 export class ProjectsSectionComponent implements OnInit, OnDestroy {
   constructor(private lang: LanguageService) {}
   private langSub: Subscription | undefined;
-  public imgService = inject(ImageService)
 
   currentLanguage: Language = 'en';
   translations = PROJECTTRANSLATIONS[this.currentLanguage];
@@ -94,26 +92,5 @@ export class ProjectsSectionComponent implements OnInit, OnDestroy {
   switchLanguage(language: Language) {
     this.currentLanguage = language;
     this.translations = PROJECTTRANSLATIONS[this.currentLanguage];
-  }
-
-  toggleAnimation() {
-    this.imgService.isAnimated = !this.imgService.isAnimated;
-    this.playAnimation();
-  }
-
-  playAnimation() {
-    const animationId = setInterval(() => {
-      this.imgService.currentIndexLeft = (this.imgService.currentIndexLeft + 1) % this.imgService.arrowToLeft.length;
-      this.imgService.currentImageLeft = this.imgService.arrowToLeft[this.imgService.currentIndexLeft];
-      if (this.imgService.currentIndexLeft === 2) {
-        clearInterval(animationId);
-      }
-    }, 125);
-  }
-
-  resetAnimation() {
-    clearInterval(this.imgService.animationId);
-    this.imgService.currentIndexLeft = 0;
-    this.imgService.currentImageLeft = this.imgService.arrowToLeft[this.imgService.currentIndexLeft];
   }
 }

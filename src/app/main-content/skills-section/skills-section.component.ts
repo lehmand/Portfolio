@@ -11,7 +11,6 @@ import { LanguageService } from '../../services/language-service/language.servic
 import { Subscription } from 'rxjs';
 import { MYSKILLSTRANSLATIONS } from '../../shared/translations';
 import { skills } from '../../shared/skills';
-import { ImageService } from '../../services/image-service/image.service';
 
 @Component({
   selector: 'app-skills-section',
@@ -49,7 +48,6 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
   isGerman: boolean = false;
   private animationId: any;
   private langSub: Subscription | undefined;
-  public imgService = inject(ImageService)
 
   constructor(private lang: LanguageService) {}
 
@@ -71,21 +69,6 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
     if (this.langSub) {
       this.langSub.unsubscribe();
     }
-  }
-
-  playAnimation() {
-    this.animationId = setInterval(() => {
-      this.imgService.currentIndexRight = (this.imgService.currentIndexRight + 1) % this.imgService.arrowToRight.length;
-      this.imgService.currentImageRight = this.imgService.arrowToRight[this.imgService.currentIndexRight];
-      if (this.imgService.currentIndexRight === 2) {
-        clearInterval(this.animationId);
-      }
-    }, 75);
-  }
-
-  resetAnimation() {
-    this.imgService.currentIndexRight = 0;
-    this.imgService.currentImageRight = this.imgService.arrowToRight[this.imgService.currentIndexRight];
   }
 
   animate(index: number) {

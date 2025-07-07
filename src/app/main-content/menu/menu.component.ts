@@ -11,7 +11,6 @@ import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { POPUPTRANSLATIONS } from '../../shared/translations';
-import { ImageService } from '../../services/image-service/image.service';
 
 type Language = 'en' | 'de';
 
@@ -29,7 +28,6 @@ export class MenuComponent implements OnInit, OnDestroy {
   translations = POPUPTRANSLATIONS[this.currentLanguage];
   @Output() linkClicked = new EventEmitter<void>();
   private langSub: Subscription | undefined;
-  public imgService = inject(ImageService)
 
   constructor(
     private lang: LanguageService,
@@ -37,7 +35,6 @@ export class MenuComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute
   ) {
     this.isGerman = this.lang.isGerman();
-    window.addEventListener('resize', this.imgService.resizeHandler);
   }
 
   ngOnInit(): void {
