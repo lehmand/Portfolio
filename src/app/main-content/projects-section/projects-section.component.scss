@@ -285,6 +285,7 @@ a {
   .project:hover > .project-image,
   .odd-project:hover > .project-image {
     filter: grayscale(0);
+    transition: filter 250ms;
   }
   .odd-project > .project-number {
     left: 0;
