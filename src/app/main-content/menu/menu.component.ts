@@ -11,6 +11,7 @@ import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { POPUPTRANSLATIONS } from '../../shared/translations';
+import { MobileService } from '../../services/mobile-service/mobile.service';
 
 type Language = 'en' | 'de';
 
@@ -27,6 +28,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   currentLanguage: Language = 'en';
   translations = POPUPTRANSLATIONS[this.currentLanguage];
   @Output() linkClicked = new EventEmitter<void>();
+  mobileService = inject(MobileService)
   private langSub: Subscription | undefined;
 
   constructor(

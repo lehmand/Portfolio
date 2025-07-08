@@ -3,11 +3,12 @@ import { LanguageService } from '../../services/language-service/language.servic
 import { Subscription } from 'rxjs';
 import { ABOUTMETRANSLATIONS } from '../../shared/translations';
 import { CommonModule } from '@angular/common';
+import { ArrowComponent } from '../../arrow/arrow.component';
 
 @Component({
   selector: 'app-about-me-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ArrowComponent],
   templateUrl: './about-me-section.component.html',
   styleUrl: './about-me-section.component.scss',
 })

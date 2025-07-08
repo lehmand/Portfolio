@@ -3,6 +3,7 @@ import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language-service/language.service';
 import { Subscription } from 'rxjs';
 import { PROJECTTRANSLATIONS } from '../../shared/translations';
+import { ArrowComponent } from '../../arrow/arrow.component';
 
 interface Project {
   image: string;
@@ -19,7 +20,7 @@ type Language = 'en' | 'de';
 @Component({
   selector: 'app-projects-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ArrowComponent],
   templateUrl: './projects-section.component.html',
   styleUrl: './projects-section.component.scss',
 })

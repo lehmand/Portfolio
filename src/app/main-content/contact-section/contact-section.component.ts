@@ -7,6 +7,7 @@ import { firstValueFrom, Subscription } from 'rxjs';
 import { CONTACTTRANSLATIONS } from '../../shared/translations';
 import { LanguageService } from '../../services/language-service/language.service';
 import { RouterModule } from '@angular/router';
+import { MobileService } from '../../services/mobile-service/mobile.service';
 
 type Language = 'en' | 'de';
 
@@ -34,6 +35,7 @@ export class ContactSectionComponent implements OnInit, OnDestroy {
   isChecked: boolean = false;
   mobileButton: string = 'Say hello ;)';
   submitMessage: string = '';
+  mobileService = inject(MobileService)
   private langSub: Subscription | undefined;
   contact: any = {
     name: '',

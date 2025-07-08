@@ -11,11 +11,12 @@ import { LanguageService } from '../../services/language-service/language.servic
 import { Subscription } from 'rxjs';
 import { MYSKILLSTRANSLATIONS } from '../../shared/translations';
 import { skills } from '../../shared/skills';
+import { ArrowComponent } from '../../arrow/arrow.component';
 
 @Component({
   selector: 'app-skills-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ArrowComponent],
   templateUrl: './skills-section.component.html',
   styleUrl: './skills-section.component.scss',
   animations: [
