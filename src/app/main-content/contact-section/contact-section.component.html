@@ -2,7 +2,7 @@
   <div class="background">
     <h1>{{ translations.headings.h1 }}</h1>
     <div class="form-container">
-      <a class="top-arrow" *ngIf="!mobileService.isMobile$" href="#top"><img src="/assets/img/arrow-up.png" alt=""/></a>
+      <a class="top-arrow" *ngIf="!(mobileService.isMobile$ | async)" href="#top"><img src="/assets/img/arrow-up.png" alt=""/></a>
       <div class="form-header">
         <h2>{{ translations.headings.h2 }}</h2>
         <h3>{{ translations.headings.h3 }}</h3>
@@ -152,7 +152,7 @@
         </div>
         <div class="button-container">
           <button
-            *ngIf="!mobileService.isMobile$"
+            *ngIf="!(mobileService.isMobile$ | async)"
             class="button-desktop"
             type="submit"
             [disabled]="contactForm.invalid"
@@ -160,7 +160,7 @@
             {{ translations.buttons.desktop }}
           </button>
           <button
-            *ngIf="mobileService.isMobile$"
+            *ngIf="(mobileService.isMobile$ | async)"
             class="button-mobile"
             type="submit"
             [disabled]="contactForm.invalid"

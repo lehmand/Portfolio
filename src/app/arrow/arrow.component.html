@@ -1,5 +1,14 @@
 <div class="img-container">
-  <img [src]="initialArrow" alt="" 
-       [class.left-arrow]="direction == 'left' && !(mobileService.isMobile$ | async)" 
-       [class.right-arrow]="direction == 'right' && !(mobileService.isMobile$ | async)">
+  <img
+    [src]="initialArrow"
+    alt=""
+    [class.mobile-left-arrow]="direction == 'left'"
+    [class.mobile-right-arrow]="direction == 'right'"
+    [class.left-arrow]="
+      direction == 'left' && !(mobileService.isMobile$ | async)
+    "
+    [class.right-arrow]="
+      direction == 'right' && !(mobileService.isMobile$ | async)
+    "
+  />
 </div>

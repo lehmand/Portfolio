@@ -27,7 +27,10 @@ export class MenuComponent implements OnInit, OnDestroy {
   isGerman: boolean = false;
   currentLanguage: Language = 'en';
   translations = POPUPTRANSLATIONS[this.currentLanguage];
-  @Output() linkClicked = new EventEmitter<void>();
+
+  @Output()
+  linkClicked = new EventEmitter<void>();
+  
   mobileService = inject(MobileService)
   private langSub: Subscription | undefined;
 
