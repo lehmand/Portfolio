@@ -142,8 +142,6 @@ input {
 
 input:focus + label,
 input:valid + label {
-  top: -16px;
-  left: 24px;
   background-color: $primary;
   transition: all 175ms ease-in-out;
   padding: 0 4px;
@@ -151,8 +149,6 @@ input:valid + label {
 }
 
 input.ng-touched + label {
-  top: -16px;
-  left: 24px;
   background-color: $primary;
   padding: 0 4px;
   z-index: 2;
