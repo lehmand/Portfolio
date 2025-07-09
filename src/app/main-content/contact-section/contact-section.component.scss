@@ -140,15 +140,19 @@ input {
   width: 100%;
 }
 
-input:focus + label,
-input:valid + label {
+input:not([type="checkbox"]):focus + label,
+input:not([type="checkbox"]):valid + label {
+  top: -16px;
+  left: 24px;
   background-color: $primary;
   transition: all 175ms ease-in-out;
   padding: 0 4px;
   z-index: 2;
 }
 
-input.ng-touched + label {
+input:not([type="checkbox"]).ng-touched + label {
+  top: -16px;
+  left: 24px;
   background-color: $primary;
   padding: 0 4px;
   z-index: 2;
